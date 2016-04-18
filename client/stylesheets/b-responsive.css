@@ -1,0 +1,51 @@
+/* Mobile HD */
+@media screen and (min-width: 350px) and (max-width: 760px){
+  /**Global**/
+  img{
+    max-width:60%;
+    width:auto\9;
+    height:auto;
+  }
+  h1{
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+  .navbar{
+    height: 60px;
+  }
+  #main-sec{
+    padding: 40px 0 0 0px;
+  }
+}
+
+/* Mobile LD */
+@media screen and (max-width: 350px){
+  /**Global**/
+  img{
+    max-width:60%;
+    width:auto\9;
+    height:auto;
+  }
+  h1{
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+  .navbar{
+    height: 60px;
+  }
+  .navbar-toggle{
+    margin-right: 25px;
+  }
+  #logo{
+    padding-left: 99px;
+    padding-top: 30px;
+  }
+  #main-sec{
+    padding: 40px 0 0 0px;
+  }
+  #main-heading{
+    padding: 40px 0 0 0;
+  }
+}
