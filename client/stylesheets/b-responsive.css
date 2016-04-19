@@ -14,8 +14,22 @@
   .navbar{
     height: 60px;
   }
+  .navbar-toggle{
+    margin-right: 25px;
+  }
+  .nav{
+    padding-left: 10px;
+    background-color: white;
+  }
+  #logo{
+    padding-left: 124px;
+    padding-top: 18px;
+  }
   #main-sec{
     padding: 40px 0 0 0px;
+  }
+  #main-heading{
+    padding: 40px 0 0 0;
   }
 }
 
@@ -38,9 +52,13 @@
   .navbar-toggle{
     margin-right: 25px;
   }
+  .nav{
+    padding-left: 10px;
+    background-color: white;
+  }
   #logo{
     padding-left: 99px;
-    padding-top: 30px;
+    padding-top: 18px;
   }
   #main-sec{
     padding: 40px 0 0 0px;
