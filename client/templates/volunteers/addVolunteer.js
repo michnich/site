@@ -1,6 +1,6 @@
 Template.addVolunteer.onCreated(function() {
   Session.set('volunteerErrors', {});
-  Meteor.subscribe('volunteers');
+  Meteor.subscribe("volunteers");
 });
 
 Template.addVolunteer.helpers({
