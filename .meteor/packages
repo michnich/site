@@ -21,7 +21,7 @@ iron:router
 twbs:bootstrap
 ian:accounts-ui-bootstrap-3
 accounts-password
-selaias:accounts-entry
 alanning:roles
 msavin:mongol
 session
+useraccounts:bootstrap
