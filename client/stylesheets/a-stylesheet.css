@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('font/BEBAS___-webfont.eot');
+    src: url('font/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/BEBAS___-webfont.woff') format('woff'),
+         url('font/BEBAS___-webfont.ttf') format('truetype'),
+         url('font/BEBAS___-webfont.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 img{
   width: 100%;
 }
@@ -9,9 +19,12 @@ html,body{
   font-weight: 800;
 }
 h1{
-  font-weight: 800;
-  font-size: 46px;
+  font-family: 'BebasRegular';
+  font-weight: normal;
+  font-size: 42px;
   text-transform: uppercase;
+  word-spacing: 16px;
+  letter-spacing: 1px;
 }
 .container{
   width: 100%;
