@@ -1,3 +1,4 @@
+/* Global */
 @font-face {
     font-family: 'BebasRegular';
     src: url('font/BEBAS___-webfont.eot');
@@ -32,6 +33,9 @@ h2{
   font-size: 30px;
   text-transform: uppercase;
 }
+p{
+  color: #626262;
+}
 .container{
   width: 100%;
   padding: 0px 0px 0px 0px;
@@ -52,14 +56,16 @@ h2{
 .navbar-right{
   padding-right: 40px;
 }
+#logo{
+  padding-left: 40px;
+}
+
+/* Section 1 */
 .main-menu-imgs{
   width: 60%;
 }
 .main-img{
   padding: 0 0 20px 0;
-}
-#logo{
-  padding-left: 40px;
 }
 #main-sec{
   padding: 70px 0 0 0px;
@@ -79,5 +85,37 @@ h2{
 }
 #main-menu{
   padding: 40px 0 0 0;
+  text-align: center;
+}
+
+/* Section 2 */
+#sec-2{
+  background-color: #ECF0F1;
+  height: 790px;
+}
+.main-border {
+  width: 50px;
+  border-bottom: 2px solid #E74C3C;
+  margin: 0px auto;
+  margin-bottom: 25px;
+}
+.title{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin: 0 0 0 0;
+}
+.sec-title{
+  color: #3e3e3e;
+  padding: 0 0 0 0;
+
+}
+.sec-title-2{
+  color: #858585;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+.sec-text{
+  padding: 20px 40px 0 40px;
   text-align: center;
 }
