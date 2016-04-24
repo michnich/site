@@ -8,28 +8,35 @@
   }
   h1{
     font-weight: 700;
-    font-size: 36px;
+    font-size: 26px;
     text-transform: uppercase;
+    word-spacing: 10px;
+    letter-spacing: 2px;
   }
   .navbar{
-    height: 60px;
+    height: 64px;
   }
   .navbar-toggle{
     margin-right: 25px;
+    margin-top: 12px;
+  }
+  .navbar-brand{
+    padding: 0px 0px 0px 0px;
+    width: 300px;
   }
   .nav{
     padding-left: 10px;
     background-color: white;
   }
   #logo{
-    padding-left: 124px;
-    padding-top: 18px;
+    padding-left: 28px;
+    padding-top: 16px;
   }
   #main-sec{
-    padding: 40px 0 0 0px;
+    padding: 28px 0 0 0px;
   }
   #main-heading{
-    padding: 40px 0 0 0;
+    padding: 28px 0 0 0;
   }
 }
 
@@ -43,27 +50,34 @@
   }
   h1{
     font-weight: 700;
-    font-size: 36px;
+    font-size: 22px;
     text-transform: uppercase;
+    word-spacing: 10px;
+    letter-spacing: 2px;
   }
   .navbar{
-    height: 60px;
+    height: 66px;
   }
   .navbar-toggle{
     margin-right: 25px;
+    margin-top: 16px;
+  }
+  .navbar-brand{
+    padding: 0px 0px 0px 0px;
+    width: 250px;
   }
   .nav{
     padding-left: 10px;
     background-color: white;
   }
   #logo{
-    padding-left: 99px;
-    padding-top: 18px;
+    padding-left: 24px;
+    padding-top: 20px;
   }
   #main-sec{
-    padding: 40px 0 0 0px;
+    padding: 20px 0 0 0px;
   }
   #main-heading{
-    padding: 40px 0 0 0;
+    padding: 20px 0 0 0;
   }
 }
