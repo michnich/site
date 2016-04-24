@@ -25,3 +25,6 @@ ian:accounts-ui-bootstrap-3
 accounts-password
 useraccounts:bootstrap
 msavin:mongol
+alanning:roles
+session
+underscore
