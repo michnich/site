@@ -9,9 +9,10 @@
   h1{
     font-weight: 700;
     font-size: 26px;
-    text-transform: uppercase;
-    word-spacing: 10px;
-    letter-spacing: 2px;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 26px;
   }
   .navbar{
     height: 64px;
@@ -28,6 +29,17 @@
     padding-left: 10px;
     background-color: white;
   }
+  .main-menu-imgs{
+    width: 40%;
+  }
+  .main-img{
+    padding: 0 0 50px 0;
+  }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
     padding-left: 28px;
     padding-top: 16px;
@@ -35,8 +47,23 @@
   #main-sec{
     padding: 28px 0 0 0px;
   }
+  #sec-1{
+    height: 1300px;
+  }
   #main-heading{
     padding: 28px 0 0 0;
+  }
+  /* Section 1 */
+
+
+  /* Section 2 */
+  #sec-2{
+    height: 1420px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 1020px;
   }
 }
 
@@ -51,9 +78,10 @@
   h1{
     font-weight: 700;
     font-size: 22px;
-    text-transform: uppercase;
-    word-spacing: 10px;
-    letter-spacing: 2px;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 20px;
   }
   .navbar{
     height: 66px;
@@ -70,6 +98,17 @@
     padding-left: 10px;
     background-color: white;
   }
+  .main-menu-imgs{
+    width: 30%;
+  }
+  .main-img{
+    padding: 0 0 50px 0;
+  }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
     padding-left: 24px;
     padding-top: 20px;
@@ -79,5 +118,18 @@
   }
   #main-heading{
     padding: 20px 0 0 0;
+  }
+
+  /* Section 1 */
+
+
+  /* Section 2 */
+  #sec-2{
+    height: 1420px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 1020px;
   }
 }
