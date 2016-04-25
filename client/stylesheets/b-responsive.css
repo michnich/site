@@ -35,6 +35,11 @@
   .main-img{
     padding: 0 0 50px 0;
   }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
     padding-left: 28px;
     padding-top: 16px;
@@ -47,6 +52,18 @@
   }
   #main-heading{
     padding: 28px 0 0 0;
+  }
+  /* Section 1 */
+
+
+  /* Section 2 */
+  #sec-2{
+    height: 1120px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 1020px;
   }
 }
 
@@ -87,6 +104,11 @@
   .main-img{
     padding: 0 0 50px 0;
   }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
     padding-left: 24px;
     padding-top: 20px;
@@ -96,5 +118,18 @@
   }
   #main-heading{
     padding: 20px 0 0 0;
+  }
+
+  /* Section 1 */
+
+
+  /* Section 2 */
+  #sec-2{
+    height: 1420px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 1020px;
   }
 }

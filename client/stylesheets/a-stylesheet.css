@@ -59,6 +59,21 @@ li{
 .navbar-right{
   padding-right: 40px;
 }
+.sec-title{
+  color: #3e3e3e;
+  padding: 0 0 0 0;
+
+}
+.sec-title-2{
+  color: #858585;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+.sec-text{
+  padding: 20px 200px 20px 200px;
+  text-align: justify;
+  font-size: 16px;
+}
 #logo{
   padding-left: 40px;
 }
@@ -107,21 +122,6 @@ li{
   padding-top: 20px;
   padding-bottom: 0px;
   margin: 0 0 0 0;
-}
-.sec-title{
-  color: #3e3e3e;
-  padding: 0 0 0 0;
-
-}
-.sec-title-2{
-  color: #858585;
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-}
-.sec-text{
-  padding: 20px 200px 20px 200px;
-  text-align: justify;
-  font-size: 16px;
 }
 #core-values{
   list-style: none;
