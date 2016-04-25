@@ -36,6 +36,9 @@ h2{
 p{
   color: #626262;
 }
+li{
+  color: #626262;
+}
 .container{
   width: 100%;
   padding: 0px 0px 0px 0px;
@@ -91,7 +94,7 @@ p{
 /* Section 2 */
 #sec-2{
   background-color: #ECF0F1;
-  height: 790px;
+  height: 820px;
 }
 .main-border {
   width: 50px;
@@ -116,6 +119,18 @@ p{
   margin: 0 0 0 0;
 }
 .sec-text{
-  padding: 20px 40px 0 40px;
+  padding: 20px 200px 20px 200px;
+  text-align: justify;
+  font-size: 16px;
+}
+#core-values{
+  list-style: none;
+  padding-left: 0px;
   text-align: center;
+}
+
+/* Section 3 */
+#sec-3{
+  background-color: white;
+  height: 820px;
 }
