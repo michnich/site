@@ -1,20 +1,31 @@
-Template.addVolunteer.onCreated(function() {
+Template.editVolunteer.onCreated(function() {
   Session.set('volunteerErrors', {});
 });
 
-Template.addVolunteer.helpers({
+Template.editVolunteer.helpers({
   errorMessage: function(field) {
     return Session.get('volunteerErrors')[field];
   },
   errorClass: function(field) {
     return !!Session.get('volunteerErrors')[field] ? 'has-error' : '';
+  },
+
+  isInGroup: function(program) {
+  	if (_.indexOf(this.program, program) != -1) {
+  		return true;
+  	}
+  	else {
+  		return false;
+  	}
   }
 });
 
-Template.addVolunteer.events({
+Template.editVolunteer.events({
 	'submit form': function(e) {
 		e.preventDefault();
 		//gather all the info from the fields
+		var volunteerId = this._id;
+
 		var volunteer = {
 			first_name: $(e.target).find('[name=first_name]').val(),
 			last_name: $(e.target).find('[name=last_name]').val(),
@@ -46,20 +57,20 @@ Template.addVolunteer.events({
 
 		//check to make sure all required fields were filled
 		var errors = checkVolunteer(volunteer);
-
 		//if not throw errors for the empty fields
 		if (!_.isEmpty(errors)) {
 			return Session.set('volunteerErrors', errors);
 		}
 
 		//otherwise insert the volunteer into the collection
-		Meteor.call('volunteerInsert', volunteer, function(error,result) {
-			if (error) {
-				return throwError(error.reason);
-			}
-			else {
-				Router.go('volunteerProfile', {_id: result});
-			}
-		});
+		Volunteers.update(volunteerId, {$set: volunteer}, function(error) {
+      		if (error) {
+      			console.log(error.reason);
+        		throwError(error.reason);
+      		} else {
+      			console.log("no error");
+        		Router.go('volunteerProfile', {_id: volunteerId});
+      		}
+    	});
 	}
 });

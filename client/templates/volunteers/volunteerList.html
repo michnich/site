@@ -1,0 +1,10 @@
+<template name="volunteerList">
+	<div class="col-md-8 col-md-push-2">
+		<h3>Volunteers</h3>
+		<div class = "container">
+			{{#each volunteer}}
+				{{> volunteerItem}}
+			{{/each}}
+		</div>
+	</div>
+</template>
