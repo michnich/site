@@ -79,6 +79,12 @@ li{
 }
 
 /* Section 1 */
+#about-us{
+  background-image: url(img/top-image-1.png);
+  background-position: center;
+  height: 200px;
+}
+
 .main-menu-imgs{
   width: 60%;
 }
@@ -109,7 +115,7 @@ li{
 /* Section 2 */
 #sec-2{
   background-color: #ECF0F1;
-  height: 820px;
+  height: 1080px;
 }
 .main-border {
   width: 50px;
