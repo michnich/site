@@ -43,7 +43,7 @@ Template.addStudent.events({
 			return Session.set('studentErrors', errors);
 		}
 
-		//otherwise insert the volunteer into the collection
+		//otherwise insert the student into the collection
 		Meteor.call('studentInsert', student, function(error,result) {
 			if (error) {
 				return throwError(error.reason);
