@@ -137,7 +137,7 @@ li{
 /* Section 3 */
 #sec-3{
   background-color: white;
-  height: 820px;
+  height: 1120px;
 }
 
 /* Section 4 */
@@ -150,4 +150,16 @@ li{
 #sec-5{
     background-color: #A3DCFF;
     height: 820px;
+}
+
+/* Section 6 */
+#sec-6{
+    background-color: #97C9E8;
+    height: 920px;
+}
+
+/* Section 7 */
+#sec-7{
+    background-color: #DFD1E8;
+    height: 920px;
 }
