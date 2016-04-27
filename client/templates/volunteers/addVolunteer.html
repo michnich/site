@@ -1,8 +1,9 @@
 <template name="addVolunteer">
-  <div class="container">
+  <div class="container padding-15">
+  <div class="col-md-10 col-md-push-1">
     <form class="general-form">
       <h3>Add a new volunteer</h3>
-      <div class="row well">
+      <div class="row well well-sm padding-10">
         <div class="col-sm-6">
             <div class="form-group {{errorClass 'first_name'}}">
               <label class="control-label" for="first_name">First Name</label>
@@ -72,10 +73,14 @@
             <div class="form-group {{errorClass 'program'}}">
             <label class="control-label" for="program">Programs</label>
             <div class= "form-group">
-              <input type="checkbox" name="program" class= "checkbox-inline" value="Community Centers">Community Centers
-              <input type="checkbox" name="program" class= "checkbox-inline" value="School Programs">School Programs
-              <input type="checkbox" name="program" class= "checkbox-inline" value="Summer Camps">Summer Camps
-              <input type="checkbox" name="program" class= "checkbox-inline" value="Events">Events
+              <div class="row">
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Community Centers">Community Centers
+                <input type="checkbox" name="program" class= "checkbox-inline" value="School Programs">School Programs
+              </div>
+              <div class="row">
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Summer Camps">Summer Camps
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Events">Events
+              </div>
             </div>  
           </div>
         </div>
@@ -83,7 +88,7 @@
 
 
         <h3>Address</h3>
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'address1'}}">
               <label class="control-label" for="address1">Street</label>
@@ -145,7 +150,7 @@
         </div>
 
         <h3>Emergency Contact</h3>
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'eme_contact'}}">
               <label class="control-label" for="eme_contact">Name</label>
@@ -168,7 +173,7 @@
         </div>
         
         <h3>Employment Information</h3>
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'employer'}}">
             <label class="control-label" for="employer">Current Employer</label>
@@ -191,7 +196,7 @@
         </div>
        
        <h3>Background Checks</h3>
-       <div class="row well">
+       <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'park_check'}}">
             <label class="control-label" for="park_check">Parks & Rec Background Check Completed</label>
@@ -278,5 +283,6 @@
         </div>
         <input type="submit" value="Submit" class="btn btn-primary"/>
       </form>
+    </div>
   </div>      
 </template>
