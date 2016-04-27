@@ -1,5 +1,6 @@
 Template.editRolePermissions.onCreated(function() {
 	Meteor.subscribe("volunteerRoles");
+	Meteor.subscribe("roles");
 	Session.set("volunteerRole", "");
 	Session.set('permissions', []);
 	Session.set('unappliedPermissions', []);
@@ -19,7 +20,6 @@ Template.editRolePermissions.events({
 	'change #type': function(e) {
 		var volunteerRole = $(e.target).val();
 		Session.set("volunteerRole", volunteerRole);
-
 		var appliedPermissions = VolunteerRoles.findOne({name: volunteerRole}).permissions;
 		Session.set('permissions', appliedPermissions);
 		var allRoles = _.pluck(Meteor.roles.find().fetch(), 'name');
