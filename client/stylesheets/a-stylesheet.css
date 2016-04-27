@@ -79,12 +79,6 @@ li{
 }
 
 /* Section 1 */
-#about-us{
-  background-image: url(img/top-image-1.png);
-  background-position: center;
-  height: 200px;
-}
-
 .main-menu-imgs{
   width: 60%;
 }
@@ -113,6 +107,11 @@ li{
 }
 
 /* Section 2 */
+#about-us{
+  background-image: url(img/top-image-1.png);
+  background-position: center;
+  height: 200px;
+}
 #sec-2{
   background-color: #ECF0F1;
   height: 1080px;
@@ -139,4 +138,16 @@ li{
 #sec-3{
   background-color: white;
   height: 820px;
+}
+
+/* Section 4 */
+#sec-4{
+    background-color: #ECF0F1;
+    height: 1080px;
+}
+
+/* Section 5 */
+#sec-5{
+    background-color: #A3DCFF;
+    height: 820px;
 }
