@@ -5,14 +5,15 @@
         <div class="col-md-4 col-sm-6">
             <div class="box">
                 <div class="icon">
-                    <div class="image"><span class="glyphicon glyphicon-list-alt btn-lg white"></span></div>
+                    <div class="image"><span class="glyphicon glyphicon-user btn-lg white"></span></div>
                     <div class="info">
                         <h3 class="title">Volunteers</h3>
                         <p><a href="#">View Volunteers</a></p>
                         <p><a href="#">Edit a Volunteer</a></p>
                         {{> addVolunteerModal}}
                         <p><a href="#" data-toggle="modal" data-target="#addVolunteerModal">Add a Volunteer</a></p>
-                        <p><a href="#">Create a User Account</a></p>
+                        {{> createUserModal}}
+                        <p><a href="#" data-toggle="modal" data-target="#createUserModal">Create a User Account</a></p>
                     </div>
                 </div>
                 <div class="space"></div>
@@ -21,7 +22,7 @@
         <div class="col-md-4 col-sm-6">
             <div class="box">
                 <div class="icon">
-                    <div class="image"><span class="glyphicon glyphicon-envelope btn-lg white"></span></div>
+                    <div class="image"><span class="glyphicon glyphicon-education btn-lg white"></span></div>
                     <div class="info">
                         <h3 class="title">Students</h3>
                         <p><a href="#">View Students</a></p>
@@ -35,7 +36,7 @@
         <div class="col-md-4 col-sm-6">
             <div class="box">
                 <div class="icon">
-                    <div class="image"><span class="glyphicon glyphicon-volume-up btn-lg white"></span></div>
+                    <div class="image"><span class="glyphicon glyphicon-envelope btn-lg white"></span></div>
                     <div class="info">
                         <h3 class="title">Information Requests</h3>
                         <p><a href="#">Parents</a></p>
@@ -51,10 +52,11 @@
         <div class="col-md-4 col-sm-6">
             <div class="box">
                 <div class="icon">
-                    <div class="image"><span class="glyphicon glyphicon-volume-up btn-lg white"></span></div>
+                    <div class="image"><span class="glyphicon glyphicon-list btn-lg white"></span></div>
                     <div class="info">
                         <h3 class="title">Role Management</h3>
-                        <p><a href="#">Create a new Permission</a></p>
+                        {{> addPermissionModal}}
+                        <p><a href="#" data-toggle="modal" data-target="#addPermissionModal">Create a new Permission</a></p>
                         <p><a href="#">Edit Role Permissions</a></p>
                         <p><a href="#">Add a new Admin</a></p>
                     </div>
