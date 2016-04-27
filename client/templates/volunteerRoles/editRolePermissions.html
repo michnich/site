@@ -1,6 +1,6 @@
 <template name = "editRolePermissions">
-	<div class="container">
-		<div class="col-md-8 col-md-push-2 well">
+	<div class="container padding-30">
+		<div class="col-md-8 col-md-push-2 well well-sm">
 			<form>
 				<h3>Select a volunteer role to edit</h3>
 				<select name="type" id="type">
@@ -11,7 +11,7 @@
 		      	</select>
 			</form>
 		</div>
-		<div class="col-md-8 col-md-push-2 well form">
+		<div class="col-md-8 col-md-push-2 well well-sm form">
 			<h3>Add new permissions to this role</h3>
 			<form>
 			<select>
@@ -22,7 +22,7 @@
 			<input type="submit" value="Submit">
 			</form>
 		</div>
-		<div class="col-md-8 col-md-push-2 well">
+		<div class="col-md-8 col-md-push-2 well well-sm">
 			<h3>Currently applied permissions:</h3>
 			<div class="col-md-6">
 				{{#each appliedPermissions}}
