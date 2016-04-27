@@ -1,7 +1,9 @@
 <template name ="editVolunteer">
-	<div class="container">
+	<div class="container padding-15">
+   <div class="col-md-10 col-md-push-1">
+    <h3>Edit Volunteer</h3>
     <form class="general-form">
-      <div class="row well">
+      <div class="row well well-sm padding-10">
         <div class="col-sm-6">
             <div class="form-group {{errorClass 'first_name'}}">
               <label class="control-label" for="first_name">First Name</label>
@@ -72,10 +74,14 @@
             <div class="form-group {{errorClass 'program'}}">
             <label class="control-label" for="program">Programs</label>
             <div class= "form-group">
-              <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Community Centers'}}" value="Community Centers">Community Centers
-              <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'School Programs'}}" value="School Programs">School Programs
-              <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Summer Camps'}}" value="Summer Camps">Summer Camps
-              <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Events'}}" value="Events">Events
+              <div class= "row">
+                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Community Centers'}}" value="Community Centers">Community Centers
+                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'School Programs'}}" value="School Programs">School Programs
+              </div>
+              <div class= "row">
+                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Summer Camps'}}" value="Summer Camps">Summer Camps
+                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Events'}}" value="Events">Events
+              </div>
               <span class="help-block">{{errorMessage 'program'}}</span> 
             </div> 
           </div>         
@@ -83,7 +89,7 @@
 
         </div>
 
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'address1'}}">
               <label class="control-label" for="address1">Address</label>
@@ -143,7 +149,7 @@
           </div>
        </div>
         </div>
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'eme_contact'}}">
               <label class="control-label" for="eme_contact">Emergency Contact</label>
@@ -165,7 +171,7 @@
         </div>
         </div>
         
-        <div class="row well">
+        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'employer'}}">
             <label class="control-label" for="employer">Current Employer</label>
@@ -187,7 +193,7 @@
         </div>
         </div>
        
-       <div class="row well">
+       <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'park_check'}}">
             <label class="control-label" for="park_check">Parks & Rec Background Check Completed</label>
@@ -278,5 +284,6 @@
         </div>
         <input type="submit" value="Submit" class="btn btn-primary"/>
       </form>
+      </div>
   </div>      
 </template>
