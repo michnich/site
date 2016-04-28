@@ -1,0 +1,34 @@
+<template name = "editRolePermissions">
+	<div class="container padding-30">
+		<div class="col-md-8 col-md-push-2 well well-sm">
+			<form>
+				<h3>Select a volunteer role to edit</h3>
+				<select name="type" id="type">
+			        <option name="type" value="Volunteer Instructor">Volunteer Instructor</option>
+			        <option name="type" value="Volunteer Coordinator">Volunteer Coordinator</option>
+			        <option name="type" value="Class Coordinator">Class Coordinator</option>
+			        <option name="type" value="Admin">Admin</option>
+		      	</select>
+			</form>
+		</div>
+		<div class="col-md-8 col-md-push-2 well well-sm form">
+			<h3>Add new permissions to this role</h3>
+			<form>
+			<select>
+				{{#each unappliedPermissions}}
+					<option name="newPermission" value={{this}}>{{this}}</option>
+				{{/each}}
+			</select>
+			<input type="submit" value="Submit" class="btn btn-primary">
+			</form>
+		</div>
+		<div class="col-md-8 col-md-push-2 well well-sm">
+			<h3>Currently applied permissions:</h3>
+			<div class="col-md-6">
+				{{#each appliedPermissions}}
+					{{> editPermissionItem}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</template>
