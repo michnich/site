@@ -1,0 +1,102 @@
+<template name="volunteerProfileModal">
+<div class="modal fade" id="volunteerProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Volunteer Profile</h4>
+      </div>
+      <div class="modal-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<h2 style="color: black">{{volunteer.first_name}} {{volunteer.last_name}}</h2>
+				</div>
+				<div class="col-sm-4 padding-15">
+					<a href="{{pathFor 'editVolunteer'}}" class="btn btn-primary">Edit</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Volunteer Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Date of Birth: {{volunteer.dob}}</h5>
+							<h5>Role: {{type}}</h5>
+							<h5>Programs: 
+							{{#each program}}
+								{{this}},
+							{{/each}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Email: {{email}}</h5>
+							<h5>Phone: {{phone}}</h5>
+							<h5>Address: {{address1}} {{address2}}</h5>
+							<h5>{{city}}, {{state}} {{zip}}</h5>
+						</div>
+					</div>		
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Emergency Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Name: {{eme_contact}}</h5>
+							<h5>Number: {{eme_number}}</h5>
+						</div>
+					</div>		
+				</div>	
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Employment Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Employer: {{employer}}</h5>
+							<h5>Position: {{position}}</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Background Checks</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Parks & Rec Background Check: {{park_check}}</h5>
+							<h6>Date Completed: {{park_check_date}}</h6>
+							<h5>PA Criminal Background Check Completed: {{pa_criminal_check}}</h5>
+							<h6>Date Completed: {{pa_criminal_check_date}}</h6>
+							<h5>PA Child Abuse Check Completed: {{pa_child_check}}</h5>
+							<h6>Date Completed: {{pa_child_check_date}}</h6>
+							<h5>FBI Criminal Background Check Completed: {{fbi_check}}</h5>
+							<h6>Date Completed: {{fbi_check_date}}</h6>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

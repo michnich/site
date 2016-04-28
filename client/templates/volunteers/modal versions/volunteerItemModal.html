@@ -1,0 +1,18 @@
+<template name="volunteerItemModal">
+	<div class="row">
+		<div class="well well-sm">
+			<div class="container">
+				<div class="col-md-6">
+					<a id="volunteer" value="{{_id}}" data-toggle="modal" data-target="#volunteerProfileModal"><h4>{{first_name}} {{last_name}}</h4></a>
+				</div>
+				<div class="col-md-6">
+					<h4>{{type}}</h4>
+					<h5>Programs: 
+						{{#each program}}
+							{{this}},
+						{{/each}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

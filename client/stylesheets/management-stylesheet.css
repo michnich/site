@@ -89,3 +89,22 @@
 .box .space {
     height: 30px;
 }
+
+.modal-header {
+    background-color: #a2d0ff;
+    color: white;
+}
+
+.modal-body h3 {
+    color: #408ABE;
+}
+
+.btn-primary {
+    background-color: #a2d0ff;
+    border-color: #a2d0ff;
+}
+
+.btn-primary:hover {
+    background-color: #408ABE;
+    border-color: #408ABE;
+}

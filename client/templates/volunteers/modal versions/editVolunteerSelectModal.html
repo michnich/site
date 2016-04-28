@@ -1,0 +1,25 @@
+<template name="editVolunteerSelectModal">
+<div class="modal fade" id="editVolunteerSelectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit a Volunteer</h4>
+      </div>
+      <div class="modal-body">
+      	<div  class="container">
+      		<select name="selected">
+      			{{#each volunteers}}
+      				<option value="{{_id}}">{{first_name}} {{last_name}}</option>
+      			{{/each}}
+      		</select>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button id="closeButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="select" class="btn btn-primary" data-toggle="modal" data-target="#editVolunteerModal">Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
