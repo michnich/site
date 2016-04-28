@@ -14,12 +14,12 @@
 		      	</select>
 			</form>
 		</div>
-		<div class="row well well-sm form">
+		<div class="row well well-sm">
 			<h3>Add new permissions to this role</h3>
 			<form>
-			<select>
+			<select name="newPermission">
 				{{#each unappliedPermissions}}
-					<option name="newPermission" value={{this}}>{{this}}</option>
+					<option value={{this}}>{{this}}</option>
 				{{/each}}
 			</select>
 			<input type="submit" value="Submit" class="btn btn-primary">

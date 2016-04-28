@@ -37,6 +37,6 @@ Template.editRolePermissions.events({
 		Session.set('permissions', appliedPermissions);
 		var allRoles = _.pluck(Meteor.roles.find().fetch(), 'name');
 		var unappliedPermissions = _.difference(allRoles, appliedPermissions);
-		Session.set("unappliedPermissions", unappliedPermissions); 
+		Session.set("unappliedPermissions", unappliedPermissions);
 	}
 });
