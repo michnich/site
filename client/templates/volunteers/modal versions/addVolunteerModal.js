@@ -49,7 +49,6 @@ Template.addVolunteerModal.events({
 
 		//if not throw errors for the empty fields
 		if (!_.isEmpty(errors)) {
-			console.log("check errors");
 			return Session.set('volunteerErrors', errors);
 		}
 
@@ -59,7 +58,8 @@ Template.addVolunteerModal.events({
 				return throwError(error.reason);
 			}
 			else {
-				$("#closeButton").click();  
+				$("#form #closeButton").trigger('click');  
+				$("#form").trigger('reset'); 
 			}
 		});
 	}
