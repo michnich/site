@@ -74,6 +74,15 @@ li{
   text-align: justify;
   font-size: 16px;
 }
+.par-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: #858585;
+}
+.sent-title{
+  font-size: 16px;
+  color: #626262;
+}
 #logo{
   padding-left: 40px;
 }
@@ -137,7 +146,12 @@ li{
 /* Section 3 */
 #sec-3{
   background-color: white;
-  height: 1120px;
+  height: 1200px;
+}
+#partner{
+  background-image: url(img/top-image-2.png);
+  background-position: center;
+  height: 200px;
 }
 
 /* Section 4 */
@@ -145,11 +159,16 @@ li{
     background-color: #ECF0F1;
     height: 1080px;
 }
+#programs{
+  background-image: url(img/top-image-3.png);
+  background-position: center;
+  height: 200px;
+}
 
 /* Section 5 */
 #sec-5{
     background-color: #A3DCFF;
-    height: 820px;
+    height: 880px;
 }
 
 /* Section 6 */

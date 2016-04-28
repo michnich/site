@@ -1,0 +1,49 @@
+<template name="editRolePermissionsModal">
+<div class="modal fade" id="editRolePermissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      <div class="container">
+		<div class="well well-sm">
+			<form>
+				<h3>Select a volunteer role to edit</h3>
+				<select name="type" id="type">
+			        <option name="type" value="Volunteer Instructor">Volunteer Instructor</option>
+			        <option name="type" value="Volunteer Coordinator">Volunteer Coordinator</option>
+			        <option name="type" value="Class Coordinator">Class Coordinator</option>
+			        <option name="type" value="Admin">Admin</option>
+		      	</select>
+			</form>
+		</div>
+		<div class="well well-sm form">
+			<h3>Add new permissions to this role</h3>
+			<form>
+			<select>
+				{{#each unappliedPermissions}}
+					<option name="newPermission" value={{this}}>{{this}}</option>
+				{{/each}}
+			</select>
+			<input type="submit" value="Submit" class="btn btn-primary">
+			</form>
+		</div>
+		<div class="well well-sm">
+			<h3>Currently applied permissions:</h3>
+			<div class="col-md-6">
+				{{#each appliedPermissions}}
+					{{> editPermissionItem}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
