@@ -39,6 +39,10 @@ p{
 li{
   color: #626262;
 }
+footer{
+  height: 200px;
+  background-color: #404040;
+}
 .container{
   width: 100%;
   padding: 0px 0px 0px 0px;
@@ -167,18 +171,44 @@ li{
 
 /* Section 5 */
 #sec-5{
-    background-color: #A3DCFF;
+    background-color: #ECF0F1;
     height: 880px;
+}
+#parents{
+  background-image: url(img/top-image-4.png);
+  background-position: center;
+  height: 200px;
 }
 
 /* Section 6 */
 #sec-6{
-    background-color: #97C9E8;
+    background-color: #ECF0F1;
     height: 920px;
+}
+#volunteers{
+  background-image: url(img/top-image-5.png);
+  background-position: center;
+  height: 200px;
 }
 
 /* Section 7 */
 #sec-7{
-    background-color: #DFD1E8;
+    background-color: #ECF0F1;
     height: 920px;
+}
+#educators{
+  background-image: url(img/top-image-6.png);
+  background-position: center;
+  height: 200px;
+}
+
+/* Section 8 */
+#sec-8{
+    background-color: white;
+    height: 1220px;
+}
+#contact{
+  background-image: url(img/top-image-7.png);
+  background-position: center;
+  height: 200px;
 }

@@ -65,6 +65,19 @@
   #sec-3{
     height: 2000px;
   }
+
+  /* Section 4 */
+  #sec-4{
+    height: 1400px;
+  }
+
+  /* Section 8 */
+  .form-group{
+    padding: 0px 10px 0px 10px;
+  }
+  .form-control{
+    width: 60px;
+  }
 }
 
 /* Mobile LD */
@@ -133,5 +146,18 @@
   /* Section 3 */
   #sec-3{
     height: 2280px;
+  }
+
+  /* Section 4 */
+  #sec-4{
+    height: 1400px;
+  }
+
+  /* Section 8 */
+  .form-group{
+    padding: 0px 10px 0px 10px;
+  }
+  .form-control{
+    width: 100px;
   }
 }
