@@ -1,0 +1,44 @@
+<template name="contactForm">
+<form>
+	<div class="form-group">
+	  <label class="control-label" for="first_name">First Name</label>
+	  <div>
+	    <input name="first_name" id="first_name" type="text" value="" class="form-control"/>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label" for="last_name">Last Name</label>
+	  <div>
+	    <input name="last_name" id="last_name" type="text" value="" class="form-control"/>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label" for="first_name">Are you a...</label>
+		<div>
+		<select name="type" id="type">
+	     	<option value="parent">Future Coded by Kids Parent</option>
+	     	<option value="educator">Educator</option>
+	     	<option value="volunteer">Future Coded by Kids Volunteer</option>
+	     	<option value="supporter">Future Coded by Kids Supporter</option>
+	     	<option value="partner">Potential Partner</option>
+	     	<option value="other">Other</option>
+		</select>
+		</div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label" for="subject">Subject</label>
+	  <div>
+	    <input name="subject" id="subject" type="text" value="" class="form-control"/>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label" for="Message">Message</label>
+	  <div>
+	    <textarea name="message" rows="4" cols="30" id="subject" type="text" value="" class="form-control"></textarea>
+	  </div>
+	</div>
+	<div id="contact-submit" class="">
+		<input type="submit" value="Submit" class="btn btn-primary">
+	</div>
+</form>
+</template>

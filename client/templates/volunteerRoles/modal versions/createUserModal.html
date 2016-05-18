@@ -1,0 +1,18 @@
+<template name="createUserModal">
+<div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="$('#at-pwd-form').trigger('reset');"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a New User Account</h4>
+      </div>
+      <div class="modal-body">
+       	{{> atForm state='signUp'}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="$('#at-pwd-form').trigger('reset');">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

@@ -1,14 +1,19 @@
-<template name ="editVolunteer">
-	<div class="container padding-15">
-   <div class="col-md-10 col-md-push-1">
-    <h3>Edit Volunteer</h3>
-    <form class="general-form">
+<template name="addVolunteerModal">
+<div class="modal fade" id="addVolunteerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="$('#form').trigger('reset');"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a new Volunteer</h4>
+      </div>
+      <form id="form">
+      <div class="modal-body">
       <div class="row well well-sm padding-10">
         <div class="col-sm-6">
             <div class="form-group {{errorClass 'first_name'}}">
               <label class="control-label" for="first_name">First Name</label>
               <div>
-                <input name="first_name" id="first_name" type="text" value="{{first_name}}" class="form-control"/>
+                <input name="first_name" id="first_name" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'first_name'}}</span>
               </div>
             </div>
@@ -18,7 +23,7 @@
             <div class="form-group {{errorClass 'last_name'}}">
               <label class="control-label" for="last_name">Last Name</label>
               <div>
-                <input name="last_name" id="last_name" type="text" value="{{last_name}}" class="form-control"/>
+                <input name="last_name" id="last_name" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'last_name'}}</span>
               </div>
             </div>
@@ -28,7 +33,7 @@
             <div class="form-group {{errorClass 'dob'}}">
               <label class="control-label" for="dob">Date of Birth</label>
               <div>
-                <input name="dob" id="dob" type="date" value="{{dob}}" class="form-control"/>
+                <input name="dob" id="dob" type="date" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'dob'}}</span>
               </div>
             </div>
@@ -38,7 +43,7 @@
             <div class="form-group {{errorClass 'email'}}">
               <label class="control-label" for="email">Contact Email</label>
               <div>
-                <input name="email" id="email" type="text" value="{{email}}" class="form-control"/>
+                <input name="email" id="email" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'email'}}</span>
               </div>
             </div>
@@ -48,7 +53,7 @@
              <div class="form-group {{errorClass 'phone'}}">
                 <label class="control-label" for="phone">Phone</label>
                   <div>
-                    <input name="phone" id="phone" type="text" value="{{phone}}" class="form-control"/>
+                    <input name="phone" id="phone" type="text" value="" class="form-control"/>
                     <span class="help-block">{{errorMessage 'phone'}}</span>
                   </div>
              </div>
@@ -58,12 +63,11 @@
             <div class="form-group {{errorClass 'type'}}">
                 <label class="control-label" for="type">Volunteer Role</label>
                 <div>
-                  <select name="type" id="type" value="{{type}}">
+                  <select name="type" id="type">
                     <option value="">-Select-</option>
                     <option value="Volunteer Instructor">Volunteer Instructor</option>
                     <option value="Volunteer Coordinator">Volunteer Coordinator</option>
                     <option value="Class Coordinator">Class Coordinator</option>
-                    <option selected="selected" value="{{type}}">{{type}}</option>
                   </select>
                   <span class="help-block">{{errorMessage 'type'}}</span>
                 </div>
@@ -74,27 +78,27 @@
             <div class="form-group {{errorClass 'program'}}">
             <label class="control-label" for="program">Programs</label>
             <div class= "form-group">
-              <div class= "row">
-                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Community Centers'}}" value="Community Centers">Community Centers
-                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'School Programs'}}" value="School Programs">School Programs
+              <div class="row">
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Community Centers">Community Centers
+                <input type="checkbox" name="program" class= "checkbox-inline" value="School Programs">School Programs
               </div>
-              <div class= "row">
-                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Summer Camps'}}" value="Summer Camps">Summer Camps
-                <input type="checkbox" name="program" class= "checkbox-inline" checked="{{isInGroup 'Events'}}" value="Events">Events
+              <div class="row">
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Summer Camps">Summer Camps
+                <input type="checkbox" name="program" class= "checkbox-inline" value="Events">Events
               </div>
-              <span class="help-block">{{errorMessage 'program'}}</span> 
-            </div> 
-          </div>         
+            </div>  
+          </div>
+        </div>
         </div>
 
-        </div>
 
+        <h3>Address</h3>
         <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'address1'}}">
-              <label class="control-label" for="address1">Address</label>
+              <label class="control-label" for="address1">Street</label>
               <div>
-                <input name="address1" id="address1" type="text" value="{{address1}}" placeholder="Street" class="form-control"/>
+                <input name="address1" id="address1" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'address1'}}</span>
               </div>
           </div>
@@ -102,9 +106,9 @@
 
         <div class="col-sm-6">
           <div class="form-group">
-            <label class="control-label" for="address2">&nbsp;</label>
+            <label class="control-label" for="address2">Apt/Suite/Unit</label>
             <div>
-                <input name="address2" id="address2" type="text" value="{{address2}}" placeholder="Apt/Suite/Unit Number" class="form-control"/>
+                <input name="address2" id="address2" type="text" value="" class="form-control"/>
               </div>
           </div>
         </div>
@@ -113,7 +117,7 @@
           <div class="form-group {{errorClass 'city'}}">
               <label class="control-label" for="city">City</label>
                 <div>
-                  <input name="city" id="city" type="text" value="{{city}}" class="form-control"/>
+                  <input name="city" id="city" type="text" value="" class="form-control"/>
                   <span class="help-block">{{errorMessage 'city'}}</span>
                 </div>
           </div>
@@ -123,7 +127,7 @@
           <div class="form-group {{errorClass 'state'}}">
               <label class="control-label" for="state">State</label>
               <div>
-                <input name="state" id="state" type="text" value="{{state}}" class="form-control"/>
+                <input name="state" id="state" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'state'}}</span>
               </div>
           </div>
@@ -133,7 +137,7 @@
           <div class="form-group {{errorClass 'zip'}}">
               <label class="control-label" for="zip">Zip Code</label>
               <div>
-                <input name="zip" id="zip" type="text" value="{{zip}}" class="form-control"/>
+                <input name="zip" id="zip" type="text" value="" class="form-control"/>
                 <span class="help-block">{{errorMessage 'zip'}}</span>
               </div>
           </div>
@@ -143,18 +147,20 @@
           <div class="form-group {{errorClass 'country'}}">
               <label class="control-label" for="country">Country</label>
               <div>
-                <input name="country" id="country" type="text" value="{{country}}" class="form-control"/>
+                <input name="country" id="country" type="text" value="US" class="form-control"/>
                 <span class="help-block">{{errorMessage 'country'}}</span>
               </div>
           </div>
        </div>
         </div>
+
+        <h3>Emergency Contact</h3>
         <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'eme_contact'}}">
-              <label class="control-label" for="eme_contact">Emergency Contact</label>
+              <label class="control-label" for="eme_contact">Name</label>
                 <div>
-                  <input name="eme_contact" id="eme_contact" type="eme_contact" value="{{eme_contact}}" placeholder="Name" class="form-control"/>
+                  <input name="eme_contact" id="eme_contact" type="eme_contact" value="" class="form-control"/>
                   <span class="help-block">{{errorMessage 'eme_contact'}}</span>
                 </div>
           </div>
@@ -162,21 +168,22 @@
 
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'eme_number'}}">
-              <label class="control-label" for="eme_number">&nbsp;</label>
+              <label class="control-label" for="eme_number">Number</label>
                 <div>
-                  <input name="eme_number" id="eme_number" type="eme_number" value="{{eme_number}}" placeholder="Number" class="form-control"/>
+                  <input name="eme_number" id="eme_number" type="eme_number" value="" class="form-control"/>
                   <span class="help-block">{{errorMessage 'eme_number'}}</span>
                 </div>
           </div>
         </div>
         </div>
         
+        <h3>Employment Information</h3>
         <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'employer'}}">
             <label class="control-label" for="employer">Current Employer</label>
             <div>
-              <input name="employer" id="employer" type="employer" value="{{employer}}" class="form-control"/>
+              <input name="employer" id="employer" type="employer" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'employer'}}</span>
             </div>
           </div>
@@ -186,13 +193,14 @@
           <div class="form-group {{errorClass 'position'}}">
             <label class="control-label" for="position">Position</label>
             <div>
-              <input name="position" id="position" type="position" value="{{position}}" class="form-control"/>
+              <input name="position" id="position" type="position" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'position'}}</span>
             </div>
           </div>
         </div>
         </div>
        
+       <h3>Background Checks</h3>
        <div class="row well well-sm padding-10">
         <div class="col-sm-6">
           <div class="form-group {{errorClass 'park_check'}}">
@@ -202,7 +210,6 @@
                 <option value="">--</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-                <option selected="selected" value="{{park_check}}">{{park_check}}</option>
               </select>
             <span class="help-block">{{errorMessage 'park_check'}}</span>
             </div>
@@ -210,7 +217,7 @@
           <div class="form-group {{errorClass 'park_check_date'}}">
             <label class="control-label" for="park_check_date">Date Completed</label>
             <div>
-              <input name="park_check_date" id="park_check_date" type="date" value="{{park_check_date}}" class="form-control"/>
+              <input name="park_check_date" id="park_check_date" type="date" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'park_check_date'}}</span>
             </div>
           </div>
@@ -224,7 +231,6 @@
                 <option value="">--</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-                <option selected="selected" value="{{pa_criminal_check}}">{{pa_criminal_check}}</option>
               </select>
               <span class="help-block">{{errorMessage 'pa_criminal_check'}}</span>
             </div>
@@ -232,7 +238,7 @@
           <div class="form-group {{errorClass 'pa_criminal_check_date'}}">
             <label class="control-label" for="pa_criminal_check_date">Date Completed</label>
             <div>
-              <input name="pa_criminal_check_date" id="pa_criminal_check_date" type="date" value="{{pa_criminal_check_date}}" class="form-control"/>
+              <input name="pa_criminal_check_date" id="pa_criminal_check_date" type="date" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'pa_criminal_check_date'}}</span>
             </div>
           </div>
@@ -246,7 +252,6 @@
                 <option value="">--</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-                <option selected="selected" value="{{pa_child_check}}">{{pa_child_check}}</option>
               </select>
               <span class="help-block">{{errorMessage 'pa_child_check'}}</span>
             </div>
@@ -254,7 +259,7 @@
           <div class="form-group {{errorClass 'pa_child_check_date'}}">
             <label class="control-label" for="pa_child_check_date">Date Completed</label>
             <div>
-              <input name="pa_child_check_date" id="pa_child_check_date" type="date" value="{{pa_child_check_date}}" class="form-control"/>
+              <input name="pa_child_check_date" id="pa_child_check_date" type="date" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'pa_child_check_date'}}</span>
             </div>
           </div>
@@ -268,7 +273,6 @@
                 <option value="">--</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-                <option selected="selected" value="{{fbi_check}}">{{fbi_check}}</option>
               </select>
               <span class="help-block">{{errorMessage 'fbi_check'}}</span>
             </div>
@@ -276,14 +280,19 @@
           <div class="form-group {{errorClass 'fbi_check_date'}}">
             <label class="control-label" for="fbi_check_date">Date Completed</label>
             <div>
-              <input name="fbi_check_date" id="fbi_check_date" type="date" value="{{fbi_check_date}}" class="form-control"/>
+              <input name="fbi_check_date" id="fbi_check_date" type="date" value="" class="form-control"/>
               <span class="help-block">{{errorMessage 'fbi_check_date'}}</span>
             </div>
           </div>
         </div>
         </div>
-        <input type="submit" value="Submit" class="btn btn-primary"/>
-      </form>
       </div>
-  </div>      
+      <div class="modal-footer">
+        <button type="button" id="closeButton" class="btn btn-default" data-dismiss="modal" onClick="$('#form').trigger('reset');">Close</button>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 </template>

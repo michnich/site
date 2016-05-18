@@ -1,4 +1,4 @@
-Template.editRolePermissions.onCreated(function() {
+Template.editRolePermissionsModal.onCreated(function() {
 	Meteor.subscribe("volunteerRoles");
 	Meteor.subscribe("roles");
 	Session.set("volunteerRole", "");
@@ -6,7 +6,7 @@ Template.editRolePermissions.onCreated(function() {
 	Session.set('unappliedPermissions', []);
 });
 
-Template.editRolePermissions.helpers({
+Template.editRolePermissionsModal.helpers({
 	appliedPermissions: function(){
 		return Session.get("permissions");
 	},
@@ -16,7 +16,7 @@ Template.editRolePermissions.helpers({
 	}
 });
 
-Template.editRolePermissions.events({
+Template.editRolePermissionsModal.events({
 	'change #type': function(e) {
 		var volunteerRole = $(e.target).val();
 		Session.set("volunteerRole", volunteerRole);
@@ -37,6 +37,6 @@ Template.editRolePermissions.events({
 		Session.set('permissions', appliedPermissions);
 		var allRoles = _.pluck(Meteor.roles.find().fetch(), 'name');
 		var unappliedPermissions = _.difference(allRoles, appliedPermissions);
-		Session.set("unappliedPermissions", unappliedPermissions);
+		Session.set("unappliedPermissions", unappliedPermissions); 
 	}
 });
