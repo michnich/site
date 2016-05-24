@@ -2,7 +2,7 @@
     <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="studentForm">
+                <form class="general-form" id="studentForm">
                     <div class="modal-header">
                         <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Add a New Student</h4>
@@ -118,13 +118,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label" for="eme_contact">Name</label>
-                                        <input name="eme_contact" id="eme_contact" type="eme_contact" value="" class="form-control" />
+                                        <input name="eme_contact" id="eme_contact" type="text" value="" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label" for="eme_number">Number</label>
-                                        <input name="eme_number" id="eme_number" type="eme_number" value="" class="form-control" />
+                                        <input name="eme_number" id="eme_number" type="text" value="" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -151,6 +151,9 @@
                                         <input name="high_school" id="high_school" type="text" value="" class="form-control" />
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row well well-sm padding-10 has-error hidden" id="studentExists">
+                              <label class="help-block">Student already exists</label>
                             </div>
                         </div>
                     </div>

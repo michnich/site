@@ -1,5 +1,11 @@
 Template.addStudentModal.onRendered(function() {
-    $("#studentForm").validate();
+    $("#studentForm").validate({
+      rules: {
+          pictures_allowed: {
+              required: true
+          },
+      }
+    });
 });
 
 Template.addStudentModal.events({
@@ -23,18 +29,31 @@ Template.addStudentModal.events({
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
-            eme_number: $(e.target).find('[name=eme_number]').val(),
-            start_date: moment().startOf('day')
+            eme_number: $(e.target).find('[name=eme_number]').val()
         };
 
-        //validator will check that all required fields are entered and valid
-        //insert the student into the collection
-        Meteor.call('studentInsert', student, function(error, result) {
+        Meteor.call("existingStudent", student.first_name, student.last_name, student.dob, function(error, exists) {
             if (error) {
-                return throwError(error.reason);
+                console.log("error", error);
+            }
+
+            if (exists) {
+                $("#studentExists").removeClass("hidden");
             } else {
-                $("#studentForm #closeButton").trigger('click');
+                //validator will check that all required fields are entered and valid
+                //insert the student into the collection
+                $("#studentExists").addClass("hidden");
+                Meteor.call('studentInsert', student, function(error, result) {
+                    if (error) {
+                        return throwError(error.reason);
+                    } else {
+                        $("#studentForm").trigger('reset');
+                        $("#studentForm").validate().resetForm();
+                        $("#studentForm #closeButton").trigger('click');
+                    }
+                });
             }
         });
+
     },
 });
