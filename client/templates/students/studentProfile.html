@@ -1,68 +1,104 @@
 <template name="studentProfile">
 	<div class="col-md-10 col-md-push-1">
-	<div class="container padding-30">
-		<div class="row">
-			<div class="col-sm-8">
-				<h2 style="color: black">{{first_name}} {{last_name}}</h2>
+		<div class="container padding-30">
+			<div class="row">
+				<div class="col-sm-6">
+					<h2 style="color: black">{{first_name}} {{last_name}}</h2>
+				</div>
+				<div class="col-sm-4">
+					<form class="form-inline padding-15">
+						<input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
+						<button type="submit" class="btn btn-primary">Check in</button>
+					</form>
+				</div>
+				<div class="col-sm-2 padding-15">
+					<a href="{{pathFor 'editStudent'}}" class="btn btn-primary">Edit</a>
+				</div>
 			</div>
-			<div class="col-sm-4 padding-15">
-				<a href="{{pathFor 'editStudent'}}" class="btn btn-primary">Edit</a>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4>Student Information</h4>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Student Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Date of Birth: {{dob}}</h5>
+							<h5>Program: {{program}}</h5>
+							<h5>Pictures allowed: {{pictures_allowed}}</h5>
+						</div>
 					</div>
-					<div class="panel-body">
-						<h5>Date of Birth: {{dob}}</h5>
-						<h5>Program: {{program}}</h5>
-						<h5>Pictures allowed: {{pictures_allowed}}</h5>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Program Information</h4>
+						</div>
+						<div class="panel-body">
+							<h4><strong>Login Info:</strong></h4>
+							<h5>GitHub username: {{github_username}}</h5>
+							<h5>GitHub password: {{github_password}}</h5>
+							<h5>Email address: {{student_email}}</h5>
+							<h4><strong>Current Levels:</strong></h4>
+							<h5>HTML: {{current_html}}</h5>
+							<h5>CSS: {{current_css}}</h5>
+							<h5>JavaScript: {{current_javascript}}</h5>
+							<h5>Developer Tools: {{current_devtools}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Recent Attendance</h4>
+						</div>
+						<div class="panel-body">
+							{{#each studentAttendance}}
+							<h5>{{this}}</h5> {{/each}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Parent Email: {{email}}</h5>
+							<h5>Parent Phone: {{phone}}</h5>
+							<h5>Address: {{address1}} {{address2}}</h5>
+							<h5>{{city}}, {{state}} {{zip}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>Emergency Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Name: {{eme_contact}}</h5>
+							<h5>Number: {{eme_number}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>School History</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Elementary: {{elm_school}}</h5>
+							<h5>Middle: {{middle_school}}</h5>
+							<h5>High: {{high_school}}</h5>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4>Contact Information</h4>
-					</div>
-					<div class="panel-body">
-						<h5>Parent Email: {{parent_email}}</h5>
-						<h5>Parent Phone: {{phone}}</h5>
-						<h5>Address: {{address1}} {{address2}}</h5>
-						<h5>{{city}}, {{state}} {{zip}}</h5>
-					</div>
-				</div>		
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4>Emergency Contact Information</h4>
-					</div>
-					<div class="panel-body">
-						<h5>Name: {{eme_contact}}</h5>
-						<h5>Number: {{eme_number}}</h5>
-					</div>
-				</div>		
-			</div>	
 		</div>
-
-		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4>School History</h4>
-					</div>
-					<div class="panel-body">
-						<h5>Elementary: {{elm_school}}</h5>
-						<h5>Middle: {{middle_school}}</h5>
-						<h5>High: {{high_school}}</h5>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</div>
 	</div>
 </template>
