@@ -24,7 +24,10 @@
 						</div>
 						<div class="panel-body">
 							<h5>Date of Birth: {{dob}}</h5>
-							<h5>Program: {{program}}</h5>
+							<h5>Program: </h5>
+							{{#each program}}
+								<h5>{{name}}, {{day_of_week}}</h5>
+							{{/each}}
 							<h5>Pictures allowed: {{pictures_allowed}}</h5>
 						</div>
 					</div>

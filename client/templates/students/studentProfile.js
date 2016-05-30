@@ -16,6 +16,10 @@ Template.studentProfile.helpers({
     parent: function(field) {
         Meteor.subscribe("parentById", this.parentId);
         return Parents.find();
+    },
+    program: function() {
+      Meteor.subscribe("programById", this.program);
+      return Programs.find();
     }
 });
 
