@@ -1,0 +1,205 @@
+<template name="addParentProfile">
+    <div class="container padding-30">
+        <div class="col-md-10 col-md-push-1">
+            <form class="general-form" id="parentProfileForm">
+                <div class="row well well-sm padding-10">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="first_name">First Name</label>
+                                <input name="first_name" id="first_name" type="text" value="" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="last_name">Last Name</label>
+                                <input name="last_name" id="last_name" type="text" value="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="dob">Date of Birth</label>
+                                <input name="dob" id="dob" type="date" value="" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="gender">Gender</label>
+                                <div id="gender">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="gender" value="Male">Male</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="gender" value="Female">Female</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="gender" value="Trans">Trans</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="gender" value="Undisclosed">Prefer not to disclose</label>
+                                    <label class="checkbox-inline" id="checkLabel">
+                                        <input type="checkbox" name="gender" value="Other" id="other">Other</label>
+                                    <br>
+                                    <label class="hidden control-label" name="otherLabel">Please specify:</label>
+                                    <input type="text" class="hidden form-control" name="otherText" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="race_ethnicity">Race/Ethnicity (check all that apply)</label>
+                                <div>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="White">White
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="Hispanic or Latino">Hispanic or Latino
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="Black or African American">Black or African American
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="Native American or American Indian">Native American or American Indian
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="race_ethnicity" value="NA">Prefer not to disclose
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Contact Information</h3>
+                <div class="row well well-sm padding-10">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email Address</label>
+                            <input name="email" id="email" type="email" value="" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="phone">Phone Number</label>
+                            <input name="phone" id="phone" type="text" value="" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Address</h3>
+                <div class="row well well-sm padding-10">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="address1">Address</label>
+                                <input name="address1" id="address1" type="text" value="" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="address2">&nbsp;</label>
+                                <input name="address2" id="address2" type="text" value="" placeholder="Apt/Unit" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="city">City</label>
+                                <input name="city" id="city" type="text" value="" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="state">State</label>
+                                <input name="state" id="state" type="text" value="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="zip">Zip</label>
+                            <input name="zip" id="zip" type="text" value="" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Emergency Contact</h3>
+                <div class="row well well-sm padding-10">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="eme_contact">Name</label>
+                            <input name="eme_contact" id="eme_contact" type="text" value="" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="eme_number">Number</label>
+                            <input name="eme_number" id="eme_number" type="text" value="" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <h3>Employment Information</h3>
+                <div class="row well well-sm padding-10">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="education">Highest Level of Education Completed</label>
+                            <div>
+                                <select name="education" id="education">
+                                    <option value="">No schooling</option>
+                                    <option value="">Elementary to Jr. high school</option>
+                                    <option value="Community Center">Some high school</option>
+                                    <option value="School">High school degree or equivalent (e.g. GED)</option>
+                                    <option value="Summer Camp">Some college</option>
+                                    <option value="">Trade/technical/vocational training</option>
+                                    <option value="Summer Camp">Associate's Degree</option>
+                                    <option value="Summer Camp">Bachelor's Degree</option>
+                                    <option value="Summer Camp">Graduate's Degree</option>
+                                    <option value="Summer Camp">Other</option>
+                                    <!--show input box if other-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="employment">Employment Status</label>
+                            <select name="employment" id="employment">
+                                <option value="Community Center">Employed</option>
+                                <option value="School">Unemployed, looking for work</option>
+                                <option value="Summer Camp">Unemployed, not looking for work</option>
+                                <option value="Summer Camp">Retired</option>
+                                <option value="Summer Camp">Unable to work</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="employment">Yearly Household Income</label>
+                            <select name="employment" id="employment">
+                                <option value="Community Center">Less than $20,000</option>
+                                <option value="School">$20,000 to $34,999</option>
+                                <option value="Summer Camp">$35,000 to $49,999</option>
+                                <option value="Summer Camp">$50,000 to $74,999</option>
+                                <option value="Summer Camp">$75,000 to $99,999</option>
+                                <option value="Summer Camp">$100,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</template>
