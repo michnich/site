@@ -74,7 +74,7 @@ Template.editStudent.events({
         e.preventDefault();
         //gather all the info from the fields
         var studentId = this._id;
-        
+
         var student = {
             first_name: $(e.target).find('[name=first_name]').val(),
             last_name: $(e.target).find('[name=last_name]').val(),
@@ -96,18 +96,19 @@ Template.editStudent.events({
             high_school: $(e.target).find('[name=high_school]').val(),
         };
 
-        Students.update(studentId, {
-            $set: student
-        }, function(error) {
-            if (error) {
-                console.log(error.reason);
-                throwError(error.reason);
-            } else {
-                console.log("no error");
-                Router.go('studentProfile', {
-                    _id: studentId
-                });
-            }
+        Meteor.call("studentUpdate", student, studentId, function(error, result){
+          if(error){
+            //error handling
+            console.log("error", error);
+          }
+          if(result){
+            console.log("sucess");
+            Router.go('studentProfile', {
+                _id: studentId
+            });
+          }
         });
+
+
     }
 });
