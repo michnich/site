@@ -26,102 +26,87 @@
 									<input name="dob" id="dob" type="date" value="{{dob}}" class="form-control" />
 								</div>
 							</div>
-
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label class="control-label" for="email">Parent Email</label>
-									<input name="email" id="email" type="email" value="{{email}}" class="form-control" />
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="phone">Parent Phone</label>
-									<input name="phone" id="phone" type="text" value="{{phone}}" class="form-control" />
-								</div>
-							</div>
-
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="program">Program Type</label>
-									<div>
-										<select name="program" id="program">
-											<option value="Community Center" selected="{{communitySelected}}">Community Center</option>
-											<option value="School" selected="{{schoolSelected}}">School</option>
-											<option value="Summer Camp" selected="{{summerSelected}}">Summer Camp</option>
-										</select>
+									<label class="control-label" for="gender">Gender</label>
+									<div id="gender">
+										<label class="checkbox-inline">
+											<input type="checkbox" name="gender" value="Male" checked="{{genderChecked 'Male'}}">Male</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="gender" value="Female" checked="{{genderChecked 'Female'}}">Female</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="gender" value="Trans" checked="{{genderChecked 'Trans'}}">Trans</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="gender" value="Undisclosed" checked="{{genderChecked 'Undisclosed'}}">Prefer not to disclose</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="gender" value="Other" id="otherGender" checked="{{genderChecked 'Other'}}">Other</label>
+										<br>
+										<label class="hidden control-label" name="otherLabel">Please specify:</label>
+										<input type="text" class="hidden form-control" name="otherText" value="">
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label class="control-label" for="pictures_allowed">Pictures Allowed?</label>
-								<div>
-									<input type="radio" name="pictures_allowed" value="yes" checked="{{picsAllowed}}">Yes
-									<br>
-									<input type="radio" name="pictures_allowed" value="no" checked="{{picsNotAllowed}}">No
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
+									<div id="race_ethnicity">
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="White" checked="{{raceChecked 'White'}}">White</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="Hispanic or Latino" checked="{{raceChecked 'Hispanic or Latino'}}">Hispanic or Latino</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="Black or African American" checked="{{raceChecked 'Black or African American'}}">Black or African American</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="Native American or American Indian" checked="{{raceChecked 'Native American or American Indian'}}">Native American or American Indian</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander" checked="{{raceChecked 'Asian / Pacific Islander'}}">Asian / Pacific Islander</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" name="race_ethnicity" value="Other" checked="{{raceChecked 'Other'}}">Other</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="control-label" for="pictures_allowed">Pictures Allowed?</label>
+									<div>
+										<input type="radio" name="pictures_allowed" value="yes" checked="{{picsAllowed}}">Yes
+										<br>
+										<input type="radio" name="pictures_allowed" value="no" checked="{{picsNotAllowed}}">No
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<h3>Address</h3>
+					<h3>Class</h3>
 					<div class="row well well-sm padding-10">
-						<div class="row">
 							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="address1">Address</label>
-									<input name="address1" id="address1" type="text" value="{{address1}}" class="form-control" />
-								</div>
+									<div class="form-group">
+											<label class="control-label" for="program_location">Location</label>
+											<div>
+													<select name="program_location" id="program_location">
+															{{#each programLocations}}
+															<option value="{{name}}" selected="{{programLocationSelected name}}">{{name}}</option>
+															{{/each}}
+													</select>
+											</div>
+									</div>
 							</div>
 
 							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="address2">&nbsp;</label>
-									<input name="address2" id="address2" type="text" value="{{address2}}" placeholder="Apt/Unit" class="form-control" />
-								</div>
+									<div class="form-group">
+											<label class="control-label" for="program_time">Time</label>
+											<div>
+													<select name="program_time" id="program_time">
+															{{#each programTimes}}
+															<option value="{{_id}}" selected="{{programTimeSelected _id}}">{{day_of_week}}, {{timeFormat start_time}} - {{timeFormat end_time}}</option>
+															{{/each}}
+													</select>
+											</div>
+									</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="city">City</label>
-									<input name="city" id="city" type="text" value="{{city}}" class="form-control" />
-								</div>
-							</div>
-
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="state">State</label>
-									<input name="state" id="state" type="text" value="{{state}}" class="form-control" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label class="control-label" for="zip">Zip</label>
-								<input name="zip" id="zip" type="text" value="{{zip}}" class="form-control" />
-							</div>
-						</div>
-					</div>
-
-					<h3>Emergency Contact</h3>
-					<div class="row well well-sm padding-10">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label class="control-label" for="eme_contact">Name</label>
-								<input name="eme_contact" id="eme_contact" type="text" value="{{eme_contact}}" class="form-control" />
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label class="control-label" for="eme_number">Number</label>
-								<input name="eme_number" id="eme_number" type="text" value="{{eme_number}}" class="form-control" />
-							</div>
-						</div>
 					</div>
 
 					<h3>School History</h3>
@@ -147,6 +132,7 @@
 							</div>
 						</div>
 					</div>
+					<!--admin only level info-->
 				</div>
 				<input type="submit" value="Submit" class="btn btn-primary" />
 			</form>

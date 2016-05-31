@@ -1,4 +1,5 @@
 Template.parentAddStudent.onCreated(function() {
+    Meteor.subscribe("programType", "Community Center");
     Session.set("programLocation", "");
 });
 
@@ -85,11 +86,11 @@ Template.parentAddStudent.events({
     },
 
     'click #no': function() {
-      $('#anotherStudent').modal('hide');
-      Router.go("/dashboard");
+        $('#anotherStudent').modal('hide');
+        Router.go("/dashboard");
     },
     'click #yes': function() {
-      $('#anotherStudent').modal('hide');
-      document.location.reload(true);
+        $('#anotherStudent').modal('hide');
+        document.location.reload(true);
     }
 });
