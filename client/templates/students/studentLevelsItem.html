@@ -1,0 +1,17 @@
+<template name= "studentLevelsItem">
+  <div class="row">
+      <div class="col-sm-2">
+          <h3>{{../level}}</h3>
+          <input type="hidden" value="{{level}}" name="{{type}}_level">
+      </div>
+      <div class="col-sm-3">
+          <input type="date" value="{{start}}" name="{{type}}_{{../level}}_start" class="form-control" />
+      </div>
+      <div class="col-sm-3">
+          <input type="date" value="{{est_end}}" name="{{type}}_{{../level}}_est_end" class="form-control" />
+      </div>
+      <div class="col-sm-3">
+          <input type="date" value="{{actual_end}}" name="{{type}}_{{../level}}_actual_end" class="form-control" />
+      </div>
+  </div>
+</template>

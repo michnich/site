@@ -43,10 +43,11 @@
 							<h5>GitHub password: {{github_password}}</h5>
 							<h5>Email address: {{student_email}}</h5>
 							<h4><strong>Current Levels:</strong></h4>
-							<h5>HTML: {{current_html}}</h5>
-							<h5>CSS: {{current_css}}</h5>
-							<h5>JavaScript: {{current_javascript}}</h5>
-							<h5>Developer Tools: {{current_devtools}}</h5>
+							<a href="{{pathFor 'editStudentLevels'}}" class="btn btn-primary">Edit</a>
+							<h5>HTML: {{getCurrentLevel html}}</h5>
+							<h5>CSS: {{getCurrentLevel css}}</h5>
+							<h5>JavaScript: {{getCurrentLevel js}}</h5>
+							<h5>Developer Tools: {{getCurrentLevel devTools}}</h5>
 						</div>
 					</div>
 				</div>

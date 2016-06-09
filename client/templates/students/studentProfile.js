@@ -18,8 +18,17 @@ Template.studentProfile.helpers({
         return Parents.find();
     },
     program: function() {
-      Meteor.subscribe("programById", this.program);
-      return Programs.find();
+        Meteor.subscribe("programById", this.program);
+        return Programs.find();
+    },
+    getCurrentLevel: function(category) {
+      var levels = _.pick(this, category);
+      var i;
+      for (i = 0; i < levels.length; i++) {
+        if (levels[i].current) {
+          return levels[i].level;
+        }
+      }
     }
 });
 
