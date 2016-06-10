@@ -24,31 +24,7 @@
                                 <input name="dob" id="dob" type="date" value="" class="form-control" />
                             </div>
                         </div>
-
                         <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="gender">Gender</label>
-                                <div id="gender">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Male">Male</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Female">Female</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Trans">Trans</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Undisclosed">Prefer not to disclose</label>
-                                    <label class="checkbox-inline" id="checkLabel">
-                                        <input type="checkbox" name="gender" value="Other" id="other">Other</label>
-                                    <br>
-                                    <label class="hidden control-label" name="otherLabel">Please specify:</label>
-                                    <input type="text" class="hidden form-control" name="otherText" value="">
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label" for="race_ethnicity">Race/Ethnicity (check all that apply)</label>
                                 <div>
@@ -70,10 +46,9 @@
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other
                                     </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="NA">Prefer not to disclose
-                                    </label>
                                 </div>
+                                <label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
+                                <input type="text" class="hidden form-control" name="otherRaceText" value="">
                             </div>
                         </div>
                     </div>

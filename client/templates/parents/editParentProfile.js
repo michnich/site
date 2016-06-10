@@ -18,6 +18,11 @@ Template.editParentProfile.helpers({
 });
 
 Template.editParentProfile.events({
+    'change #otherRace': function(e) {
+        $('label[name=otherRaceLabel]').toggleClass('hidden');
+        $('input[name=otherRaceText]').toggleClass('hidden');
+    },
+
     'submit form': function(e) {
         e.preventDefault();
         //gather all the info from the fields
@@ -49,14 +54,14 @@ Template.editParentProfile.events({
             //EMPLOYMENT INFO
         };
 
-        Meteor.call("parentUpdate", parent, parentId, function(error, result){
-          if(error){
-            //error handling
-            console.log("error", error);
-          }
-          if(result){
-          //do something
-          }
+        Meteor.call("parentUpdate", parent, parentId, function(error, result) {
+            if (error) {
+                //error handling
+                console.log("error", error);
+            }
+            if (result) {
+                //do something
+            }
         });
     }
 });

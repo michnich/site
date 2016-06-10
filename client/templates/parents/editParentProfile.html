@@ -27,29 +27,6 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="control-label" for="gender">Gender</label>
-                                <div id="gender">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Male" checked="{{genderChecked 'Male'}}">Male</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Female" checked="{{genderChecked 'Female'}}">Female</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Trans" checked="{{genderChecked 'Trans'}}">Trans</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Undisclosed" checked="{{genderChecked 'Undisclosed'}}">Prefer not to disclose</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="gender" value="Other" id="otherGender" checked="{{genderChecked 'Other'}}">Other</label>
-                                    <br>
-                                    <label class="hidden control-label" name="otherLabel">Please specify:</label>
-                                    <input type="text" class="hidden form-control" name="otherText" value="">
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
                                 <label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
                                 <div id="race_ethnicity">
                                     <label class="checkbox-inline">
@@ -63,10 +40,13 @@
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander" checked="{{raceChecked 'Asian / Pacific Islander'}}">Asian / Pacific Islander</label>
                                     <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="Other" checked="{{raceChecked 'Other'}}">Other</label>
+                                        <input type="checkbox" name="race_ethnicity" id="otherRace" value="Other" checked="{{raceChecked 'Other'}}">Other</label>
                                 </div>
+                                <label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
+                                <input type="text" class="hidden form-control" name="otherRaceText" value="">
                             </div>
                         </div>
+                        <br>
                     </div>
                 </div>
 

@@ -38,6 +38,11 @@ Template.addParentProfile.helpers({
 });
 
 Template.addParentProfile.events({
+    'change #otherRace': function(e) {
+        $('label[name=otherRaceLabel]').toggleClass('hidden');
+        $('input[name=otherRaceText]').toggleClass('hidden');
+    },
+    
     "submit form": function(e) {
         e.preventDefault();
         var parentProfile = {
