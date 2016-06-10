@@ -1,10 +1,13 @@
 Template.addStudentModal.onRendered(function() {
     $("#studentForm").validate({
-      rules: {
-          pictures_allowed: {
-              required: true
-          },
-      }
+        rules: {
+            pictures_allowed: {
+                required: true
+            },
+            program: {
+                required: true
+            }
+        }
     });
 });
 
@@ -16,20 +19,25 @@ Template.addStudentModal.events({
             first_name: $(e.target).find('[name=first_name]').val(),
             last_name: $(e.target).find('[name=last_name]').val(),
             dob: $(e.target).find('[name=dob]').val(),
-            program: $(e.target).find("[name=program]").val(),
-            parent_email: $(e.target).find('[name=parent_email]').val(),
-            phone: $(e.target).find('[name=phone]').val(),
+            gender: $(e.target).find("[name=gender]:checked").map(function() {
+                if (this.value === "Other") {
+                    return $(e.target).find("[name=otherGenderText]").val();
+                } else {
+                    return this.value;
+                }
+            }).get(),
+            race_ethnicity: $(e.target).find("[name=race_ethnicity]:checked").map(function() {
+                if (this.value === "Other") {
+                    return $(e.target).find("[name=otherRaceText]").val();
+                } else {
+                    return this.value;
+                }
+            }).get(),
             pictures_allowed: $(e.target).find('[name=pictures_allowed]:checked').val(),
-            address1: $(e.target).find('[name=address1]').val(),
-            address2: $(e.target).find('[name=address2]').val(),
-            city: $(e.target).find('[name=city]').val(),
-            state: $(e.target).find('[name=state]').val(),
-            zip: $(e.target).find('[name=zip]').val(),
+            program: $(e.target).find('[name=program_time]').val(),
             elm_school: $(e.target).find('[name=elm_school]').val(),
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val(),
-            eme_contact: $(e.target).find('[name=eme_contact]').val(),
-            eme_number: $(e.target).find('[name=eme_number]').val()
         };
 
         Meteor.call("existingStudent", student.first_name, student.last_name, student.dob, function(error, exists) {

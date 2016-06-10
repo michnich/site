@@ -1,8 +1,3 @@
-Template.parentAddStudent.onCreated(function() {
-    Meteor.subscribe("programType", "Community Center");
-    Session.set("programLocation", "");
-});
-
 Template.parentAddStudent.onRendered(function() {
     $("#studentForm").validate({
         rules: {
@@ -11,47 +6,12 @@ Template.parentAddStudent.onRendered(function() {
             },
             program: {
                 required: true
-            },
-            //elm school
-            //middle school
-            //high school
+            }
         }
     });
 });
 
-Template.parentAddStudent.helpers({
-    programLocations: function() {
-        Meteor.subscribe("programType", "Community Center");
-        var programs = _.uniq(_.toArray(Programs.find().fetch()), false, function(p) {
-            return p.name;
-        });
-        Session.set("programLocation", programs[0].name);
-        return programs;
-    },
-
-    programTimes: function() {
-        var location = Session.get("programLocation");
-        return Programs.find({
-            name: location
-        });
-    },
-
-    timeFormat: function(timeString) {
-        return moment().hour(timeString).minute(0).format("hh:mm a");
-    }
-});
-
 Template.parentAddStudent.events({
-    'change #program_location': function(e) {
-        var programLocation = ($e).target.find(["name=program_location"]).val();
-        Session.set("programLocation", programLocation);
-    },
-
-    'change #otherGender': function(e) {
-        $('label[name=otherLabel]').toggleClass('hidden');
-        $('input[name=otherText]').toggleClass('hidden');
-    },
-
     'submit form': function(e) {
         e.preventDefault();
         var student = {
@@ -60,13 +20,17 @@ Template.parentAddStudent.events({
             dob: $(e.target).find('[name=dob]').val(),
             gender: $(e.target).find("[name=gender]:checked").map(function() {
                 if (this.value === "Other") {
-                    return $(e.target).find("[name=otherText]").val();
+                    return $(e.target).find("[name=otherGenderText]").val();
                 } else {
                     return this.value;
                 }
             }).get(),
             race_ethnicity: $(e.target).find("[name=race_ethnicity]:checked").map(function() {
-                return this.value;
+              if (this.value === "Other") {
+                  return $(e.target).find("[name=otherRaceText]").val();
+              } else {
+                  return this.value;
+              }
             }).get(),
             pictures_allowed: $(e.target).find('[name=pictures_allowed]:checked').val(),
             program: $(e.target).find('[name=program_time]').val(),

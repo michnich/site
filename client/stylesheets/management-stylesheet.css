@@ -80,7 +80,11 @@
 .modal-body h3 {
     color: #408ABE;
 }
-/*don't forget to take this out*/
+/*input fix*/
 input {
 	max-width: 100%;
+}
+
+select {
+  max-width: 100%;
 }
