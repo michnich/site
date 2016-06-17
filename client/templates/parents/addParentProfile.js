@@ -1,6 +1,21 @@
 Template.addParentProfile.onRendered(function() {
     $("#parentProfileForm").validate({
         rules: {
+            first_name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
             email: {
                 required: true
             },
@@ -42,7 +57,7 @@ Template.addParentProfile.events({
         $('label[name=otherRaceLabel]').toggleClass('hidden');
         $('input[name=otherRaceText]').toggleClass('hidden');
     },
-    
+
     "submit form": function(e) {
         e.preventDefault();
         var parentProfile = {

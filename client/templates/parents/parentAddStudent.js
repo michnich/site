@@ -1,11 +1,42 @@
 Template.parentAddStudent.onRendered(function() {
     $("#studentForm").validate({
         rules: {
+            first_name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
             pictures_allowed: {
                 required: true
             },
-            program: {
+            program_time: {
                 required: true
+            },
+            //do we take pre k age kids???
+            elm_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() >= 0;
+                }
+            },
+            middle_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() > 6;
+                }
+            },
+            high_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() > 9;
+                }
             }
         }
     });
@@ -26,11 +57,11 @@ Template.parentAddStudent.events({
                 }
             }).get(),
             race_ethnicity: $(e.target).find("[name=race_ethnicity]:checked").map(function() {
-              if (this.value === "Other") {
-                  return $(e.target).find("[name=otherRaceText]").val();
-              } else {
-                  return this.value;
-              }
+                if (this.value === "Other") {
+                    return $(e.target).find("[name=otherRaceText]").val();
+                } else {
+                    return this.value;
+                }
             }).get(),
             pictures_allowed: $(e.target).find('[name=pictures_allowed]:checked').val(),
             program: $(e.target).find('[name=program_time]').val(),

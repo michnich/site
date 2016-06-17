@@ -1,3 +1,49 @@
+Template.editParentProfile.onRendered(function() {
+    $("#parentProfileForm").validate({
+        rules: {
+            first_name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
+            email: {
+                required: true
+            },
+            phone: {
+                required: true
+            },
+            address1: {
+                required: true
+            },
+            city: {
+                required: true
+            },
+            state: {
+                required: true
+            },
+            zip: {
+                required: true
+            },
+            eme_contact: {
+                required: true
+            },
+            eme_number: {
+                required: true
+            }
+        }
+    });
+});
+
 Template.editParentProfile.helpers({
     raceChecked: function(race) {
         var array = _.toArray(this.race_ethnicity);
