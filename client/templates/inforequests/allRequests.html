@@ -1,7 +1,27 @@
 <template name="allRequests">
-  <div class="container-fluid col-md-6 col-md-push-3" style="padding-top: 30px">
-    {{#each requests}}
-      {{> infoRequestItem}}
-    {{/each}}
-  </div>
+    <div class="container-fluid col-md-6 col-md-push-3" style="padding-top: 40px">
+        <h1>Information Requests</h1>
+        <form>
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Filter by:</p>
+                </div>
+                <div class="col-md-4">
+                    <select id="selectStatus" name="selectStatus" class="form-control" style="display: inline-block">
+                        <div>
+                            <option value="">All</option>
+                            <option value="New">New</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Complete">Complete</option>
+                        </div>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                </div>
+            </div>
+        </form>
+        <div class="row" style="padding-top: 20px">
+            {{#each requests}} {{> infoRequestItem}} {{/each}}
+        </div>
+    </div>
 </template>
