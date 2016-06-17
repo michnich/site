@@ -7,6 +7,9 @@
 #contact-submit{
   padding: 0px 20px 0px 60px;
 }
+#contact-submit .btn {
+  font-family: 'BebasRegular';
+}
 @media screen and (min-width: 350px) and (max-width: 760px){
   .form-group{
     padding: 0px 10px 0px 10px;
