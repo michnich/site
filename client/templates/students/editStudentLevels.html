@@ -1,0 +1,104 @@
+<template name="editStudentLevels">
+    <div class="container-fluid padding-15">
+        <div class="col-md-10 col-md-push-1">
+            <form>
+                <h1>{{first_name}}'s Progress</h1>
+                <h2 style="color:black">HTML</h2>
+                <div class="row-fluid">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h3>Level</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Start Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Est. End Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Actual End Date</h3>
+                        </div>
+                    </div>
+                    {{#each htmlLevels}}
+                    {{> studentLevelsItem type="html"}}
+                    {{/each}}
+                    <div class="row">
+                        <input type="button" class="btn btn-default" id="html" value="Next Level">
+                    </div>
+                </div>
+                <h2 style="color:black">CSS</h2>
+                <div class="row-fluid">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h3>Level</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Start Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Est. End Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Actual End Date</h3>
+                        </div>
+                    </div>
+                    {{#each cssLevels}}
+                    {{> studentLevelsItem type="css"}}
+                    {{/each}}
+                    <div class="row">
+                        <input type="button" class="btn btn-default" id="css" value="Next level">
+                    </div>
+                </div>
+                <h2 style="color:black">JavaScript</h2>
+                <div class="row-fluid">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h3>Level</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Start Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Est. End Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Actual End Date</h3>
+                        </div>
+                    </div>
+                    {{#each jsLevels}}
+                    {{> studentLevelsItem type="js"}}
+                    {{/each}}
+                    <div class="row">
+                        <input type="button" class="btn btn-default" id="js" value="Next level">
+                    </div>
+                </div>
+
+                <h2 style="color:black">Developer Tools</h2>
+                <div class="row-fluid">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h3>Level</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Start Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Est. End Date</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Actual End Date</h3>
+                        </div>
+                    </div>
+                    {{#each devToolsLevels}}
+                    {{> studentLevelsItem type="devTools"}}
+                    {{/each}}
+                    <div class="row">
+                        <input type="button" class="btn btn-default" id="devTools" value="Next level">
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</template>

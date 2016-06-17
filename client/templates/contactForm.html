@@ -1,44 +1,77 @@
 <template name="contactForm">
-<form>
-	<div class="form-group">
-	  <label class="control-label" for="first_name">First Name</label>
-	  <div>
-	    <input name="first_name" id="first_name" type="text" value="" class="form-control"/>
-	  </div>
-	</div>
-	<div class="form-group">
-	  <label class="control-label" for="last_name">Last Name</label>
-	  <div>
-	    <input name="last_name" id="last_name" type="text" value="" class="form-control"/>
-	  </div>
-	</div>
-	<div class="form-group">
-	  <label class="control-label" for="first_name">Are you a...</label>
-		<div>
-		<select name="type" id="type">
-	     	<option value="parent">Future Coded by Kids Parent</option>
-	     	<option value="educator">Educator</option>
-	     	<option value="volunteer">Future Coded by Kids Volunteer</option>
-	     	<option value="supporter">Future Coded by Kids Supporter</option>
-	     	<option value="partner">Potential Partner</option>
-	     	<option value="other">Other</option>
-		</select>
+	<div class="" id="form-sec">
+		<div class="top-border" id="contact-form">
+
+		</div>
+
+		<div class="col-md-4">
+
+		</div>
+		<div class="col-md-4 general-contact">
+			<form id="contactForm">
+				<div class="form-group">
+					<h1 style="text-align: center">Contact Us</h1>
+					<br>
+					<p style="text-align: center"><span style="color:red">*</span>Required field</p>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="first_name">First Name <span style="color:red">*</span></label>
+					<div>
+						<input name="first_name" id="first_name" type="text" value="" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="last_name">Last Name</label>
+					<div>
+						<input name="last_name" id="last_name" type="text" value="" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="email">Email Address <span style="color:red">*</span></label>
+					<div>
+						<input name="email" id="email" type="email" value="" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="first_name">Are you a... <span style="color:red">*</span></label>
+					<div>
+						<select name="type" id="type">
+							<option value="Parent">Future Coded by Kids Parent</option>
+							<option value="Educator">Educator</option>
+							<option value="Volunteer">Future Coded by Kids Volunteer</option>
+							<option value="Supporter">Future Coded by Kids Supporter</option>
+							<option value="Partner">Potential Partner</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="subject">Subject <span style="color:red">*</span></label>
+					<div>
+						<input name="subject" id="subject" type="text" value="" class="form-control" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="Message">Message <span style="color:red">*</span></label>
+					<div>
+						<textarea name="message" rows="4" style="width: 100%" id="subject" type="text" value="" class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="alert alert-success hidden" id="success">
+						We'll get back to you soon!
+					</div>
+					<div class="alert alert-danger hidden" id="error">
+						Oops! There was an error. Please try again or email us at info@codedbykids.com
+					</div>
+				</div>
+				<div id="contact-submit" class="">
+					<input type="submit" value="Submit" class="btn btn-primary btn-block">
+				</div>
+			</form>
+		</div>
+		<div class="col-md-4">
+
 		</div>
 	</div>
-	<div class="form-group">
-	  <label class="control-label" for="subject">Subject</label>
-	  <div>
-	    <input name="subject" id="subject" type="text" value="" class="form-control"/>
-	  </div>
-	</div>
-	<div class="form-group">
-	  <label class="control-label" for="Message">Message</label>
-	  <div>
-	    <textarea name="message" rows="4" cols="30" id="subject" type="text" value="" class="form-control"></textarea>
-	  </div>
-	</div>
-	<div id="contact-submit" class="">
-		<input type="submit" value="Submit" class="btn btn-primary">
-	</div>
-</form>
 </template>
