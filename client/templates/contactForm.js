@@ -23,6 +23,7 @@ Template.contactForm.onRendered(function() {
 
 Template.contactForm.events({
     'submit form': function(e) {
+        e.preventDefault();
         var form = {
             first_name: $(e.target).find('[name=first_name]').val(),
             last_name: $(e.target).find('[name=last_name]').val(),
@@ -30,7 +31,7 @@ Template.contactForm.events({
             type: $(e.target).find('[name=type]').val(),
             subject: $(e.target).find('[name=subject]').val(),
             message: $(e.target).find('[name=message]').val(),
-            status: 'new'
+            status: 'New'
         };
 
         Meteor.call('requestInsert', form, function(error, result) {
@@ -38,7 +39,7 @@ Template.contactForm.events({
                 $("#error").removeClass("hidden");
                 return throwError(error.reason);
             } else {
-                $("#contactForm").validate().resetForm();
+                $("#contactForm").trigger('reset');
                 $("#success").removeClass("hidden");
             }
         });
