@@ -8,28 +8,75 @@
   }
   h1{
     font-weight: 700;
-    font-size: 36px;
-    text-transform: uppercase;
+    font-size: 26px;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 26px;
   }
   .navbar{
-    height: 60px;
+    height: 64px;
   }
   .navbar-toggle{
     margin-right: 25px;
+    margin-top: 12px;
+  }
+  .navbar-brand{
+    padding: 0px 0px 0px 0px;
+    width: 300px;
   }
   .nav{
     padding-left: 10px;
     background-color: white;
   }
+  .main-menu-imgs{
+    width: 40%;
+  }
+  .main-img{
+    padding: 0 0 50px 0;
+  }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
-    padding-left: 124px;
-    padding-top: 18px;
+    padding-left: 28px;
+    padding-top: 16px;
   }
   #main-sec{
-    padding: 40px 0 0 0px;
+    padding: 28px 0 0 0px;
+  }
+  #sec-1{
+    height: 1120px;
   }
   #main-heading{
-    padding: 40px 0 0 0;
+    padding: 28px 0 0 0;
+  }
+  /* Section 1 */
+
+
+  /* Section 2 */
+  #sec-2{
+    height: 1620px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 2000px;
+  }
+
+  /* Section 4 */
+  #sec-4{
+    height: 1400px;
+  }
+
+  /* Section 8 */
+  .form-group{
+    padding: 0px 10px 0px 10px;
+  }
+  .form-control{
+    width: 60px;
   }
 }
 
@@ -43,27 +90,74 @@
   }
   h1{
     font-weight: 700;
-    font-size: 36px;
-    text-transform: uppercase;
+    font-size: 22px;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 20px;
   }
   .navbar{
-    height: 60px;
+    height: 66px;
   }
   .navbar-toggle{
     margin-right: 25px;
+    margin-top: 16px;
+  }
+  .navbar-brand{
+    padding: 0px 0px 0px 0px;
+    width: 250px;
   }
   .nav{
     padding-left: 10px;
     background-color: white;
   }
+  .main-menu-imgs{
+    width: 30%;
+  }
+  .main-img{
+    padding: 0 0 50px 0;
+  }
+  .sec-text{
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
   #logo{
-    padding-left: 99px;
-    padding-top: 18px;
+    padding-left: 24px;
+    padding-top: 20px;
   }
   #main-sec{
-    padding: 40px 0 0 0px;
+    padding: 20px 0 0 0px;
   }
   #main-heading{
-    padding: 40px 0 0 0;
+    padding: 20px 0 0 0;
+  }
+
+  /* Section 1 */
+  #sec-1{
+    height: 820px;
+  }
+
+  /* Section 2 */
+  #sec-2{
+    height: 1680px;
+  }
+
+  /* Section 3 */
+  #sec-3{
+    height: 2280px;
+  }
+
+  /* Section 4 */
+  #sec-4{
+    height: 1400px;
+  }
+
+  /* Section 8 */
+  .form-group{
+    padding: 0px 10px 0px 10px;
+  }
+  .form-control{
+    width: 100px;
   }
 }
