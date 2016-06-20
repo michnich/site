@@ -9,22 +9,21 @@
           <span class="icon-bar"></span>
         </button>
         {{#if currentUser}}
-        <a class="navbar-brand" id="logo" href="{{pathFor 'home'}}"><img src="img/logo-v5.png" /></a>
+        <a class="navbar-brand" id="logo" href="http://www.codedbykids.com/index.html"><img src="img/logo-v5.png" /></a>
         {{else}}
-        <a class="navbar-brand" id="logo" href="/#home"><img src="img/logo-v5.png" /></a>
+        <a class="navbar-brand" id="logo" href="http://www.codedbykids.com/index.html"><img src="img/logo-v5.png" /></a>
         {{/if}}
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://www.codedbykids.com/about.html#about-us">About</a></li>
+          <li><a href="http://www.codedbykids.com/partner.html#partner">Partner</a></li>
+          <li><a href="http://www.codedbykids.com/programs.html#programs">Programs</a></li>
+          <li><a href="/contact">Contact</a></li>
           {{#if currentUser}}
-          <li><a href="{{pathFor 'profile'}}">Profile</a></li>
           <li><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
           <li><a href="{{pathFor 'signOut'}}">Sign Out</a></li>
           {{else}}
-          <li><a href="/#about-us">About</a></li>
-          <li><a href="/#partner">Partner</a></li>
-          <li><a href="/#programs">Programs</a></li>
-          <li><a href="/#contact">Contact</a></li>
           <li><a href="{{pathFor 'signIn'}}">Sign In</a></li>
           {{/if}}
         </ul>
