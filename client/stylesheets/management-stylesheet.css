@@ -88,3 +88,38 @@ input {
 select {
   max-width: 100%;
 }
+
+.background-blue {
+  background-color: #3F6682;
+}
+
+.background-grey {
+  background-color: #f0f0f0;
+}
+
+.blue-button {
+  background-color: #f0f0f0;
+  border: solid 3px #4BADA2;
+  color: #4BADA2;
+  font-weight: bold;
+}
+
+.blue-button:active, .blue-button:hover {
+  background-color: #4BADA2;
+  border: solid 3px #4BADA2;
+  color: white;
+}
+
+.blue-button-filled {
+  border: solid 3px #4BADA2;
+  background-color: #4BADA2;
+  color: white;
+  font-weight: bold;
+}
+
+.blue-button-filled:hover {
+  border: solid 3px #4BADA2;
+  background-color: #4BADA2;
+  color: white;
+  font-weight: bold;
+}
