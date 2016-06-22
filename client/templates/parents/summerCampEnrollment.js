@@ -174,6 +174,7 @@ Template.summerCampEnrollment.events({
               middle_school: $(this).find('[name=middle_school]').val(),
               high_school: $(this).find('[name=high_school]').val(),
               photos: $(e.target).find('[name=takePhotos]:checked').val(),
+              attend_class_permission: $(e.target).find('[name=attendClass]:checked').val()
           };
 
           var returnId = Meteor.call("addSummerStudent", student, parentProfile.first_name, parentProfile.last_name, parentProfile.dob, function(error, result){
