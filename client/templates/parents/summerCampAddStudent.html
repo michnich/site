@@ -1,0 +1,153 @@
+<template name="summerCampAddStudent">
+    <!--STUDENT INFO-->
+    <div class="studentSection">
+        <div class="row padding-10">
+            <div class="form-group">
+                <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-user"></span> Student Profile</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="first_name">First Name <span style="color:red">*</span></label>
+                        <input name="first_name" id="first_name" type="text" value="" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="last_name">Last Name <span style="color:red">*</span></label>
+                        <input name="last_name" id="last_name" type="text" value="" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="dob">Date of Birth <span style="color:red">*</span></label>
+                        <input name="dob" id="dob" type="date" value="" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="gender">Gender <span style="color:red">*</span></label>
+                        <div id="gender">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="gender" value="Male">Male</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="gender" value="Female">Female</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="gender" value="Other" id="otherGender">Other</label>
+                            <br>
+                            <label class="hidden control-label" name="otherGenderLabel">Please specify:</label>
+                            <input type="text" class="hidden form-control" name="otherGenderText" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label" for="race_ethnicity">Race/Ethnicity <span style="color:red">*</span></label>
+                        <div class="container" id="race_ethnicity">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="White">White</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="Hispanic or Latino">Hispanic or Latino</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="Black or African American">Black or African American</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="Native American or American Indian">Native American or American Indian</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other</label>
+                        </div>
+                        <label class="hidden control-label" name="otherRaceLabel">Please specify (if other):</label>
+                        <input type="text" class="hidden form-control" name="otherRaceText" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-10">
+            <div class="form-group">
+                <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-education"></span> Education History</h2>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="current_grade">Current Grade <span style="color:red">*</span></label>
+                    <div>
+                        <select name="current_grade" id="current_grade" class="form-control">
+                            <option value="0">Kindergarten</option>
+                            <option value="1">1st</option>
+                            <option value="2">2nd</option>
+                            <option value="3">3rd</option>
+                            <option value="4">4th</option>
+                            <option value="5">5th</option>
+                            <option value="6">6th</option>
+                            <option value="7">7th</option>
+                            <option value="8">8th</option>
+                            <option value="9">9th</option>
+                            <option value="10">10th</option>
+                            <option value="11">11th</option>
+                            <option value="12">12th</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="elm_school">Elementary School
+                        <p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+                    </label>
+                    <input name="elm_school" id="elm_school" type="text" value="" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="middle_school">Middle School
+                        <p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+                    </label>
+                    <input name="middle_school" id="middle_school" type="text" value="" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="high_school">High School
+                        <p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+                    </label>
+                    <input name="high_school" id="high_school" type="text" value="" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row padding-10">
+            <div class="form-group">
+                <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-list-alt"></span>Summer Camp Sessions</h2>
+                <p style="color: #4BADA2;">Select which sessions you would like to enroll in, and if you would like to include before and after care (runs one hour before and one hour after class). Each session is $400, and before and after care for each session is $100
+                </p>
+                <p style="color: #4BADA2;">Each session runs at the Marian Anderson Recreation Center, Monday through Friday from 9:00am to 12:00pm (or 8:00am to 1:00pm with before and after care)</p>
+            </div>
+            <div class="form-group">
+                <div class="container" id="program">
+                    <div class="col-sm-6">
+                        <h3>Session 1</h3>
+                        <label class="control-label">
+                            <input type="checkbox" name="program" value="July 2016 session"> July 18th - July 29th</label>
+                        <br>
+                        <label class="control-label">
+                            <input type="checkbox" name="july_session_care" id="july_session_care" value="Yes"> Include before and after care</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Session 2</h3>
+                        <label class="control-label">
+                            <input type="checkbox" name="program" value="August 2016 session"> August 1st - August 12th</label>
+                        <br>
+                        <label class="control-label">
+                            <input type="checkbox" name="august_session_care" id="august_session_care" value="Yes"> Include before and after care</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END STUDENT INFO-->
+</template>

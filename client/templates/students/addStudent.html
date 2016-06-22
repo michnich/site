@@ -1,5 +1,8 @@
+<!--IGNORE-->
 <template name="addStudent">
-	<div class="row well well-sm padding-10">
+	<form class="general-form" id="studentForm">
+	<h2 style="color: #4BADA2">Student Profile</h2>
+	<div class="row padding-10 white">
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group">
@@ -73,8 +76,8 @@
 		</div>
 	</div>
 
-	<h3>Class</h3>
-	<div class="row well well-sm padding-10">
+	<h2 style="color: #4BADA2">Program</h2>
+	<div class="row padding-10 white">
 		<div class="col-sm-6">
 			<div class="form-group">
 				<label class="control-label" for="program_location">Location</label>
@@ -102,8 +105,19 @@
 		</div>
 	</div>
 
-	<h3>Education History</h3>
-	<div class="row well well-sm padding-10">
+	<h2 style="color: #4BADA2">Education History</h2>
+	<div class="row padding-10 white">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label class="control-label" for="current_grade">Current Grade</label>
+					<div>
+						<select name="current_grade" id="current_grade" class="form-control">
+							<option value="{{name}}">{{name}}</option>
+						</select>
+					</div>
+
+			</div>
+		</div>
 		<div class="col-sm-6">
 			<div class="form-group">
 				<label class="control-label" for="elm_school">Elementary School</label>
@@ -128,4 +142,8 @@
 	<div class="row well well-sm padding-10 has-error hidden" id="studentExists">
 		<label class="help-block">Student already exists</label>
 	</div>
+	<div class ="col-sm-4 col-sm-push-4" style="padding-bottom: 10px">
+			<button type="submit" class="btn btn-primary btn-block">Submit</button>
+	</div>
+</form>
 </template>

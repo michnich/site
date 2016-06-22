@@ -9,6 +9,9 @@
     font-weight: normal;
     font-style: normal;
 }
+a{
+  color: #C664CE;
+}
 img{
   width: 100%;
 }
@@ -26,7 +29,6 @@ h1{
   text-transform: uppercase;
   word-spacing: 16px;
   letter-spacing: 1px;
-
 }
 h2{
   color: #5b5b5b;
@@ -77,8 +79,7 @@ footer{
 
 }
 .sec-title-2{
-  color: white;
-  opacity: .95;
+  color: #4BADA2;
   font-weight: 800;
   font-size: 30px;
   text-transform: uppercase;
@@ -98,6 +99,34 @@ footer{
   color: white;
   text-align: center;
   padding: 20px 320px 20px 320px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.sec-text-j{
+  color: white;
+  text-align: justify;
+  padding: 20px 280px 20px 280px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.sec-text-general{
+  color: white;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.sec-text-general-l{
+  color: white;
+  text-align: left;
+  padding: 20px 50px 20px 60px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.sec-text-general-r{
+  color: white;
+  text-align: right;
+  padding: 20px 70px 20px 40px;
   font-size: 22px;
   font-weight: 400;
 }
@@ -144,12 +173,33 @@ footer{
   font-weight: bold;
   color: #3d3d3d;
 }
-.img-light{
+.number-large{
   color: white;
-  opacity: .85;
+  font-weight: 600;
+  font-size: 62px;
+  padding: 0 20px 0 0;
+  float: left;
+  margin: 0px 0px 130px 0px;
+}
+.img-light{
+  color: #CFDCF2;
+  padding-bottom: 6px;
+}
+.img-small{
+  color: white;
+  padding: 6px 20px 6px 0;
+  margin: 0px 0px 80px 0px;
+  float: left;
+}
+.img-xsmall{
+  color: white;
+  padding: 6px 20px 6px 0;
+  margin: 0px 0px 0px 0px;
+  float: left;
 }
 .img-dark{
   color: #3d3d3d;
+  padding-bottom: 6px;
 }
 #logo{
   padding-left: 40px;
@@ -185,23 +235,23 @@ footer{
 
 /* Section 2 */
 #about-us{
-  background-image: url(img/top-image-1.png);
+  background-image: url(../img/top-image-1.png);
   background-position: center;
   height: 200px;
 }
-#sec-2{
-  background-color: #ECF0F1;
-  height: 1080px;
+#sec-5{
+  background-color: #3F6682;
+  height: 1280px;
 }
 .main-border {
-  width: 50px;
-  border-bottom: 2px solid #E74C3C;
+  width: 100px;
+  border-bottom: 2px solid #E3866F;
   margin: 0px auto;
   margin-bottom: 25px;
 }
 .title{
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 0px;
   margin: 0 0 0 0;
 }
@@ -212,56 +262,68 @@ footer{
 }
 
 /* Section 3 */
-#sec-3{
-  background-color: white;
-  height: 1200px;
+#sec-6{
+  background-color: #3F6682;
+  height: 1520px;
 }
 #partner{
-  background-image: url(img/top-image-2.png);
+  background-image: url(../img/top-image-2.png);
   background-position: center;
   height: 200px;
 }
 
 /* Section 4 */
-#sec-4{
-    background-color: #ECF0F1;
-    height: 1080px;
+#sec-7{
+    background-color: #3F6682;
+    height: 1180px;
 }
 #programs{
-  background-image: url(img/top-image-3.png);
+  background-image: url(../img/top-image-3.png);
   background-position: center;
   height: 200px;
 }
 
 /* Section 5 */
-#sec-5{
-    background-color: #ECF0F1;
-    height: 880px;
+#sec-2{
+    background-color: #3F6682;
+    height: 2800px;
 }
 #parents{
-  background-image: url(img/top-image-4.png);
+  background-image: url(../img/top-image-4.png);
   background-position: center;
   height: 200px;
 }
+.reg-img{
+  width: 60%;
+}
+.reg-sec{
+  text-align: center;
+}
+#reg-btn{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  font-size: 16px;
+}
 
 /* Section 6 */
-#sec-6{
+#sec-3{
     background-color: #ECF0F1;
-    height: 920px;
+    height: 2020px;
 }
 #volunteers{
-  background-image: url(img/top-image-5.png);
+  background-image: url(../img/top-image-5.png);
   background-position: center;
   height: 200px;
 }
 
 /* Section 7 */
-#sec-7{
-    background-color: #ECF0F1;
-    height: 920px;
+#sec-4{
+    background-color: #3F6682;
+    height: 1020px;
 }
 #educators{
-  background-image: url(img/top-image-6.png);
+  background-image: url(../img/top-image-6.png);
   background-position: center;
   height: 200px;
 }
@@ -276,11 +338,37 @@ footer{
   background-position: center;
   height: 200px;
 }
+
 .general-contact{
   padding: 50px 0 0 0;
 }
-#form-sec{
+
+#contact-form-sec{
   background-color: #f0f0f0;
   width: 100%;
-  height: 966px;
+  height: 1300px;
+ }
+ #enrollment-form-sec{
+   background-color: #f0f0f0;
+   width: 100%;
+   height: 1500px;
+ }
+ .form-title{
+  text-align: center;
+ }
+ .form-text{
+   text-align: center;
+ }
+
+/* Footer */
+#social{
+  text-align: center;
+  color: white;
+  padding: 10px 0 0 0;
+}
+.footer-text{
+  color: white;
+}
+.social-icons{
+  padding: 0 10px 0 0;
 }
