@@ -1,0 +1,128 @@
+<template name="summerCampParent">
+    <div class="row padding-10">
+        <div class="form-group">
+            <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-user"></span> Parent Profile</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="parent_first_name">First Name <span style="color:red">*</span></label>
+                    <input name="parent_first_name" id="parent_first_name" type="text" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="parent_last_name">Last Name <span style="color:red">*</span></label>
+                    <input name="parent_last_name" id="parent_last_name" type="text" value="" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="parent_dob">Date of Birth <span style="color:red">*</span></label>
+                    <input name="parent_dob" id="parent_dob" type="date" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="parent_race_ethnicity">Race/Ethnicity <span style="color:red">*</span></label>
+                    <div class="container" id="parent_race_ethnicity">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="White">White</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="Hispanic or Latino">Hispanic or Latino</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="Black or African American">Black or African American</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="Native American or American Indian">Native American or American Indian</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="parent_race_ethnicity" value="Other" id="otherParentRace">Other</label>
+                    </div>
+                    <label class="hidden control-label" name="otherRaceParentLabel">Please specify:</label>
+                    <input type="text" class="hidden form-control" name="otherRaceParentText" value="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row padding-10">
+        <div class="form-group">
+            <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-phone"></span> Contact Information</h2>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label" for="email">Email Address <span style="color:red">*</span></label>
+                <input name="email" id="email" type="email" value="" class="form-control" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label" for="phone">Phone Number <span style="color:red">*</span></label>
+                <input name="phone" id="phone" type="text" value="" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row padding-10">
+        <div class="form-group">
+            <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-home"></span> Address</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="address1">Address <span style="color:red">*</span></label>
+                    <input name="address1" id="address1" type="text" value="" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="address2">&nbsp;</label>
+                    <input name="address2" id="address2" type="text" value="" placeholder="Apt/Unit" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="city">City <span style="color:red">*</span></label>
+                    <input name="city" id="city" type="text" value="" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label" for="state">State <span style="color:red">*</span></label>
+                    <input name="state" id="state" type="text" value="" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label" for="zip">Zip <span style="color:red">*</span></label>
+                <input name="zip" id="zip" type="text" value="" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row padding-10">
+        <div class="form-group">
+            <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-alert"></span> Emergency Contact</h2>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label" for="eme_contact">Name <span style="color:red">*</span></label>
+                <input name="eme_contact" id="eme_contact" type="text" value="" class="form-control" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label" for="eme_number">Number <span style="color:red">*</span></label>
+                <input name="eme_number" id="eme_number" type="text" value="" class="form-control" />
+            </div>
+        </div>
+    </div>
+</template>

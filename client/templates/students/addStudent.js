@@ -1,3 +1,47 @@
+//IGNORE
+Template.addStudent.onRendered(function() {
+    $("#studentForm").validate({
+        rules: {
+            first_name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
+            pictures_allowed: {
+                required: true
+            },
+            program_time: {
+                required: true
+            },
+            //do we take pre k age kids???
+            elm_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() >= 0;
+                }
+            },
+            middle_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() > 6;
+                }
+            },
+            high_school: {
+                depends: function(element) {
+                    return $("#current_grade").val() > 9;
+                }
+            }
+        }
+    });
+});
 Template.addStudent.onCreated(function() {
     Meteor.subscribe("programType", "Community Center");
     Session.set("programLocation", "");

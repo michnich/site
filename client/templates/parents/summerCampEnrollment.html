@@ -1,0 +1,58 @@
+<template name="summerCampEnrollment">
+    <div class="" id="enrollment-form-sec">
+        <div class="top-border" id="contact-form">
+
+        </div>
+        <div class="container padding-30 background-grey">
+            <h1 class="form-title">Coded By Kids Summer Coding Camp Enrollment Form</h1>
+            <p class="form-text">Please complete this form to enroll your child in our summer camp program.</p>
+            <p class="form-text"><span style="color:red">*</span>Required field</p>
+            <form class="general-form" id="summerCampEnrollment">
+                <div class="col-md-10 col-md-push-1">
+                    <!--PARENT INFO-->
+                    <div class="col-sm-12 title" style="margin-bottom: 20px">
+                        <h3 class="sec-title-dark">Parent Information</h3>
+                        <p class="form-text">Billing for the summer camp will be sent to the email you provide.</p>
+                    </div>
+                    {{> summerCampParent}}
+                    <div class="col-sm-12 title" style="margin-bottom: 20px">
+                        <h3 class="sec-title-dark">Student Information</h3>
+                        <p class="form-text">If you wish to enroll more than one student, you may click the "Enroll Another Student" button below.</p>
+                    </div>
+                    {{#each numberOfStudents}}
+                    <h3 class="sec-title-dark">Student {{this}}</h3>
+                    {{> summerCampAddStudent}}
+                    {{/each}}
+                    <div class="col-sm-12" style="margin-top: 20px; margin-bottom: 20px">
+                        <div class="form-group">
+                            <input type="button" class="btn blue-button pull-left" id="anotherStudent" value="Enroll Another Student">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="control-label">
+                                <input type="checkbox" name="attendClass" id="attendClass" value="Yes"> 1. Permission to Attend Class <span style="color:red">*</span></label>
+                            <p>I hereby give permission for my child/children to participate in Coded by Kids technology education programs. I understand that as a part of the programs my child will need to sign up for various online accounts including email.
+                                I also understand that these online accounts are necessary to participate in class and will only be used for class.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="control-label">
+                                <input type="checkbox" name="takePhotos" id="takePhotos" value="Yes"> 2. Permission to Photograph, Record, or Film</label>
+                            <p>Being able to show the value our children receive from our programs helps us to increase the support we receive and improve the quality of the programs we provide to our students. We use photographs, audio and videos of our
+                                classes and students to help show this value.</p>
+                            <p>I hereby give permission for my child to participate in interviews, the use of quotes, and the taking of photographs, audio or videos by Coded by Kids.</p>
+                            <p>I also grant to Coded by kids the right to edit, use, and reuse said products for nonprofit purposes. I also hereby release Coded by Kids and its agents and employees from all claims, demands, and liabilities whatsoever in
+                                connection with the above.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-sm-push-4 text-center">
+                    <button type="submit" class="btn btn-block blue-button">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
