@@ -1,8 +1,7 @@
-
 Template.enrolledProgramItem.helpers({
-  summerCamp: function() {
-    return (this.program_type === "Summer Camp");
-  }
+  timeFormat: function(timeString) {
+      return moment().hour(timeString).minute(0).format("hh:mm a");
+  },
 });
 
 Template.enrolledProgramItem.events({
