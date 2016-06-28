@@ -87,8 +87,7 @@ Template.addParentProfile.events({
         };
         Meteor.call("parentInsert", parentProfile, function(error, result) {
             if (error) {
-                console.log("error", error);
-                //ERROR HANDLING
+                alert("Sorry! There was an error! Please try resubmitting the form again. If that doesn't work please contact us and let us know.")
             }
             if (result) {
                 Router.go('/enrollStudent');

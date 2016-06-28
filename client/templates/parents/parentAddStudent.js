@@ -54,8 +54,6 @@ Template.parentAddStudent.onCreated(function() {
 });
 
 Template.parentAddStudent.helpers({
-  //PROGRAM ENROLLMENT HELPERS
-
   //if a program has been selected, will return true and will display the html for the location and time selects
   //used to keep them hidden until a choice is made
   programSelected: function() {
@@ -91,6 +89,7 @@ Template.parentAddStudent.helpers({
 
   //returns true if the selected program is a summer camp
   //used to display the session dates in the select for program time and before/after care field
+  //NOT CURRENTLY USED
   summerCamp: function() {
     return (Session.get("programSelected") === "Summer Camp");
   },
@@ -102,21 +101,11 @@ Template.parentAddStudent.helpers({
     return Programs.find({'_id': {$in: enrolledPrograms}});
   },
 
+  //returns true if the user has selected programs, shows selected programs area
   enrolledProgramsTrue: function() {
     var enrolledPrograms = Session.get("enrolledPrograms");
     return (enrolledPrograms.length != 0);
   },
-  //END OF PROGRAM HELPERS
-
-  //returns grade for current_grade select
-    gradeLevel: function() {
-        var array = ["K"];
-        var i;
-        for (i = 1; i <= 12; i++) {
-            array.push(i);
-        }
-        return array;
-    }
 })
 
 
