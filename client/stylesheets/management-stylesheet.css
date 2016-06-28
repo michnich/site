@@ -132,3 +132,10 @@ select {
 .checkbox-inline.no_indent:last-child {
   margin-right: 0;
 }
+
+.reg-btn{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  font-size: 16px;
+}

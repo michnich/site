@@ -1,6 +1,6 @@
 <template name="parentAddStudent">
   <div class="" id="enrollment-form-sec">
-    <div class="top-border" id="contact-form">
+    <div class="top-border" id="about-us">
 
     </div>
       <div class="container padding-30 background-grey">
@@ -56,17 +56,17 @@
                               <div class="form-group">
                                   <label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
                                   <div class="container" id="race_ethnicity">
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="White">White</label>
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="Hispanic or Latino">Hispanic or Latino</label>
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="Black or African American">Black or African American</label>
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="Native American or American Indian">Native American or American Indian</label>
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander</label>
-                                      <label class="checkbox-inline">
+                                      <label class="checkbox-inline no_indent">
                                           <input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other</label>
                                   </div>
                                   <label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
@@ -116,8 +116,9 @@
                               <div>
                                   <select name="program_type" id="program_type" class="form-control">
                                       <option disabled selected value> -- select an option -- </option>
-                                      <option value="Summer Camp">Summer Camp</option>
+                                      <!--<option value="Summer Camp">Summer Camp</option>-->
                                       <option value="Community Center">Community Center Class</option>
+                                      <option disabled value>more coming soon...</option>
                                   </select>
                               </div>
                           </div>
@@ -199,9 +200,6 @@
                           </div>
                       </div>
                   </div>
-                  <div class="row well well-sm padding-10 has-error hidden" id="studentExists">
-                      <label class="help-block">Student already exists</label>
-                  </div>
                   <div class="col-sm-4 col-sm-push-4 text-center" style="padding-bottom: 10px">
                       <button type="submit" class="btn btn-block blue-button">Submit</button>
                   </div>
@@ -210,12 +208,11 @@
           <div class="modal fade" id="anotherStudent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog modal-sm" role="document">
                   <div class="modal-content">
-                      <div class="modal-header">
-                          Enroll another student?
-                      </div>
-                      <div class="modal-body">
-                          <button type="submit" class="btn btn-default" id="no">No</button>
-                          <button type="submit" class="btn btn-default" id="yes">Yes</button>
+                      <div class="modal-header" style="background-color: #4BADA2">
+                          <h4>Enroll another student?</h4>
+                          <br>
+                          <button type="submit" class="btn btn-default reg-btn" id="yes">Yes</button>
+                          <button type="submit" class="btn btn-default reg-btn" id="no">No</button>
                       </div>
                   </div>
               </div>
