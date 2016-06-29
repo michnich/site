@@ -1,176 +1,206 @@
 <template name="editParentProfile">
-    <div class="container padding-30">
-        <div class="col-md-10 col-md-push-1">
-            <form class="general-form" id="parentProfileForm">
-                <div class="row well well-sm padding-10">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="first_name">First Name</label>
-                                <input name="first_name" id="first_name" type="text" value="first_name" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="last_name">Last Name</label>
-                                <input name="last_name" id="last_name" type="text" value="last_name" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="dob">Date of Birth</label>
-                                <input name="dob" id="dob" type="date" value="dob" class="form-control" />
-                            </div>
-                        </div>
+  <div class="" id="enrollment-form-sec">
+      <!--TOP BANNER-->
+      <div class="top-border" id="contact-form">
 
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
-                                <div id="race_ethnicity">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="White" checked="{{raceChecked 'White'}}">White</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="Hispanic or Latino" checked="{{raceChecked 'Hispanic or Latino'}}">Hispanic or Latino</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="Black or African American" checked="{{raceChecked 'Black or African American'}}">Black or African American</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="Native American or American Indian" checked="{{raceChecked 'Native American or American Indian'}}">Native American or American Indian</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander" checked="{{raceChecked 'Asian / Pacific Islander'}}">Asian / Pacific Islander</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="race_ethnicity" id="otherRace" value="Other" checked="{{raceChecked 'Other'}}">Other</label>
-                                </div>
-                                <label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
-                                <input type="text" class="hidden form-control" name="otherRaceText" value="">
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                </div>
+      </div>
 
-                <h3>Contact Information</h3>
-                <div class="row well well-sm padding-10">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="email">Email Address</label>
-                            <input name="email" id="email" type="email" value="email" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="phone">Phone Number</label>
-                            <input name="phone" id="phone" type="text" value="phone" class="form-control" />
-                        </div>
-                    </div>
-                </div>
+      <div class="container padding-30 background-grey">
+          <form class="general-form" id="parentProfile">
+              <div class="col-md-10 col-md-push-1">
+                  <!--BASIC PROFILE-->
+                  <div class="row padding-10">
+                      <div class="form-group">
+                          <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-user"></span> Parent Profile</h2>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="first_name">First Name</label>
+                                  <input name="first_name" id="first_name" type="text" value="first_name" class="form-control" />
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="last_name">Last Name</label>
+                                  <input name="last_name" id="last_name" type="text" value="last_name" class="form-control" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="dob">Date of Birth</label>
+                                  <input name="dob" id="dob" type="date" value="dob" class="form-control" />
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
+                                  <div class="container" id="race_ethnicity">
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="White" checked="{{raceChecked 'White'}}">White</label>
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="Hispanic or Latino" checked="{{raceChecked 'Hispanic or Latino'}}">Hispanic or Latino</label>
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="Black or African American" checked="{{raceChecked 'Black or African American'}}">Black or African American</label>
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="Native American or American Indian" checked="{{raceChecked 'Native American or American Indian'}}">Native American or American Indian</label>
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander" checked="{{raceChecked 'Asian / Pacific Islander'}}">Asian / Pacific Islander</label>
+                										<label class="checkbox-inline no_indent">
+                											<input type="checkbox" name="race_ethnicity" value="Other" checked="{{raceChecked 'Other'}}">Other</label>
+                									</div>
+                                  <label class="hidden control-label" name="otherRaceParentLabel">Please specify:</label>
+                                  <input type="text" class="hidden form-control" name="otherRaceParentText" value="">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
-                <h3>Address</h3>
-                <div class="row well well-sm padding-10">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="address1">Address</label>
-                                <input name="address1" id="address1" type="text" value="address1" class="form-control" />
-                            </div>
-                        </div>
+                  <!--CONTACT INFORMATION-->
+                  <div class="row padding-10">
+                      <div class="form-group">
+                          <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-phone"></span> Contact Information</h2>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label class="control-label" for="email">Email Address</label>
+                              <input name="email" id="email" type="email" value="email" class="form-control" />
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label class="control-label" for="phone">Phone Number</label>
+                              <input name="phone" id="phone" type="text" value="phone" class="form-control" />
+                          </div>
+                      </div>
+                  </div>
 
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="address2">&nbsp;</label>
-                                <input name="address2" id="address2" type="text" value="address2" placeholder="Apt/Unit" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="city">City</label>
-                                <input name="city" id="city" type="text" value="city" class="form-control" />
-                            </div>
-                        </div>
+                  <!--ADDRESS-->
+                  <div class="row padding-10">
+                      <div class="form-group">
+                          <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-home"></span> Address</h2>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="address1">Address</label>
+                                  <input name="address1" id="address1" type="text" value="address1" class="form-control" />
+                              </div>
+                          </div>
 
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label" for="state">State</label>
-                                <input name="state" id="state" type="text" value="state" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="zip">Zip</label>
-                            <input name="zip" id="zip" type="text" value="zip" class="form-control" />
-                        </div>
-                    </div>
-                </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="address2">&nbsp;</label>
+                                  <input name="address2" id="address2" type="text" value="address2" placeholder="Apt/Unit" class="form-control" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="city">City</label>
+                                  <input name="city" id="city" type="text" value="city" class="form-control" />
+                              </div>
+                          </div>
 
-                <h3>Emergency Contact</h3>
-                <div class="row well well-sm padding-10">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="eme_contact">Name</label>
-                            <input name="eme_contact" id="eme_contact" type="text" value="eme_contact" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="eme_number">Number</label>
-                            <input name="eme_number" id="eme_number" type="text" value="eme_number" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <h3>Employment Information</h3>
-                <div class="row well well-sm padding-10">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="education">Highest Level of Education Completed</label>
-                            <div>
-                                <select name="education" id="education">
-                                    <option value="">No schooling</option>
-                                    <option value="">Elementary to Jr. high school</option>
-                                    <option value="Community Center">Some high school</option>
-                                    <option value="School">High school degree or equivalent (e.g. GED)</option>
-                                    <option value="Summer Camp">Some college</option>
-                                    <option value="">Trade/technical/vocational training</option>
-                                    <option value="Summer Camp">Associate's Degree</option>
-                                    <option value="Summer Camp">Bachelor's Degree</option>
-                                    <option value="Summer Camp">Graduate's Degree</option>
-                                    <option value="Summer Camp">Other</option>
-                                    <!--show input box if other-->
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="employment">Employment Status</label>
-                            <select name="employment" id="employment">
-                                <option value="Community Center">Employed</option>
-                                <option value="School">Unemployed, looking for work</option>
-                                <option value="Summer Camp">Unemployed, not looking for work</option>
-                                <option value="Summer Camp">Retired</option>
-                                <option value="Summer Camp">Unable to work</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="control-label" for="employment">Yearly Household Income</label>
-                            <select name="employment" id="employment">
-                                <option value="Community Center">Less than $20,000</option>
-                                <option value="School">$20,000 to $34,999</option>
-                                <option value="Summer Camp">$35,000 to $49,999</option>
-                                <option value="Summer Camp">$50,000 to $74,999</option>
-                                <option value="Summer Camp">$75,000 to $99,999</option>
-                                <option value="Summer Camp">$100,000+</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <label class="control-label" for="state">State</label>
+                                  <select name="state" id="state" type="text" value="state" class="form-control">
+                                      <option value="AL" selected="{{stateSelected 'AL'}}">Alabama</option>
+                                      <option value="AK" selected="{{stateSelected 'AK'}}">Alaska</option>
+                                      <option value="AZ" selected="{{stateSelected 'AZ'}}">Arizona</option>
+                                      <option value="AR" selected="{{stateSelected 'AR'}}">Arkansas</option>
+                                      <option value="CA" selected="{{stateSelected 'CA'}}">California</option>
+                                      <option value="CO" selected="{{stateSelected 'CO'}}">Colorado</option>
+                                      <option value="CT" selected="{{stateSelected 'CT'}}">Connecticut</option>
+                                      <option value="DE" selected="{{stateSelected 'DE'}}">Delaware</option>
+                                      <option value="DC" selected="{{stateSelected 'DC'}}">District Of Columbia</option>
+                                      <option value="FL" selected="{{stateSelected 'FL'}}">Florida</option>
+                                      <option value="GA" selected="{{stateSelected 'GA'}}">Georgia</option>
+                                      <option value="HI" selected="{{stateSelected 'HI'}}">Hawaii</option>
+                                      <option value="ID" selected="{{stateSelected 'ID'}}">Idaho</option>
+                                      <option value="IL" selected="{{stateSelected 'IL'}}">Illinois</option>
+                                      <option value="IN" selected="{{stateSelected 'IN'}}">Indiana</option>
+                                      <option value="IA" selected="{{stateSelected 'IA'}}">Iowa</option>
+                                      <option value="KS" selected="{{stateSelected 'KS'}}">Kansas</option>
+                                      <option value="KY" selected="{{stateSelected 'KY'}}">Kentucky</option>
+                                      <option value="LA" selected="{{stateSelected 'LA'}}">Louisiana</option>
+                                      <option value="ME" selected="{{stateSelected 'ME'}}">Maine</option>
+                                      <option value="MD" selected="{{stateSelected 'MD'}}">Maryland</option>
+                                      <option value="MA" selected="{{stateSelected 'MA'}}">Massachusetts</option>
+                                      <option value="MI" selected="{{stateSelected 'MI'}}">Michigan</option>
+                                      <option value="MN" selected="{{stateSelected 'MN'}}">Minnesota</option>
+                                      <option value="MS" selected="{{stateSelected 'MS'}}">Mississippi</option>
+                                      <option value="MO" selected="{{stateSelected 'MO'}}">Missouri</option>
+                                      <option value="MT" selected="{{stateSelected 'MT'}}">Montana</option>
+                                      <option value="NE" selected="{{stateSelected 'NE'}}">Nebraska</option>
+                                      <option value="NV" selected="{{stateSelected 'NV'}}">Nevada</option>
+                                      <option value="NH" selected="{{stateSelected 'NH'}}">New Hampshire</option>
+                                      <option value="NJ" selected="{{stateSelected 'NJ'}}">New Jersey</option>
+                                      <option value="NM" selected="{{stateSelected 'NM'}}">New Mexico</option>
+                                      <option value="NY" selected="{{stateSelected 'NY'}}">New York</option>
+                                      <option value="NC" selected="{{stateSelected 'NC'}}">North Carolina</option>
+                                      <option value="ND" selected="{{stateSelected 'ND'}}">North Dakota</option>
+                                      <option value="OH" selected="{{stateSelected 'OH'}}">Ohio</option>
+                                      <option value="OK" selected="{{stateSelected 'OK'}}">Oklahoma</option>
+                                      <option value="OR" selected="{{stateSelected 'OR'}}">Oregon</option>
+                                      <option value="PA" selected="{{stateSelected 'PA'}}">Pennsylvania</option>
+                                      <option value="RI" selected="{{stateSelected 'RI'}}">Rhode Island</option>
+                                      <option value="SC" selected="{{stateSelected 'SC'}}">South Carolina</option>
+                                      <option value="SD" selected="{{stateSelected 'SD'}}">South Dakota</option>
+                                      <option value="TN" selected="{{stateSelected 'TN'}}">Tennessee</option>
+                                      <option value="TX" selected="{{stateSelected 'TX'}}">Texas</option>
+                                      <option value="UT" selected="{{stateSelected 'UT'}}">Utah</option>
+                                      <option value="VT" selected="{{stateSelected 'VT'}}">Vermont</option>
+                                      <option value="VA" selected="{{stateSelected 'VA'}}">Virginia</option>
+                                      <option value="WA" selected="{{stateSelected 'WA'}}">Washington</option>
+                                      <option value="WV" selected="{{stateSelected 'WV'}}">West Virginia</option>
+                                      <option value="WI" selected="{{stateSelected 'WI'}}">Wisconsin</option>
+                                      <option value="WY" selected="{{stateSelected 'WY'}}">Wyoming</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label class="control-label" for="zip">Zip</label>
+                              <input name="zip" id="zip" type="text" value="zip" class="form-control" />
+                          </div>
+                      </div>
+                  </div>
+                  <!--EMERGENCY CONTACT-->
+                  <div class="row padding-10">
+                      <div class="form-group">
+                          <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-alert"></span> Emergency Contact</h2>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label class="control-label" for="eme_contact">Name</label>
+                              <input name="eme_contact" id="eme_contact" type="text" value="eme_contact" class="form-control" />
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label class="control-label" for="eme_number">Number</label>
+                              <input name="eme_number" id="eme_number" type="text" value="eme_number" class="form-control" />
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row padding-10">
+                      <div class="form-group">
+                          <h2 style="color: #4BADA2"><span class="glyphicon glyphicon-briefcase"></span> Employment Information</h2>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-4 col-sm-push-4 text-center">
+                  <button type="submit" class="btn btn-block blue-button">Submit Registration</button>
+              </div>
+          </form>
+      </div>
+  </div>
 </template>

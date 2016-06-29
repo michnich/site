@@ -60,6 +60,14 @@ Template.editParentProfile.helpers({
         } else {
             return false;
         }
+    },
+    stateSelected: function(state) {
+      if (if this.state === state) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 });
 
