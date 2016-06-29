@@ -1,20 +1,21 @@
 <template name="parentDash">
     <h1>Dashboard</h1>
+    <!--view/edit profile, view/edit students, add new student-->
     <div class="row">
-        <div class="col-sm-4">
-            <div class="spacer"></div>
-            <a class="thumbnail" href="#"><h3>View/Edit Profile</h3>
-                  <i style="font-size: 4.5vw; padding-top: 10px;" class="glyphicon glyphicon-user"></i></a>
+        <div class="col-sm-6">
+          <h3>Enrolled Students</h3>
+          {{#each students}}
+            {{>studentItem}}
+          {{/each}}
         </div>
-        <div class="col-sm-4">
-            <div class="spacer"></div>
-            <a class="thumbnail" href="#"><h3>Enroll a New Student</h3>
-                  <i style="font-size: 4.5vw; padding-top: 10px;" class="glyphicon glyphicon-education"></i></a>
+        <div class="col-sm-6">
+
         </div>
-        <div class="col-sm-4">
-            <div class="spacer"></div>
-            <a class="thumbnail" href="#"><h3>View/Edit Current Students</h3>
-                  <i style="font-size: 4.5vw; padding-top: 10px;" class="glyphicon glyphicon-plus"></i></a>
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+
         </div>
     </div>
 </template>

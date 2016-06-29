@@ -46,7 +46,6 @@ Template.addParentProfile.onRendered(function() {
 
 Template.addParentProfile.helpers({
     'change #other': function(e) {
-        alert("toggled");
         $('label[name=otherLabel]').toggleClass('hidden');
         $('input[name=otherText]').toggleClass('hidden');
     }
@@ -83,7 +82,7 @@ Template.addParentProfile.events({
             zip: $(e.target).find('[name=zip]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
             eme_number: $(e.target).find('[name=eme_number]').val(),
-            //EMPLOYMENT INFO
+            userId: Meteor.userId()
         };
         Meteor.call("parentInsert", parentProfile, function(error, result) {
             if (error) {
