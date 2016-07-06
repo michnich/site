@@ -9,6 +9,15 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
+                          <label>Select class: </label>
+                          <select id="program" name="program" class="form-control">
+                            <option value="" disabled selected>---</option>
+                              {{#each programs}}
+                                <option value="{{_id}}">{{display_name}}</option>
+                              {{/each}}
+                          </select>
+                        </div>
+                        <div class="container">
                             <label for="attendanceDate">For date </label>
                             <input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
                             {{#each student}}
