@@ -1,14 +1,5 @@
 <template name="studentItem">
 	<div class="row">
-		<div class="well well-sm">
-			<div class="container">
-				<div class="col-md-6">
-					<h4><a href="{{pathFor 'studentProfile'}}">{{first_name}} {{last_name}}</a></h4>
-				</div>
-				<div class="col-md-6">
-					<h5>Program: {{program}}</h5>
-				</div>
-			</div>
-		</div>
+		<h3><a href="{{pathFor 'studentProfile'}}">{{first_name}} {{last_name}}</a>	<a href="{{pathFor 'editStudent'}}"><span class="glyphicon glyphicon-edit"></span></a></h3>
 	</div>
 </template>

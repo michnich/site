@@ -1,5 +1,7 @@
 <template name="dashboard">
     <div class="container padding-30">
+      <div class="col-md-10 col-md-push-1">
+        <h1>Dashboard</h1>
         <!--{{#if isInRole 'admin'}}
           <h1 style="padding-left: 10px;">Dashboard</h1>
           {{> adminDash}}
@@ -8,6 +10,7 @@
         {{else}}
           {{> accessDenied}}
         {{/if}}-->
-        {{> parentDash}}
+        {{> adminDash}}
     </div>
+  </div>
 </template>
