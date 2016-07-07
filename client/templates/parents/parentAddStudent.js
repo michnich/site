@@ -17,9 +17,6 @@ Template.parentAddStudent.onRendered(function() {
             race_ethnicity: {
                 required: true
             },
-            pictures_allowed: {
-                required: true
-            },
             //add back programs
             current_grade: {
                 required: true
@@ -40,6 +37,9 @@ Template.parentAddStudent.onRendered(function() {
                     return ($('#current_grade').val() >= 10)
                 }
             },
+            attendClass: {
+                required: true
+            }
         }
     });
 });
@@ -117,7 +117,6 @@ Template.parentAddStudent.events({
     'submit form': function(e) {
         e.preventDefault();
         var parent = Parents.findOne({})._id;
-        console.log(parent);
         var student = {
             first_name: $(e.target).find('[name=first_name]').val(),
             last_name: $(e.target).find('[name=last_name]').val(),
@@ -142,22 +141,25 @@ Template.parentAddStudent.events({
             elm_school: $(e.target).find('[name=elm_school]').val(),
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val(),
+            photos: $(e.target).find('[name=takePhotos]:checked').val(),
+            attend_class_permission: $(e.target).find('[name=attendClass]:checked').val(),
             parentId: parent
         };
 
         Meteor.call("studentInsert", student, function(error, result) {
             if (error) {
-                console.log("error", error);
+                alert("Sorry, there was an error! Please try submitting the form again and let us know if the problem persists.")
             }
             if (result) {
-                $('#anotherStudent').modal('show');
+                //$('#anotherStudent').modal('show');
+                Router.go('dashboard');
             }
         });
     },
 
     'click #no': function() {
         $('#anotherStudent').on('hidden.bs.modal', function() {
-            Router.go('/');
+            Router.go('dashboard');
         });
         $('#anotherStudent').modal('hide');
     },

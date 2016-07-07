@@ -1,5 +1,5 @@
 Template.editParentProfile.onRendered(function() {
-    $("#parentProfileForm").validate({
+    $("#editProfile").validate({
         rules: {
             first_name: {
                 required: true
@@ -103,11 +103,12 @@ Template.editParentProfile.events({
 
         Meteor.call("parentUpdate", parentProfile, parentId, function(error, result) {
             if (error) {
-                //error handling
-                console.log(error);
+                alert("Sorry! There was an error updating your info. Please try again and let us know if the problem continues!");
+                console.log(error.reason);
             }
             if (result) {
-                //do something
+               $('#success').show();
+               $(window).scrollTop(0);
             }
         });
     }

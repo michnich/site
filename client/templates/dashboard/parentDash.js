@@ -1,9 +1,9 @@
 Template.parentDash.onCreated(function() {
+  Meteor.subscribe("parentById", Meteor.userId());
   Session.set("parent", "");
 });
 
 Template.parentDash.helpers({
-    /*actually the dumbest code ever*/
     students: function() {
         var parent = Session.get("parent");
         Meteor.subscribe("studentsByParent", parent);

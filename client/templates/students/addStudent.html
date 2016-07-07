@@ -1,149 +1,205 @@
-<!--IGNORE-->
 <template name="addStudent">
-	<form class="general-form" id="studentForm">
-	<h2 style="color: #4BADA2">Student Profile</h2>
-	<div class="row padding-10 white">
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="first_name">First Name</label>
-					<input name="first_name" id="first_name" type="text" value="" class="form-control" />
-				</div>
+	<div class="container padding-30 background-grey">
+		<div class="col-md-10 col-md-push-1">
+			<h1 class="form-title">Add Student</h1>
+			<div class="alert alert-success collapse" id="success">
+					<strong>Student enrolled</strong>
 			</div>
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="last_name">Last Name</label>
-					<input name="last_name" id="last_name" type="text" value="" class="form-control" />
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="dob">Date of Birth</label>
-					<input name="dob" id="dob" type="date" value="" class="form-control" />
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="gender">Gender</label>
-					<div id="gender">
-						<label class="checkbox-inline">
-							<input type="checkbox" name="gender" value="Male">Male</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="gender" value="Female">Female</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="gender" value="Other" id="otherGender">Other</label>
-						<br>
-						<label class="hidden control-label" name="otherGenderLabel">Please specify:</label>
-						<input type="text" class="hidden form-control" name="otherGenderText" value="">
+			<form class="general-form" id="addStudent">
+				<div class="row padding-10">
+					<div class="form-group">
+						<h2 style="color: #4BADA2"><span class="glyphicon glyphicon-user"></span> Student Profile</h2>
+						<p style="color: #4BADA2; font-style: italic">Words words more words</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="first_name">First Name</label>
+								<input name="first_name" id="first_name" type="text" value="" class="form-control" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="last_name">Last Name</label>
+								<input name="last_name" id="last_name" type="text" value="" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="dob">Date of Birth</label>
+								<input name="dob" id="dob" type="date" value="" class="form-control" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="gender">Gender</label>
+								<div id="gender">
+									<label class="checkbox-inline">
+										<input type="checkbox" name="gender" value="Male">Male</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="gender" value="Female">Female</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="gender" value="Other" id="otherGender">Other</label>
+									<br>
+									<label class="hidden control-label" name="otherGenderLabel">Please specify:</label>
+									<input type="text" class="hidden form-control" name="otherGenderText" value="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
+								<div class="container" id="race_ethnicity">
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="White">White</label>
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="Hispanic or Latino">Hispanic or Latino</label>
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="Black or African American">Black or African American</label>
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="Native American or American Indian">Native American or American Indian</label>
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander</label>
+									<label class="checkbox-inline no_indent">
+										<input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other</label>
+								</div>
+								<label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
+								<input type="text" class="hidden form-control" name="otherRaceText" value="">
+							</div>
+						</div>
+						<div class="col-sm-6">
+
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="race_ethnicity">Race/Ethnicity</label>
-					<div id="race_ethnicity">
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="White">White</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="Hispanic or Latino">Hispanic or Latino</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="Black or African American">Black or African American</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="Native American or American Indian">Native American or American Indian</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="Asian / Pacific Islander">Asian / Pacific Islander</label>
-						<label class="checkbox-inline">
-							<input type="checkbox" name="race_ethnicity" value="Other" id="otherRace">Other</label>
+
+				<div class="row padding-10">
+					<div class="form-group">
+						<h2 style="color: #4BADA2"><span class="glyphicon glyphicon-list-alt"></span> Program</h2>
+						<p style="color: #4BADA2; font-style: italic">Select the type of program you want to enroll your child in, then the location and time. Click 'Select' to save this choice. You can enroll in as many programs as you'd like.</p>
+						<div class="form-group">
+							<input type="hidden" name="enrolledPrograms" id="enrolledPrograms">
+						</div>
 					</div>
-					<label class="hidden control-label" name="otherRaceLabel">Please specify:</label>
-					<input type="text" class="hidden form-control" name="otherRaceText" value="">
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="form-group">
-					<label class="control-label" for="pictures_allowed">May pictures of this student be used for our website or other promotional content?</label>
-					<div>
-						<input type="radio" name="pictures_allowed" value="Yes">Yes
-						<br>
-						<input type="radio" name="pictures_allowed" value="No">No
+					{{#if enrolledProgramsTrue}}
+					<div class="col-sm-12">
+						<div class="form-group">
+							<h3>Selected Programs:</h3> {{#each enrolledPrograms}} {{> enrolledProgramItem}} {{/each}}
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<h2 style="color: #4BADA2">Program</h2>
-	<div class="row padding-10 white">
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="program_location">Location</label>
-				<div>
-					<select name="program_location" id="program_location" class="form-control">
-						{{#each programLocations}}
-						<option value="{{name}}">{{name}}</option>
-						{{/each}}
-					</select>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="program_time">Time</label>
-				<div>
-					<select name="program_time" id="program_time" class="form-control">
-						{{#each programTimes}}
-						<option value="{{_id}}">{{day_of_week}}, {{timeFormat start_time}} - {{timeFormat end_time}}</option>
-						{{/each}}
-					</select>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<h2 style="color: #4BADA2">Education History</h2>
-	<div class="row padding-10 white">
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="current_grade">Current Grade</label>
-					<div>
-						<select name="current_grade" id="current_grade" class="form-control">
-							<option value="{{name}}">{{name}}</option>
-						</select>
+					{{/if}}
+					<div class="col-sm-4">
+						<div class="form-group">
+							<p>Would you like to enroll in a...</p>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<div>
+								<select name="program_type" id="program_type" class="form-control">
+									<option disabled selected value> -- select an option -- </option>
+									<!--<option value="Summer Camp">Summer Camp</option>-->
+									<option value="Community Center">Community Center Class</option>
+									<option disabled value>more coming soon...</option>
+								</select>
+							</div>
+						</div>
 					</div>
 
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="elm_school">Elementary School</label>
-				<input name="elm_school" id="elm_school" type="text" value="" class="form-control" />
-			</div>
-		</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="program_location">Location</label>
+							<select name="program_location" id="program_location" class="form-control">
+								{{#each programLocations}}
+								<option value="{{name}}">{{name}}</option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="program_time">Time</label>
+							<select name="program_time" id="program_time" class="form-control">
+								{{#each programTimes}}
+								<option value="{{_id}}">
+									{{#if summerCamp}} {{session_start_date}} - {{session_end_date}}, {{/if}} {{day_of_week}}, {{timeFormat start_time}} - {{timeFormat end_time}}</option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+					{{#if summerCamp}}
+					<div class="col-sm-12">
+						<div class="form-group">
+							<p>Before and after care (one hour before and one hour after class) can be selected at checkout</p>
+						</div>
+					</div>
+					{{/if}}
+					<div class="col-sm-6 col-sm-push-6">
+						<input type="button" class="btn pull-right blue-button" value="Select" id="anotherProgram">
+					</div>
+				</div>
+				<div class="row padding-10">
+					<div class="form-group">
+						<h2 style="color: #4BADA2"><span class="glyphicon glyphicon-education"></span> Education History</h2>
+						<p style="color: #4BADA2; font-style: italic">Words words more words</p>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="current_grade">Current Grade</label>
+							<div>
+								<select name="current_grade" id="current_grade" class="form-control">
+									<option value="K">Kindergarten</option>
+									<option value="1">1st</option>
+									<option value="2">2nd</option>
+									<option value="3">3rd</option>
+									<option value="4">4th</option>
+									<option value="5">5th</option>
+									<option value="6">6th</option>
+									<option value="7">7th</option>
+									<option value="8">8th</option>
+									<option value="9">9th</option>
+									<option value="10">10th</option>
+									<option value="11">11th</option>
+									<option value="12">12th</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="elm_school">Elementary School
+								<p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+							</label>
+							<input name="elm_school" id="elm_school" type="text" value="" class="form-control" />
+						</div>
+					</div>
 
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="middle_school">Middle School</label>
-				<input name="middle_school" id="middle_school" type="text" value="" class="form-control" />
-			</div>
-		</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="middle_school">Middle School
+								<p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+							</label>
+							<input name="middle_school" id="middle_school" type="text" value="" class="form-control" />
+						</div>
+					</div>
 
-		<div class="col-sm-6">
-			<div class="form-group">
-				<label class="control-label" for="high_school">High School</label>
-				<input name="high_school" id="high_school" type="text" value="" class="form-control" />
-			</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label" for="high_school">High School
+								<p class="help-block" style="display: inline; font-style: italic;">if applicable</p>
+							</label>
+							<input name="high_school" id="high_school" type="text" value="" class="form-control" />
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-sm-push-4 text-center" style="padding-bottom: 10px">
+					<button type="submit" class="btn btn-block blue-button">Submit</button>
+				</div>
+			</form>
 		</div>
 	</div>
-	<div class="row well well-sm padding-10 has-error hidden" id="studentExists">
-		<label class="help-block">Student already exists</label>
-	</div>
-	<div class ="col-sm-4 col-sm-push-4" style="padding-bottom: 10px">
-			<button type="submit" class="btn btn-primary btn-block">Submit</button>
-	</div>
-</form>
 </template>
