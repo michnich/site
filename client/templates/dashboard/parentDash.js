@@ -1,6 +1,5 @@
 Template.parentDash.onCreated(function() {
-  Meteor.subscribe("parentById", Meteor.userId());
-  Session.set("parent", "");
+  Meteor.subscribe("parentByUserId", Meteor.userId());
 });
 
 Template.parentDash.helpers({
