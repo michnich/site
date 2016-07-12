@@ -2,12 +2,7 @@ Template.editStudent.onCreated(function() {
     Meteor.subscribe("programType", "Community Center");
     Session.set("programLocation", "");
     var student = Students.findOne({_id: Router.current().params._id});
-    if (Template.instance().subscriptionsReady()) {
-      console.log("ready");
-      var programs = Programs.find().fetch();
-      console.log(programs);
-    }
-    Session.set("enrolledPrograms", []);
+    Session.set("enrolledPrograms", student.program);
 });
 
 Template.editStudent.onRendered(function() {
@@ -47,6 +42,11 @@ Template.editStudent.onRendered(function() {
                 required: function() {
                     return ($('#current_grade').val() >= 10)
                 }
+            },
+            enrolledPrograms: {
+              required: function() {
+                return (Session.get("enrolledPrograms").length === 0);
+              }
             }
         }
     });
@@ -70,7 +70,8 @@ Template.editStudent.helpers({
         }
     },
     enrolledPrograms: function() {
-        return Session.get("enrolledPrograms");
+        var programIds = Session.get("enrolledPrograms");
+        return Programs.find({_id: {$in: programIds}});
     },
     programLocations: function() {
         var programs = _.uniq(_.toArray(Programs.find().fetch()), false, function(p) {
@@ -126,6 +127,14 @@ Template.editStudent.events({
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val()
         };
+
+        if (Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP)) {
+          _.extend(student, {
+            student_email: $(e.target).find('[name=student_email]').val(),
+            github_username: $(e.target).find('[name=github_username]').val(),
+            github_password: $(e.target).find('[name=github_password]').val(),
+          });
+        }
 
         Meteor.call("studentUpdate", student, studentId, function(error, result) {
             if (error) {

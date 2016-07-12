@@ -6,13 +6,13 @@
             </div>
             <div class="row padding-30">
                 {{#if isInRole 'admin' Roles.GLOBAL_GROUP}}
-                  {{> adminDash}}
+                    {{> adminDash}}
                 {{else}}
-                  {{#if isInRole 'parent' 'Parents'}}
-                    {{> parentDash}}
-                  {{else}}
-                    {{> accessDenied}}
-                  {{/if}}
+                    {{#if isInRole 'parent' 'Parents'}}
+                        {{> parentDash}}
+                    {{else}}
+                        {{> accessDenied}}
+                    {{/if}}
                 {{/if}}
             </div>
         </div>
