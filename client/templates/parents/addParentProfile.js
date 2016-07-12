@@ -62,7 +62,7 @@ Template.addParentProfile.events({
         var parentProfile = {
             first_name: $(e.target).find('[name=parent_first_name]').val(),
             last_name: $(e.target).find('[name=parent_last_name]').val(),
-            dob: $(e.target).find('[name=dob]').val(),
+            dob: $(e.target).find('[name=parent_dob]').val(),
             race_ethnicity: $(e.target).find("[name=parent_race_ethnicity]:checked").map(function() {
                 return this.value;
             }).get(),
