@@ -1,5 +1,49 @@
+Template.addStudent.onRendered(function() {
+   $("#addStudent").validate({
+        ignore: "input[type='text']:hidden",
+        rules: {
+            first_name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
+            //add back programs
+            current_grade: {
+                required: true
+            },
+            //do we take pre k age kids???
+            elm_school: {
+                required: function() {
+                    return ($('#current_grade').val() > 0)
+                }
+            },
+            middle_school: {
+                required: function() {
+                    return ($('#current_grade').val() > 6)
+                }
+            },
+            high_school: {
+                required: function() {
+                    return ($('#current_grade').val() >= 10)
+                }
+            }
+        }
+    });
+});
+
 Template.addStudent.onCreated(function() {
     Meteor.subscribe("allPrograms");
+    Meteor.subscribe("parentByUserId", Meteor.userId());
     Session.set("programSelected", "");
     Session.set("programLocation", "");
     Session.set("enrolledPrograms", []);
@@ -66,7 +110,7 @@ Template.addStudent.helpers({
     },
 })
 
-Template.parentAddStudent.events({
+Template.addStudent.events({
     'submit form': function(e) {
         e.preventDefault();
         var student = {
@@ -87,24 +131,36 @@ Template.parentAddStudent.events({
                     return this.value;
                 }
             }).get(),
-            pictures_allowed: $(e.target).find('[name=pictures_allowed]:checked').val(),
             program: Session.get("enrolledPrograms"),
             current_grade: $(e.target).find('[name=current_grade]').val(),
             elm_school: $(e.target).find('[name=elm_school]').val(),
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val(),
+            photos: $(e.target).find('[name=takePhotos]:checked').val(),
+            parentId: "admin"
         };
 
         Meteor.call("studentInsert", student, function(error, result) {
             if (error) {
-              alert("Sorry, there was an error! Please try submitting the form again and let us know if the problem persists.")
+                alert("Sorry, there was an error! Please try submitting the form again and let us know if the problem persists.")
             }
             if (result) {
-              $("#success").show();
-               $(window).scrollTop(0);
-              document.location.reload(true);
+                //$('#anotherStudent').modal('show');
+                Router.go('dashboard');
             }
         });
+    },
+
+    'click #no': function() {
+        $('#anotherStudent').on('hidden.bs.modal', function() {
+            Router.go('dashboard');
+        });
+        $('#anotherStudent').modal('hide');
+    },
+
+    'click #yes': function() {
+        $('#anotherStudent').modal('hide');
+        document.location.reload(true);
     },
 
     'change #program_location': function(e) {

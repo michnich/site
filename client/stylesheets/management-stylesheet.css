@@ -4,6 +4,9 @@
 .padding-15 {
     padding-top: 15px;
 }
+.padding-20 {
+    padding-top: 20px;
+}
 .padding-30 {
     padding-top: 30px;
 }
@@ -89,8 +92,9 @@ input {
 select {
     max-width: 100%;
 }
-.background-blue {
-    background-color: #3F6682;
+#background-blue {
+    background-color: #4BADA2;
+    color: white;
 }
 .background-grey {
     background-color: #f0f0f0;

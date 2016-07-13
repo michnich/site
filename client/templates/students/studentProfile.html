@@ -1,27 +1,25 @@
 <template name="studentProfile">
 	<div class="col-md-10 col-md-push-1">
 		<div class="container padding-30">
-			<div class="row">
+			<div class="row padding-20">
 				<div class="col-sm-6">
-					<h2 style="color: black">{{first_name}} {{last_name}}</h2>
+					<h2 style="color: black; display: inline">{{first_name}} {{last_name}} </h2>
+					<h3 style="display: inline"><sup><a href="{{pathFor 'editStudent'}}"> Edit</a></sup></h3>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-6">
 					{{#if isInRole 'admin' Roles.GLOBAL_GROUP}}
-					<form class="form-inline padding-15">
+					<form class="form-inline">
 						<input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
 						<button type="submit" class="btn btn-primary">Check in</button>
 					</form>
 					{{/if}}
 				</div>
-				<div class="col-sm-2 padding-15">
-					<a href="{{pathFor 'editStudent'}}" class="btn btn-primary">Edit</a>
-				</div>
 			</div>
 
-			<div class="row">
+			<div class="row padding-15">
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Student Information</h4>
 						</div>
 						<div class="panel-body">
@@ -36,7 +34,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Program Information</h4>
 						</div>
 						<div class="panel-body">
@@ -55,7 +53,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Recent Attendance</h4>
 						</div>
 						<div class="panel-body">
@@ -69,8 +67,8 @@
 				{{#each parent}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4>Contact Information</h4>
+						<div class="panel-heading" id="background-blue">
+							<h4>Parent Contact Information</h4>
 						</div>
 						<div class="panel-body">
 							<h5>Parent Email: {{email}}</h5>
@@ -82,7 +80,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Emergency Contact Information</h4>
 						</div>
 						<div class="panel-body">
@@ -94,7 +92,7 @@
 				{{/each}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>School History</h4>
 						</div>
 						<div class="panel-body">
