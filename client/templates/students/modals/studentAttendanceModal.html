@@ -8,15 +8,30 @@
                         <h4 class="modal-title" id="myModalLabel">Take Attendance</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <label for="attendanceDate">For date </label>
-                            <input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
-                            {{#each student}}
-                            <div class="row">
-                              <label>{{first_name}} {{last_name}}</label>
-                              <input type="checkbox" name="students" value="{{_id}}" class="pull-right">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="program" class="control-label">Select class: </label>
+                                <select id="program" name="program" class="form-control">
+                                    <option value="" disabled selected>---</option>
+                                    {{#each programs}}
+                                    <option value="{{_id}}">{{display_name}}</option>
+                                    {{/each}}
+                                </select>
                             </div>
-                            {{/each}}
+                            <div class="col-sm-6">
+                                <label for="attendanceDate" class="control-label">For date: </label>
+                                <br>
+                                <input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          {{#each student}}
+                          <div class="row">
+                              <input type="checkbox" name="students" value="{{_id}}" class="form-control">
+                              <label>{{first_name}} {{last_name}}</label>
+                          </div>
+                          {{/each}}
                         </div>
                     </div>
                     <div class="modal-footer">

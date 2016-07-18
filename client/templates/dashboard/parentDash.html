@@ -1,0 +1,28 @@
+<template name="parentDash">
+    <div class="container">
+        <div class="col-sm-6">
+          {{#each parents}}
+          <h2 style="display: inline"><span class="glyphicon glyphicon-user"></span> {{first_name}} {{last_name}}</h2>
+          <h3 style="display: inline"><sup><a href="{{pathFor 'editParentProfile'}}"> Edit</a></sup></h3>
+          <div class="container">
+            <div class="row">
+              <h4>Address</h4>
+              <h5>{{address1}}, {{address2}}</h5>
+              <h5>{{city}}, {{state}} {{zip}}</h5>
+            </div>
+            <div class=row>
+              <h4>Emergency Contact</h4>
+              <h5>{{eme_contact}}, {{eme_number}}</h5>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="col-sm-6">
+            <h2 style="display: inline"><span class="glyphicon glyphicon-education"></span> Enrolled Students</h2>
+            <h3 style="display: inline"><sup><a href="{{pathFor 'parentAddStudent'}}"> Add New</a></sup></h3>
+            <div class="container">
+                {{#each students}} {{>studentItem}} {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
