@@ -1,10 +1,10 @@
 <template name="studentItem">
 	<div class="row well well-sm">
+		<input type="hidden" value="{{parentId}}" name="student">
 		<h3>
-			<a href="{{pathFor 'studentProfile'}}">{{first_name}}
-				{{last_name}}</a>
+			<a href="{{pathFor 'studentProfile'}}">{{first_name}} {{last_name}}</a>
 		</h3>
-		<h4>Emergency Contact: </h4>
 		<h4>Last day attended: </h4>
+		<h4>Current level: </h4>
 	</div>
 </template>

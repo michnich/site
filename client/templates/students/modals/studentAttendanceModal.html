@@ -13,6 +13,7 @@
                                 <label for="program" class="control-label">Select class: </label>
                                 <select id="program" name="program" class="form-control">
                                     <option value="" disabled selected>---</option>
+                                    <option value="All">All</option>
                                     {{#each programs}}
                                     <option value="{{_id}}">{{display_name}}</option>
                                     {{/each}}
