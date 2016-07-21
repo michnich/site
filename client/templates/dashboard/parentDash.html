@@ -21,7 +21,9 @@
             <h2 style="display: inline"><span class="glyphicon glyphicon-education"></span> Enrolled Students</h2>
             <h3 style="display: inline"><sup><a href="{{pathFor 'parentAddStudent'}}"> Add New</a></sup></h3>
             <div class="container">
-                {{#each students}} {{>studentItem}} {{/each}}
+                {{#each students}}
+                  {{> parentStudentItem}}
+                {{/each}}
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
 				<label class="control-label" for="selectProgram">Sort by class: </label>
 					<select class="form-control" id="selectProgram">
 						<option value="">---select---</option>
+						<option value="All">All</option>
 						{{#each programs}}
 							<option value="{{_id}}">{{display_name}}</option>
 						{{/each}}

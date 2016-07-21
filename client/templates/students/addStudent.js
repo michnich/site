@@ -137,7 +137,20 @@ Template.addStudent.events({
             middle_school: $(e.target).find('[name=middle_school]').val(),
             high_school: $(e.target).find('[name=high_school]').val(),
             photos: $(e.target).find('[name=takePhotos]:checked').val(),
-            parentId: "admin"
+            parentId: "admin",
+            parent_first_name: $(e.target).find('[name=parent_first_name]').val(),
+            parent_last_name: $(e.target).find('[name=parent_last_name]').val(),
+            email: $(e.target).find('[name=parent_email]').val(),
+            phone: $(e.target).find('[name=parent_phone]').val(),
+            parent_dob: $(e.target).find('[name=parent_dob]').val(),
+            parent_race_ethnicity: $(e.target).find('[name=parent_race_ethnicity]').val(),
+            address1: $(e.target).find('[name=address1]').val(),
+            address2: $(e.target).find('[name=address2]').val(),
+            city: $(e.target).find('[name=city]').val(),
+            state: $(e.target).find('[name=state]').val(),
+            zip: $(e.target).find('[name=zip]').val(),
+            eme_contact: $(e.target).find('[name=eme_contact]').val(),
+            eme_number: $(e.target).find('[name=eme_number]').val(),
         };
 
         Meteor.call("studentInsert", student, function(error, result) {
@@ -145,8 +158,8 @@ Template.addStudent.events({
                 alert("Sorry, there was an error! Please try submitting the form again and let us know if the problem persists.")
             }
             if (result) {
-                //$('#anotherStudent').modal('show');
-                Router.go('dashboard');
+              $('#success').show();
+              $(window).scrollTop(0);
             }
         });
     },

@@ -1,13 +1,18 @@
 Template.studentList.onCreated(function() {
-	Meteor.subscribe("allStudents");
-	Meteor.subscribe("allPrograms");
+	this.subscribe("allStudents");
+	this.subscribe("allPrograms");
 	Session.set("selectedProgram", "");
 });
 
 Template.studentList.helpers({
 	student: function() {
 		var selectedProgram = Session.get('selectedProgram');
-		return Students.find({program: selectedProgram});
+		if (selectedProgram === "All") {
+			return Students.find();
+		}
+		else {
+			return Students.find({program: selectedProgram});
+		}
 	},
 	programs: function() {
 		return Programs.find();
