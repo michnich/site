@@ -64,6 +64,33 @@
 				</div>
 			</div>
 			<div class="row">
+				{{#if adminAdd}}
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="background-blue">
+							<h4>Parent Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h4>{{parent_first_name}} {{parent_last_name}}</h4>
+							<h5>Parent Email: {{email}}</h5>
+							<h5>Parent Phone: {{phone}}</h5>
+							<h5>Address: {{address1}} {{address2}}</h5>
+							<h5>{{city}}, {{state}} {{zip}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="background-blue">
+							<h4>Emergency Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Name: {{eme_contact}}</h5>
+							<h5>Number: {{eme_number}}</h5>
+						</div>
+					</div>
+				</div>				
+				{{else}}
 				{{#each parent}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
@@ -71,6 +98,7 @@
 							<h4>Parent Contact Information</h4>
 						</div>
 						<div class="panel-body">
+							<h4>{{first_name}} {{last_name}}</h4>
 							<h5>Parent Email: {{email}}</h5>
 							<h5>Parent Phone: {{phone}}</h5>
 							<h5>Address: {{address1}} {{address2}}</h5>
@@ -90,6 +118,7 @@
 					</div>
 				</div>
 				{{/each}}
+				{{/if}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
 						<div class="panel-heading" id="background-blue">

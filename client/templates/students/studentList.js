@@ -1,6 +1,6 @@
 Template.studentList.onCreated(function() {
-	Meteor.subscribe("allStudents");
-	Meteor.subscribe("allPrograms");
+	this.subscribe("allStudents");
+	this.subscribe("allPrograms");
 	Session.set("selectedProgram", "");
 });
 

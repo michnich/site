@@ -1,0 +1,9 @@
+<template name="parentStudentItem">
+    <div class="row well well-sm">
+        <h3><a href="{{pathFor 'studentProfile'}}">{{first_name}} {{last_name}}</a></h3>
+        <h5>Programs: </h5>
+    {{#each programs}}
+        <h5>{{display_name}}</h5>
+    {{/each}}
+    </div>
+</template>

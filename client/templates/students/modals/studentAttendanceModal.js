@@ -1,7 +1,6 @@
 Template.studentAttendanceModal.onCreated(function() {
-    Meteor.subscribe("allPrograms");
-    Meteor.subscribe("allStudents");
-    Meteor.subscribe("allStudentAttendance");
+    this.subscribe("allPrograms");
+    this.subscribe("allStudents");
 });
 
 Template.studentAttendanceModal.helpers({
