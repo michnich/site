@@ -26,7 +26,7 @@ Template.studentProfile.helpers({
     },
     program: function() {
         Meteor.subscribe("programById", {$in: this.program});
-        return Programs.find();
+        return Programs.find({_id: {$in: this.program}});
     },
     getCurrentLevel: function(category) {
       var levels = _.pick(this, category);

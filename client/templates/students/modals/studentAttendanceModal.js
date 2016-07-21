@@ -9,7 +9,12 @@ Template.studentAttendanceModal.helpers({
     },
     student: function() {
         var id = Session.get("programId");
-        return Students.find({program: id});
+        if (id === "All") {
+          return Students.find();
+        }
+        else {
+          return Students.find({program: id});
+        }
     },
     getToday: function() {
         return moment().format("YYYY-MM-DD");

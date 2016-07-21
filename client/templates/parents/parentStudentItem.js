@@ -1,9 +1,6 @@
-Template.parentStudentItem.onCreated(function() {
-    Meteor.subscribe("programById", {$in: this.program});
-});
-
 Template.parentStudentItem.helpers({
     programs: function() {
-      return Programs.find();
+      Meteor.subscribe("programById", {$in: this.program});
+      return Programs.find({_id: {$in: this.program}});
     }
 });

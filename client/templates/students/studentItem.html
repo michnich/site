@@ -1,14 +1,9 @@
 <template name="studentItem">
 	<div class="row well well-sm">
-		<input type="hidden" value="{{parentId}}" id="student">
+		<input type="hidden" value="{{parentId}}" name="student">
 		<h3>
 			<a href="{{pathFor 'studentProfile'}}">{{first_name}} {{last_name}}</a>
 		</h3>
-		{{#if adminAdd parentId}}
-		<h4 id="admin">Emergency Contact: {{eme_contact}}, {{eme_number}}</h4>
-		{{else}}
-		<h4 id="parent">Emergency Contact: {{emergency parentId}}</h4>
-		{{/if}}
 		<h4>Last day attended: </h4>
 		<h4>Current level: </h4>
 	</div>
