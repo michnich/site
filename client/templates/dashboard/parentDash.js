@@ -1,5 +1,5 @@
 Template.parentDash.onCreated(function() {
-  Meteor.subscribe("parentByUserId", Meteor.userId());
+  this.subscribe("parentByUserId", Meteor.userId());
 });
 
 Template.parentDash.helpers({
@@ -8,7 +8,15 @@ Template.parentDash.helpers({
         Meteor.subscribe("studentsByParent", parent);
         return Students.find();
     },
-    parents: function() {
+    completeProfile: function() {
+      if (Parents.findOne()) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    parent: function() {
         var parent = Parents.find().fetch();
         Session.set("parent", parent[0]._id);
         return parent;

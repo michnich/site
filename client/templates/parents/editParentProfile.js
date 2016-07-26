@@ -68,6 +68,14 @@ Template.editParentProfile.helpers({
       else {
         return false;
       }
+    },
+    incomeSelected: function(income) {
+      if (this.income === income) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 });
 
@@ -98,7 +106,9 @@ Template.editParentProfile.events({
             zip: $(e.target).find('[name=zip]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
             eme_number: $(e.target).find('[name=eme_number]').val(),
-            //EMPLOYMENT INFO
+            occupation: $(e.target).find('[name=occupation]').val(),
+            employer_name: $(e.target).find('[name=employer_name]').val(),
+            income: $(e.target).find('[name=income]').val()
         };
 
         Meteor.call("parentUpdate", parentProfile, parentId, function(error, result) {

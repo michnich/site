@@ -18,7 +18,6 @@ Template.parentAddStudent.onRendered(function() {
             race_ethnicity: {
                 required: true
             },
-            //add back programs
             current_grade: {
                 required: true
             },
