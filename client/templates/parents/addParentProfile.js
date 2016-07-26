@@ -1,19 +1,16 @@
 Template.addParentProfile.onRendered(function() {
     $("#parentProfile").validate({
         rules: {
-            first_name: {
+            parent_first_name: {
                 required: true
             },
-            last_name: {
+            parent_last_name: {
                 required: true
             },
-            dob: {
+            parent_dob: {
                 required: true
             },
-            gender: {
-                required: true
-            },
-            race_ethnicity: {
+            parent_race_ethnicity: {
                 required: true
             },
             email: {
@@ -74,8 +71,7 @@ Template.addParentProfile.events({
             state: $(e.target).find('[name=state]').val(),
             zip: $(e.target).find('[name=zip]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
-            eme_number: $(e.target).find('[name=eme_number]').val(),
-            userId: Meteor.userId()
+            eme_number: $(e.target).find('[name=eme_number]').val()
         };
         Meteor.call("parentInsert", parentProfile, function(error, result) {
             if (error) {
