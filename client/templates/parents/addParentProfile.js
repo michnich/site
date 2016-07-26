@@ -71,7 +71,10 @@ Template.addParentProfile.events({
             state: $(e.target).find('[name=state]').val(),
             zip: $(e.target).find('[name=zip]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
-            eme_number: $(e.target).find('[name=eme_number]').val()
+            eme_number: $(e.target).find('[name=eme_number]').val(),
+            occupation: $(e.target).find('[name=occupation]').val(),
+            employer_name: $(e.target).find('[name=employer_name]').val(),
+            income: $(e.target).find('[name=income]').val()
         };
         Meteor.call("parentInsert", parentProfile, function(error, result) {
             if (error) {

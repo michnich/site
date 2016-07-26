@@ -5,7 +5,7 @@ Template.parentDash.onCreated(function() {
 Template.parentDash.helpers({
     students: function() {
         var parent = Session.get("parent");
-        this.subscribe("studentsByParent", parent);
+        Meteor.subscribe("studentsByParent", parent);
         return Students.find();
     },
     completeProfile: function() {
