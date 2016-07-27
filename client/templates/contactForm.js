@@ -31,6 +31,7 @@ Template.contactForm.events({
             type: $(e.target).find('[name=type]').val(),
             subject: $(e.target).find('[name=subject]').val(),
             message: $(e.target).find('[name=message]').val(),
+            date: moment().toDate(),
             status: 'New'
         };
 

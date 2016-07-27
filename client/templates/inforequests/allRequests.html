@@ -1,13 +1,11 @@
 <template name="allRequests">
     {{#if isInRole 'admin'}}
-    <div class="container-fluid col-md-6 col-md-push-3" style="padding-top: 40px">
+    <div class="container-fluid col-md-8 col-md-push-2" style="padding-top: 40px">
         <h1>Information Requests</h1>
         <form>
             <div class="row">
                 <div class="col-md-3">
-                    <p>Filter by:</p>
-                </div>
-                <div class="col-md-4">
+                  <label class="control-label">Status: </label>
                     <select id="selectStatus" name="selectStatus" class="form-control">
                         <option value="">All</option>
                         <option value="New">New</option>
@@ -15,7 +13,31 @@
                         <option value="Complete">Complete</option>
                     </select>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
+                  <label class="control-label">Type: </label>
+                  <select name="selectType" id="selectType" class="form-control">
+                    <option value="">All</option>
+                    <option value="Parent">Parent</option>
+      							<option value="Educator">Educator</option>
+      							<option value="Volunteer">Volunteer</option>
+      							<option value="Supporter">Supporter</option>
+      							<option value="Partner">Partner</option>
+      							<option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="control-label">Tagged: </label>
+                  <select name="selectTagged" id="selectTagged" class="form-control">
+                    <option value="">All</option>
+                    <option value="">Only your tags</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="control-label">Date: </label>
+                  <select name="selectTagged" id="selectTagged" class="form-control">
+                    <option value="">Newest first</option>
+                    <option value="">Oldest first</option>
+                  </select>
                 </div>
             </div>
         </form>
