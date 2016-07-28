@@ -1,6 +1,18 @@
 <template name="studentList">
-	<div class="col-md-8 col-md-push-2 padding-15">
-		<h1>Students</h1>
+	<div class="col-md-8 col-md-push-2 padding-30">
+		<div class = "container">
+			<h1>Students</h1>
+			<div class="form-group">
+				<label class="control-label" for="selectProgram">Sort by class: </label>
+					<select class="form-control" id="selectProgram">
+						<option value="">---select---</option>
+						<option value="All">All</option>
+						{{#each programs}}
+							<option value="{{_id}}">{{display_name}}</option>
+						{{/each}}
+					</select>
+			</div>
+		</div>
 		<div class = "container">
 			{{#each student}}
 				{{> studentItem}}

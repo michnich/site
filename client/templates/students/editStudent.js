@@ -1,31 +1,58 @@
 Template.editStudent.onCreated(function() {
-  Meteor.subscribe("programType", "Community Center");
-  Session.set("programLocation", "");
+    Meteor.subscribe("programType", "Community Center");
+    Session.set("programLocation", "");
+    var student = Students.findOne({_id: Router.current().params._id});
+    Session.set("enrolledPrograms", student.program);
 });
 
 Template.editStudent.onRendered(function() {
     $("#editStudentForm").validate({
+        ignore: "input[type='text']:hidden",
         rules: {
-            pictures_allowed: {
+            first_name: {
                 required: true
             },
-            program: {
+            last_name: {
                 required: true
             },
-            //elm school
-            //middle school
-            //high school
+            dob: {
+                required: true
+            },
+            gender: {
+                required: true
+            },
+            race_ethnicity: {
+                required: true
+            },
+            //add back programs
+            current_grade: {
+                required: true
+            },
+            elm_school: {
+                required: function() {
+                    return ($('#current_grade').val() > 0)
+                }
+            },
+            middle_school: {
+                required: function() {
+                    return ($('#current_grade').val() > 6)
+                }
+            },
+            high_school: {
+                required: function() {
+                    return ($('#current_grade').val() >= 10)
+                }
+            },
+            enrolledPrograms: {
+              required: function() {
+                return (Session.get("enrolledPrograms").length === 0);
+              }
+            }
         }
     });
 });
 
 Template.editStudent.helpers({
-    picsAllowed: function() {
-        return (this.pictures_allowed === "yes");
-    },
-    picsNotAllowed: function() {
-        return (this.pictures_allowed === "no");
-    },
     raceChecked: function(race) {
         var array = _.toArray(this.race_ethnicity);
         if (_.indexOf(array, race) != -1) {
@@ -41,6 +68,10 @@ Template.editStudent.helpers({
         } else {
             return false;
         }
+    },
+    enrolledPrograms: function() {
+        var programIds = Session.get("enrolledPrograms");
+        return Programs.find({_id: {$in: programIds}});
     },
     programLocations: function() {
         var programs = _.uniq(_.toArray(Programs.find().fetch()), false, function(p) {
@@ -60,12 +91,14 @@ Template.editStudent.helpers({
         return moment().hour(timeString).minute(0).format("hh:mm a");
     },
     programLocationSelected: function(name) {
-       var programId = Template.parentData(1).program;
-       var program = Programs.findOne({_id: programId});
-       return (name === program.name);
+        var programId = Template.parentData(1).program;
+        var program = Programs.findOne({
+            _id: programId
+        });
+        return (name === program.name);
     },
     programTimeSelected: function(id) {
-       return (id === Template.parentData(1).program);
+        return (id === Template.parentData(1).program);
     }
 });
 
@@ -89,26 +122,39 @@ Template.editStudent.events({
             race_ethnicity: $(e.target).find("[name=race_ethnicity]:checked").map(function() {
                 return this.value;
             }).get(),
-            pictures_allowed: $(e.target).find('[name=pictures_allowed]:checked').val(),
-            program: $(e.target).find('[name=program_time]').val(),
+            program: Session.get("enrolledPrograms"),
             elm_school: $(e.target).find('[name=elm_school]').val(),
             middle_school: $(e.target).find('[name=middle_school]').val(),
-            high_school: $(e.target).find('[name=high_school]').val(),
+            high_school: $(e.target).find('[name=high_school]').val()
         };
 
-        Meteor.call("studentUpdate", student, studentId, function(error, result){
-          if(error){
-            //error handling
-            console.log("error", error);
-          }
-          if(result){
-            console.log("sucess");
-            Router.go('studentProfile', {
-                _id: studentId
-            });
-          }
+        if (Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP)) {
+          _.extend(student, {
+            student_email: $(e.target).find('[name=student_email]').val(),
+            github_username: $(e.target).find('[name=github_username]').val(),
+            github_password: $(e.target).find('[name=github_password]').val(),
+          });
+        }
+
+        Meteor.call("studentUpdate", student, studentId, function(error, result) {
+            if (error) {
+                //error handling
+                console.log(error);
+            }
+            if (result) {
+                Router.go('studentProfile', {
+                    _id: studentId
+                });
+            }
         });
+    },
 
-
+    //retrieves the currently selected program and stores it in enrolledPrograms array
+    //so students may be enrolled in more than one program at a time
+    'click #anotherProgram': function(e) {
+        var enrolledPrograms = Session.get("enrolledPrograms");
+        var programId = $('select[name=program_time]').val();
+        enrolledPrograms.push(programId);
+        Session.set("enrolledPrograms", enrolledPrograms);
     }
 });

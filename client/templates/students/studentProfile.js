@@ -3,7 +3,9 @@ Template.studentProfile.helpers({
         return moment().format("YYYY-MM-DD");
     },
     studentAttendance: function() {
-        Meteor.subscribe("singleStudentAttendance", this._id);
+        if (!_.isEmpty(this._id)) {
+          Meteor.subscribe("singleStudentAttendance", this._id);
+        }
         var mostRecent = _.toArray(StudentAttendance.find().fetch());
         var dateStrings = [];
         var i;
@@ -17,9 +19,14 @@ Template.studentProfile.helpers({
         Meteor.subscribe("parentById", this.parentId);
         return Parents.find();
     },
+    adminAdd: function() {
+      if ((_.isEmpty(this.parentId)) || (this.parentId == "admin")) {
+        return true;
+      }
+    },
     program: function() {
-        Meteor.subscribe("programById", this.program);
-        return Programs.find();
+        Meteor.subscribe("programById", {$in: this.program});
+        return Programs.find({_id: {$in: this.program}});
     },
     getCurrentLevel: function(category) {
       var levels = _.pick(this, category);

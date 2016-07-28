@@ -94,7 +94,6 @@ Template.editStudentLevels.events({
 
             return level;
         }).get();
-        console.log(this._id);
         Meteor.call("updateStudentProgress", this._id, htmlArray, cssArray, jsArray, devToolsArray, function(error, result) {
             if (error) {
                 console.log("error", error);
