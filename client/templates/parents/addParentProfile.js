@@ -1,19 +1,16 @@
 Template.addParentProfile.onRendered(function() {
-    $("#parentProfileForm").validate({
+    $("#parentProfile").validate({
         rules: {
-            first_name: {
+            parent_first_name: {
                 required: true
             },
-            last_name: {
+            parent_last_name: {
                 required: true
             },
-            dob: {
+            parent_dob: {
                 required: true
             },
-            gender: {
-                required: true
-            },
-            race_ethnicity: {
+            parent_race_ethnicity: {
                 required: true
             },
             email: {
@@ -46,32 +43,24 @@ Template.addParentProfile.onRendered(function() {
 
 Template.addParentProfile.helpers({
     'change #other': function(e) {
-        alert("toggled");
         $('label[name=otherLabel]').toggleClass('hidden');
         $('input[name=otherText]').toggleClass('hidden');
     }
 });
 
 Template.addParentProfile.events({
-    'change #otherRace': function(e) {
-        $('label[name=otherRaceLabel]').toggleClass('hidden');
-        $('input[name=otherRaceText]').toggleClass('hidden');
+    'change #otherParentRace': function(e) {
+        $('label[name=otherParentRaceLabel]').toggleClass('hidden');
+        $('input[name=otherParentRaceText]').toggleClass('hidden');
     },
 
     "submit form": function(e) {
         e.preventDefault();
         var parentProfile = {
-            first_name: $(e.target).find('[name=first_name]').val(),
-            last_name: $(e.target).find('[name=last_name]').val(),
-            dob: $(e.target).find('[name=dob]').val(),
-            gender: $(e.target).find("[name=gender]:checked").map(function() {
-                if (this.value === "Other") {
-                    return $(e.target).find("[name=otherText]").val();
-                } else {
-                    return this.value;
-                }
-            }).get(),
-            race_ethnicity: $(e.target).find("[name=race_ethnicity]:checked").map(function() {
+            first_name: $(e.target).find('[name=parent_first_name]').val(),
+            last_name: $(e.target).find('[name=parent_last_name]').val(),
+            dob: $(e.target).find('[name=parent_dob]').val(),
+            race_ethnicity: $(e.target).find("[name=parent_race_ethnicity]:checked").map(function() {
                 return this.value;
             }).get(),
             email: $(e.target).find('[name=email]').val(),
@@ -83,12 +72,13 @@ Template.addParentProfile.events({
             zip: $(e.target).find('[name=zip]').val(),
             eme_contact: $(e.target).find('[name=eme_contact]').val(),
             eme_number: $(e.target).find('[name=eme_number]').val(),
-            //EMPLOYMENT INFO
+            occupation: $(e.target).find('[name=occupation]').val(),
+            employer_name: $(e.target).find('[name=employer_name]').val(),
+            income: $(e.target).find('[name=income]').val()
         };
         Meteor.call("parentInsert", parentProfile, function(error, result) {
             if (error) {
-                console.log("error", error);
-                //ERROR HANDLING
+                alert("Sorry! There was an error! Please try resubmitting the form again. If that doesn't work please contact us and let us know.")
             }
             if (result) {
                 Router.go('/enrollStudent');
