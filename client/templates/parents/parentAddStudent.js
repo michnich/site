@@ -143,7 +143,8 @@ Template.parentAddStudent.events({
             high_school: $(e.target).find('[name=high_school]').val(),
             photos: $(e.target).find('[name=takePhotos]:checked').val(),
             attend_class_permission: $(e.target).find('[name=attendClass]:checked').val(),
-            parentId: parent
+            parentId: parent,
+            parentUserId: Meteor.userId()
         };
 
         Meteor.call("studentInsert", student, function(error, result) {
