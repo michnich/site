@@ -36,6 +36,9 @@ Template.studentProfile.helpers({
           return levels[i].level;
         }
       }
+    },
+    formatDate: function(date) {
+      return moment(date).format("MMM Do, YYYY");
     }
 });
 
