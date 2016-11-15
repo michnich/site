@@ -1,25 +1,25 @@
 <template name="studentProfile">
 	<div class="col-md-10 col-md-push-1">
 		<div class="container padding-30">
-			<div class="row">
+			<div class="row padding-20">
 				<div class="col-sm-6">
-					<h2 style="color: black">{{first_name}} {{last_name}}</h2>
+					<h2 style="color: black; display: inline">{{first_name}} {{last_name}} </h2>
+					<h3 style="display: inline"><sup><a href="{{pathFor 'editStudent'}}"> Edit</a></sup></h3>
 				</div>
-				<div class="col-sm-4">
-					<form class="form-inline padding-15">
+				<div class="col-sm-6">
+					{{#if isInRole 'admin' Roles.GLOBAL_GROUP}}
+					<form class="form-inline">
 						<input name="attendanceDate" id="attendanceDate" type="date" value="{{getToday}}" class="form-control" />
 						<button type="submit" class="btn btn-primary">Check in</button>
 					</form>
-				</div>
-				<div class="col-sm-2 padding-15">
-					<a href="{{pathFor 'editStudent'}}" class="btn btn-primary">Edit</a>
+					{{/if}}
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row padding-15">
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Student Information</h4>
 						</div>
 						<div class="panel-body">
@@ -29,12 +29,13 @@
 								<h5>{{name}}, {{day_of_week}}</h5>
 							{{/each}}
 							<h5>Pictures allowed: {{pictures_allowed}}</h5>
+							<h5>Enrollment date: {{formatDate signup_date.date}}</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Program Information</h4>
 						</div>
 						<div class="panel-body">
@@ -43,7 +44,7 @@
 							<h5>GitHub password: {{github_password}}</h5>
 							<h5>Email address: {{student_email}}</h5>
 							<h4><strong>Current Levels:</strong></h4>
-							<a href="{{pathFor 'editStudentLevels'}}" class="btn btn-primary">Edit</a>
+							<!--<a href="{{pathFor 'editStudentLevels'}}" class="btn btn-primary">Edit</a>-->
 							<h5>HTML: {{getCurrentLevel html}}</h5>
 							<h5>CSS: {{getCurrentLevel css}}</h5>
 							<h5>JavaScript: {{getCurrentLevel js}}</h5>
@@ -53,7 +54,7 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>Recent Attendance</h4>
 						</div>
 						<div class="panel-body">
@@ -64,13 +65,14 @@
 				</div>
 			</div>
 			<div class="row">
-				{{#each parent}}
+				{{#if adminAdd}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4>Contact Information</h4>
+						<div class="panel-heading" id="background-blue">
+							<h4>Parent Contact Information</h4>
 						</div>
 						<div class="panel-body">
+							<h4>{{parent_first_name}} {{parent_last_name}}</h4>
 							<h5>Parent Email: {{email}}</h5>
 							<h5>Parent Phone: {{phone}}</h5>
 							<h5>Address: {{address1}} {{address2}}</h5>
@@ -80,7 +82,34 @@
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
+							<h4>Emergency Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h5>Name: {{eme_contact}}</h5>
+							<h5>Number: {{eme_number}}</h5>
+						</div>
+					</div>
+				</div>
+				{{else}}
+				{{#each parent}}
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="background-blue">
+							<h4>Parent Contact Information</h4>
+						</div>
+						<div class="panel-body">
+							<h4>{{first_name}} {{last_name}}</h4>
+							<h5>Parent Email: {{email}}</h5>
+							<h5>Parent Phone: {{phone}}</h5>
+							<h5>Address: {{address1}} {{address2}}</h5>
+							<h5>{{city}}, {{state}} {{zip}}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="background-blue">
 							<h4>Emergency Contact Information</h4>
 						</div>
 						<div class="panel-body">
@@ -90,9 +119,10 @@
 					</div>
 				</div>
 				{{/each}}
+				{{/if}}
 				<div class="col-md-4 col-sm-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading" id="background-blue">
 							<h4>School History</h4>
 						</div>
 						<div class="panel-body">

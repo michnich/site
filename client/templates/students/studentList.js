@@ -1,9 +1,27 @@
 Template.studentList.onCreated(function() {
-	Meteor.subscribe("allStudents");
+	this.subscribe("allStudents");
+	this.subscribe("allPrograms");
+	Session.set("selectedProgram", "");
 });
 
 Template.studentList.helpers({
 	student: function() {
-		return Students.find();
+		var selectedProgram = Session.get('selectedProgram');
+		if (selectedProgram === "All") {
+			return Students.find();
+		}
+		else {
+			return Students.find({program: selectedProgram});
+		}
+	},
+	programs: function() {
+		return Programs.find();
+	}
+});
+
+Template.studentList.events({
+	'change #selectProgram': function() {
+		var programId = $("select[id=selectProgram]").val();
+		Session.set("selectedProgram", programId);
 	}
 })
