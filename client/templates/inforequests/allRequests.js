@@ -17,6 +17,7 @@ Template.allRequests.helpers({
 });
 
 Template.allRequests.events({
+   //for filtering based on info request status
     'change #selectStatus': function(e) {
 				e.preventDefault();
         var statusType = $(e.target).val();
