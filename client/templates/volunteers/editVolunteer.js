@@ -1,3 +1,4 @@
+//unused
 Template.editVolunteer.onCreated(function() {
   Session.set('volunteerErrors', {});
 });
