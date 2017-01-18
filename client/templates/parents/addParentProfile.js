@@ -1,4 +1,5 @@
 Template.addParentProfile.onRendered(function() {
+    //the required fields for the form, employment info is optional
     $("#parentProfile").validate({
         rules: {
             parent_first_name: {
@@ -41,14 +42,8 @@ Template.addParentProfile.onRendered(function() {
     });
 });
 
-Template.addParentProfile.helpers({
-    'change #other': function(e) {
-        $('label[name=otherLabel]').toggleClass('hidden');
-        $('input[name=otherText]').toggleClass('hidden');
-    }
-});
-
 Template.addParentProfile.events({
+  //toggles an input field for elaboration if other is checked for race
     'change #otherParentRace': function(e) {
         $('label[name=otherParentRaceLabel]').toggleClass('hidden');
         $('input[name=otherParentRaceText]').toggleClass('hidden');
@@ -56,6 +51,7 @@ Template.addParentProfile.events({
 
     "submit form": function(e) {
         e.preventDefault();
+        //object that is passed to server, signup date is added server side
         var parentProfile = {
             first_name: $(e.target).find('[name=parent_first_name]').val(),
             last_name: $(e.target).find('[name=parent_last_name]').val(),
@@ -81,7 +77,7 @@ Template.addParentProfile.events({
                 alert("Sorry! There was an error! Please try resubmitting the form again. If that doesn't work please contact us and let us know.")
             }
             if (result) {
-                Router.go('/enrollStudent');
+                Router.go('/enrollStudent'); //next step in process is to enroll students
             }
         });
     }

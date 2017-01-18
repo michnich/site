@@ -1,5 +1,6 @@
 Template.parentAddStudent.onRendered(function() {
   $(window).scrollTop(0);
+  //required fields for form
    $("#parentAddStudent").validate({
         ignore: "input[type='text']:hidden",
         rules: {

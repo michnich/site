@@ -1,4 +1,5 @@
 Template.editParentProfile.onRendered(function() {
+    //required fields for the form the submit
     $("#editProfile").validate({
         rules: {
             first_name: {
@@ -44,6 +45,8 @@ Template.editParentProfile.onRendered(function() {
     });
 });
 
+//all these helpers just check the fields already applied to the parent, so their current info is selected on page load
+//race, gender, state and income
 Template.editParentProfile.helpers({
     raceChecked: function(race) {
         var array = _.toArray(this.race_ethnicity);
@@ -80,6 +83,7 @@ Template.editParentProfile.helpers({
 });
 
 Template.editParentProfile.events({
+    //toggles a textbox for elabortion if the parent selects other for race
     'change #otherRace': function(e) {
         $('label[name=otherRaceLabel]').toggleClass('hidden');
         $('input[name=otherRaceText]').toggleClass('hidden');
