@@ -1,4 +1,6 @@
 Template.addStudent.onRendered(function() {
+  //fields required to submit form
+  //less than usual because younger students may not know
    $("#addStudent").validate({
         ignore: "input[type='text']:hidden",
         rules: {

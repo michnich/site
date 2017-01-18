@@ -51,7 +51,8 @@ Template.editStudent.onRendered(function() {
         }
     });
 });
-
+//all these helpers just check the fields already applied to the student, so their current info is selected on page load
+//race, gender, state and enrolled programs
 Template.editStudent.helpers({
     raceChecked: function(race) {
         var array = _.toArray(this.race_ethnicity);
