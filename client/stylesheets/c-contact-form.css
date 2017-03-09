@@ -26,3 +26,40 @@
     width: 280px;
   }
 }
+
+/*DONATION PAGE*/
+#donation {
+  text-align: center;
+}
+#donationAmount {
+  display: inline-block;
+}
+
+.amountButton {
+  background-color: white;
+  color: #4BADA2;
+  border-color: #4BADA2;
+}
+
+.amountButton:hover, .amountButton:focus {
+  color: white;
+  background-color: #4BADA2;
+  border-color: #4BADA2;
+}
+
+.amountButton:active  {
+  color: white;
+  background-color: #4BADA2;
+  border-color: #4BADA2;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/*#paymentType {
+  display: none;
+}*/
+
+.padding-30 {
+  padding-top: 30px;
+}
