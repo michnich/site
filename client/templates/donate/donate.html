@@ -1,41 +1,30 @@
 <template name="donate">
+	<!--put banner thing here-->
+	<!--also some words-->
 	<div class="container padding-30" id="donation">
 		<div class="col-md-8 col-md-push-2">
 		 	{{#transition in="fadeInDown"}}
 			<h3 class="animated out">How much would you like to donate?</h3>
 			<div class="btn-group animated out" role="group" aria-label="..." name="donationAmount" id="donationAmount">
-			  <button type="button" class="btn btn-default amountButton">$20</button>
-			  <button type="button" class="btn btn-default amountButton">$50</button>
-			  <button type="button" class="btn btn-default amountButton">$100</button>
-			  <button type="button" class="btn btn-default amountButton">$200</button>
-			  <button type="button" class="btn btn-default amountButton">Other</button>
+			  <button type="button" class="btn btn-default amountButton" data-service="2000">$20</button>
+			  <button type="button" class="btn btn-default amountButton" data-service="5000">$50</button>
+			  <button type="button" class="btn btn-default amountButton" data-service="10000">$100</button>
+			  <button type="button" class="btn btn-default amountButton" data-service="20000">$200</button>
+			  <button type="button" class="btn btn-default amountButton" id="other" data-service="other">Other</button>
 			</div>
 			{{/transition}}
-			<div id="paymentOptions">
-				{{#transition in="fadeInDown"}}
+			{{#transition in="slideInRight" out="slideOutLeft"}}
+			  	<input type="number" min="0.01" step="0.01" id="otherAmount" name="otherAmount" class="form-control animated out">
+			{{/transition}}
+			{{#transition in="fadeInDown"}}
+			<div id="paymentOptions">				
 				<h3 class="animated out">How would you like to pay?</h3>
-				<div class="btn-group animated out" role="group" aria-label="..." name="paymentType" id="paymentType">
-				  <button type="button" class="btn btn-default amountButton"><i class="fa fa-paypal" aria-hidden="true"></i>  Paypal</button>
-				  <button type="button" class="btn btn-default amountButton"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Credit Card</button>	
+				<div class="animated out">
+				  <button type="button" class="btn btn-default amountButton" id="stripe" name="stripe"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Credit Card</button>	
+				  <button type="button" class="btn btn-default amountButton" id="paypal" name="paypal"><i class="fa fa-paypal" aria-hidden="true"></i>  Paypal</button>
 				</div>
-				{{/transition}}
 			</div>
-			<div id="stripe">
-				{{#transition in="fadeInDown"}}
-					<form id="stripeCheckout">
-						<script
-						src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-						data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-						data-amount="999"
-						data-name="Stripe.com"
-						data-description="Widget"
-						data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-						data-locale="auto"
-						data-zip-code="true">
-						</script>
-					</form>
-				{{/transition}}	
-			</div>
+			{{/transition}}
 		</div>
 	</div>
 </template>
