@@ -34,19 +34,18 @@ Template.donate.onCreated(function() {
 });
 
 Template.donate.events({
-	//shows the input field if the user clicks "other"
-	'click #other': function(e) {
-		e.preventDefault();
-		$("#otherAmount").show();
-	},
 	//animates in the payment options
 	//hides the input field for other if they click another button
 	'click .amount': function(e) {
 		e.preventDefault();
-		if (!(this.id == "other")) {
-			$("#otherAmount").hide();
+		if (e.target.id == "other") {
+			$("#otherAmount").show();
 		}
-		$("#paymentOptions").show();
+		else {
+			$("#otherAmount").hide();
+			$("#paymentOptions").show();
+		}
+		e.target.attr('checked', true);
 	},
 	//opens stripe checkout for payment
 	'click #stripe': function(e) {
