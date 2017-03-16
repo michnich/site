@@ -39,13 +39,9 @@ Template.donate.events({
 		e.preventDefault();
 		$("#otherAmount").show();
 	},
-	//sets the donation amount that will be passed to stripe when button is clicked
-	'click [data-service]': function(e) {
-		Template.instance().donationAmount.set(e.target.dataset.service);
-	},
 	//animates in the payment options
 	//hides the input field for other if they click another button
-	'click .amountButton': function(e) {
+	'click .amount': function(e) {
 		e.preventDefault();
 		if (!(this.id == "other")) {
 			$("#otherAmount").hide();
@@ -55,6 +51,11 @@ Template.donate.events({
 	//opens stripe checkout for payment
 	'click #stripe': function(e) {
 		var donationAmount = parseInt(Template.instance().donationAmount.get());
+		//if it's 0 they clicked 'other'
+		//must read in amount from text input
+		if (donationAmount == 0) {
+			donationAmount = parseInt($("#otherAmount").value) * 100; //stripe makes charges in cents
+		}
 		Template.instance().checkout.open({
 	      name: 'Coded by Kids',
 	      description: "Please check the amount below.",

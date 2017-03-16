@@ -1,30 +1,51 @@
 <template name="donate">
-	<!--put banner thing here-->
-	<!--also some words-->
-	<div class="container padding-30" id="donation">
-		<div class="col-md-8 col-md-push-2">
-		 	{{#transition in="fadeInDown"}}
-			<h3 class="animated out">How much would you like to donate?</h3>
-			<div class="btn-group animated out" role="group" aria-label="..." name="donationAmount" id="donationAmount">
-			  <button type="button" class="btn btn-default amountButton" data-service="2000">$20</button>
-			  <button type="button" class="btn btn-default amountButton" data-service="5000">$50</button>
-			  <button type="button" class="btn btn-default amountButton" data-service="10000">$100</button>
-			  <button type="button" class="btn btn-default amountButton" data-service="20000">$200</button>
-			  <button type="button" class="btn btn-default amountButton" id="other" data-service="other">Other</button>
+	<div class="top-border" id="about-us">
+
+    </div>
+    <div class="container padding-20">
+    	<div class="col-md-8 col-md-push-2">
+	    	<h2 class="text-center">Words and stuff</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac felis risus. Curabitur mauris eros, vulputate quis porttitor id, commodo non magna. Integer iaculis, tortor eu semper malesuada, tellus risus maximus velit, eu varius ligula turpis quis mauris. Vestibulum ex est, pretium vel elit vel, eleifend aliquet nulla. Cras vulputate mi vulputate neque pulvinar, a iaculis dui congue. </p>
+		</div>
+    </div>
+	<div class="container text-center">
+		<div class="col-md-8 col-md-push-2" id="donation">
+			<h3>How much would you like to donate?</h3>
+			<div id="donationAmount">
+			  <input type="radio" id="20" name="radios" value="2000" class="amount">
+			  <label for="20">$20</label>
+
+			  <input type="radio" id="50" name="radios" value="5000" class="amount">
+			  <label for="50">$50</label>
+
+			  <input type="radio" id="100" name="radios" value="10000" class="amount">
+			  <label for="100">$100</label>
+
+			  <input type="radio" id="200" name="radios" value="20000" class="amount">
+			  <label for="200">$200</label>
+
+			  <input type="radio" id="other" name="radios" value="0" class="amount">
+			  <label for="other">Other</label>
 			</div>
-			{{/transition}}
-			{{#transition in="slideInRight" out="slideOutLeft"}}
+			{{#transition in="slideInLeft" out="slideOutRight"}}
 			  	<input type="number" min="0.01" step="0.01" id="otherAmount" name="otherAmount" class="form-control animated out">
 			{{/transition}}
 			{{#transition in="fadeInDown"}}
 			<div id="paymentOptions">				
 				<h3 class="animated out">How would you like to pay?</h3>
 				<div class="animated out">
-				  <button type="button" class="btn btn-default amountButton" id="stripe" name="stripe"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Credit Card</button>	
-				  <button type="button" class="btn btn-default amountButton" id="paypal" name="paypal"><i class="fa fa-paypal" aria-hidden="true"></i>  Paypal</button>
+				  <button type="button" class="btn btn-default amountButton" id="stripe" name="stripe"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Credit Card</button>
+				  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="U5DTE564LVCWS">
+					<button type="submit" name="submit" title="PayPal - The safer, easier way to pay online!" id="paypal" class="btn btn-default amountButton"><i class="fa fa-paypal" aria-hidden="true"></i>  Paypal</button>
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				  </form>
 				</div>
 			</div>
 			{{/transition}}
 		</div>
+	</div>
+	<div class="padding-30">
 	</div>
 </template>
