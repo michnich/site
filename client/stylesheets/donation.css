@@ -12,6 +12,9 @@
 }
 
 /*AMOUNT*/
+#donation{
+  display: none;
+}
 #donationAmount {
   display: inline-block;
 }
@@ -71,13 +74,16 @@
 }
 
 #otherAmount {
-  position: absolute;
   display: none;
   width: 15%;
   margin-left: 2vh;
   margin-top: 1vh;
 }
 
+#otherSubmit {
+  display: inline-block;
+  display: none;
+}
 /*PAYMENT TYPE*/
 .paymentButton {
   display: inline-block;
@@ -92,9 +98,4 @@
 
 #paymentOptions form {
   display: inline-block;
-  
-}
-#paymentOptions {
-  display: inline-block;
-  display: none;
 }

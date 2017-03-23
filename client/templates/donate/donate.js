@@ -31,34 +31,50 @@ Template.donate.onCreated(function() {
     });
 });
 
+Template.donate.helpers({
+    paypalGetAmount: function() {
+    	console.log(Template.instance().donationAmount.get());
+      return Template.instance().donationAmount.get();
+    }
+});
+
 Template.donate.events({
-	//animates in the payment options
+	//shows donate buttons, only for stripe, paypal redirects
+	'click .paymentButton': function(e) {
+		$('#donation').show();
+	},
+
+	//if they clicked other, shows hidden input field
 	//hides the input field for other if they click another button
-	//sets the donation amount to what they selected
+	//sets the donation amount to what they selected and launches stripe checkout
 	'click .amount': function(e) {
 		if (e.target.id == "other") {
 			$("#otherAmount").show();
+			$("#otherSubmit").show();
 		}
 		else {
 			$("#otherAmount").hide();
+			$("#otherSubmit").hide();
 		}
-		$("#paymentOptions").show();
 		var amount = $('input[name=radios]:checked').val();
 		Template.instance().donationAmount.set(amount);;
-	},
-
-	//opens stripe checkout for payment
-	'click #stripe': function(e) {
-		var donationAmount = parseInt(Template.instance().donationAmount.get());
-		//if it's 0 they clicked 'other'
-		//must read in amount from text input
-		if (donationAmount == 0) {
-			donationAmount = parseInt($('input[name=otherAmount]').val()) * 100; //stripe makes charges in cents
-		}
 		Template.instance().checkout.open({
 	      name: 'Coded by Kids',
 	      description: "Please check the amount below.",
 	      amount: donationAmount
     	});
+	},
+
+	//if they entered a custom amount, seperate submit button to launch checkout
+	'click #otherSubmit': function(e) {
+		var donationAmount = parseFloat($('input[name=otherAmount]').val()) * 100; //stripe makes charges in cents
+		if (donationAmount > 0) {
+			Template.instance().donationAmount.set(donationAmount);
+			Template.instance().checkout.open({
+		      	name: 'Coded by Kids',
+		      	description: "Please check the amount below.",
+		      	amount: donationAmount
+    		});
+		}
 	}
 });
