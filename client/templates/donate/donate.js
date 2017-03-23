@@ -4,7 +4,7 @@ Template.donate.onCreated(function() {
 	template.donationAmount = new ReactiveVar(false);
 	template.donationAmount.set(0);
 
-	//CHECKOUT COFIGURATION
+	//STRIPE CHECKOUT COFIGURATION
 	template.checkout = StripeCheckout.configure({
 	    key: Meteor.settings.public.stripe,
 	    image: 'img/logo-v5.png',
@@ -19,41 +19,41 @@ Template.donate.onCreated(function() {
 	            receipt_email: token.email
           	};
 
-        	Meteor.call( 'processPayment', charge, ( error, response ) => {
-        		if ( error ) {
-	          		//failed
+          	//catch and set error message
+        	Meteor.call( 'processPayment', charge, function(error, response) {
+        		if ( error ) { 
+	          		$('.alert').show();
     			} else {
-          			//success
+          			Router.go('thankYou');
         		}
       		});
-    	},
-	    closed() { //when checkout is completed
-	      //trigger redirect to thank you page
-	    }
-	});
+    	}
+    });
 });
 
 Template.donate.events({
 	//animates in the payment options
 	//hides the input field for other if they click another button
+	//sets the donation amount to what they selected
 	'click .amount': function(e) {
-		e.preventDefault();
 		if (e.target.id == "other") {
 			$("#otherAmount").show();
 		}
 		else {
 			$("#otherAmount").hide();
-			$("#paymentOptions").show();
 		}
-		e.target.attr('checked', true);
+		$("#paymentOptions").show();
+		var amount = $('input[name=radios]:checked').val();
+		Template.instance().donationAmount.set(amount);;
 	},
+
 	//opens stripe checkout for payment
 	'click #stripe': function(e) {
 		var donationAmount = parseInt(Template.instance().donationAmount.get());
 		//if it's 0 they clicked 'other'
 		//must read in amount from text input
 		if (donationAmount == 0) {
-			donationAmount = parseInt($("#otherAmount").value) * 100; //stripe makes charges in cents
+			donationAmount = parseInt($('input[name=otherAmount]').val()) * 100; //stripe makes charges in cents
 		}
 		Template.instance().checkout.open({
 	      name: 'Coded by Kids',

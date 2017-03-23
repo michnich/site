@@ -12,7 +12,14 @@ Meteor.methods({
     });
 
     let handleCharge = Meteor.wrapAsync(Stripe.charges.create, Stripe.charges);
-    payment = handleCharge(charge);
-    return payment;
+
+    try {
+      response = handleCharge(charge);    
+      return response;
+    }
+    catch(error) {
+      console.log(error);
+      return error;
+    }
   }
 });

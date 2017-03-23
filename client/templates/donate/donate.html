@@ -4,6 +4,7 @@
     </div>
     <div class="container padding-20">
     	<div class="col-md-8 col-md-push-2">
+    		<div class="alert alert-danger" role="alert" style="display: none">Sorry! There was an issue processing your card. Please wait and try again!</div>
 	    	<h2 class="text-center">Words and stuff</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac felis risus. Curabitur mauris eros, vulputate quis porttitor id, commodo non magna. Integer iaculis, tortor eu semper malesuada, tellus risus maximus velit, eu varius ligula turpis quis mauris. Vestibulum ex est, pretium vel elit vel, eleifend aliquet nulla. Cras vulputate mi vulputate neque pulvinar, a iaculis dui congue. </p>
 		</div>
@@ -27,10 +28,8 @@
 			  <input type="radio" id="other" name="radios" value="0" class="amount">
 			  <label for="other">Other</label>
 			</div>
-			{{#transition in="slideInLeft" out="slideOutRight"}}
-			  	<input type="number" min="0.01" step="0.01" id="otherAmount" name="otherAmount" class="form-control animated out">
-			{{/transition}}
-			{{#transition in="fadeInDown"}}
+			<input type="number" min="0.01" step="0.01" id="otherAmount" name="otherAmount" class="form-control">		
+			{{#transition in="fadeInDown" out="fadeInDown"}}
 			<div id="paymentOptions">				
 				<h3 class="animated out">How would you like to pay?</h3>
 				<div class="animated out">
