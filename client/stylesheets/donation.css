@@ -99,3 +99,20 @@
 #paymentOptions form {
   display: inline-block;
 }
+
+.donate-facebook, .donate-twitter, .donate-insta, .donate-facebook a, .donate-twitter a, .donate-insta a {
+  text-decoration: none;
+  color: #919191;
+}
+
+.donate-facebook:hover, .donate-facebook:hover a {
+  color:  #3b5998;
+}
+
+.donate-twitter:hover, .donate-twitter:hover a {
+  color:  #00aced;
+}
+
+.donate-insta:hover, .donate-insta:hover a {
+  color: #e44458;
+}

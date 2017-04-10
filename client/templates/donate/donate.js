@@ -42,6 +42,7 @@ Template.donate.events({
 	//shows donate buttons, only for stripe, paypal redirects
 	'click .paymentButton': function(e) {
 		$('#donation').show();
+		$('#thankYou').modal('show');
 	},
 
 	//if they clicked other, shows hidden input field
