@@ -107,12 +107,15 @@
 
 .donate-facebook:hover, .donate-facebook:hover a {
   color:  #3b5998;
+  cursor: pointer;
 }
 
 .donate-twitter:hover, .donate-twitter:hover a {
   color:  #00aced;
+  cursor: pointer;
 }
 
 .donate-insta:hover, .donate-insta:hover a {
   color: #e44458;
+  cursor: pointer;
 }

@@ -27,8 +27,14 @@ Template.donate.onCreated(function() {
           			$('#thankYou').modal('show');
         		}
       		});
-    	}
+    	}	
     });
+});
+
+Template.donate.onRendered(function() {
+	if (Router.current().params.status === "success") {
+    	$('#thankYou').modal('show');
+    }
 });
 
 Template.donate.helpers({
