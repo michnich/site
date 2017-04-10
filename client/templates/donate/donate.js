@@ -24,7 +24,7 @@ Template.donate.onCreated(function() {
         		if ( error ) { 
 	          		$('.alert').show();
     			} else {
-          			Router.go('thankYou');
+          			$('#thankYou').modal('show');
         		}
       		});
     	}
@@ -33,16 +33,14 @@ Template.donate.onCreated(function() {
 
 Template.donate.helpers({
     paypalGetAmount: function() {
-    	console.log(Template.instance().donationAmount.get());
       return Template.instance().donationAmount.get();
     }
 });
 
 Template.donate.events({
 	//shows donate buttons, only for stripe, paypal redirects
-	'click .paymentButton': function(e) {
+	'click #stripe': function(e) {
 		$('#donation').show();
-		$('#thankYou').modal('show');
 	},
 
 	//if they clicked other, shows hidden input field
