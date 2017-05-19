@@ -66,7 +66,7 @@ Template.donate.events({
 		Template.instance().checkout.open({
 	      name: 'Coded by Kids',
 	      description: "Please check the amount below.",
-	      amount: donationAmount
+	      amount: amount
     	});
 	},
 
