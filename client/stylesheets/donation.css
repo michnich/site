@@ -1,0 +1,134 @@
+/*DONATION PAGE*/
+#donation {
+  display: inline-block;
+}
+
+.padding-30 {
+  padding-top: 30px;
+}
+
+.padding-20 {
+  padding-top: 30px;
+}
+
+/*AMOUNT*/
+#donation{
+  display: none;
+}
+#donationAmount {
+  display: inline-block;
+}
+
+#donationAmount input[type="radio"] {
+  display: none;
+  margin-right: 30px;
+}
+
+#donationAmount label {
+  color: #4BADA2;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-color: #ccc;
+  border-radius: 4px
+}
+
+#donationAmount label:hover {
+  cursor: pointer;
+  background-color: #4BADA2;
+  color: white;
+}
+
+#donationAmount input[type="radio"]:checked+label {
+  color: white;
+  background-color: #4BADA2;
+  border-color: #4BADA2;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#donationAmount input[type="radio"]:selected+label {
+  color: white;
+  background-color: #4BADA2;
+  border-color: #4BADA2;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#otherAmount {
+  display: none;
+  width: 15%;
+  margin-left: 2vh;
+  margin-top: 1vh;
+}
+
+#otherSubmit {
+  display: inline-block;
+  display: none;
+}
+/*PAYMENT TYPE*/
+.paymentButton {
+  display: inline-block;
+  color: #4BADA2;
+  background-color: #f0f0f0;
+}
+
+.paymentButton:hover, .paymentButton:active, .paymentButton:focus {
+  color: white;
+  background-color: #4BADA2;
+}
+
+#paymentOptions form {
+  display: inline-block;
+}
+
+.donate-facebook, .donate-twitter, .donate-insta, .donate-facebook a, .donate-twitter a, .donate-insta a {
+  text-decoration: none;
+  color: #919191;
+}
+
+.donate-facebook:hover, .donate-facebook:hover a {
+  color:  #3b5998;
+  cursor: pointer;
+}
+
+.donate-twitter:hover, .donate-twitter:hover a {
+  color:  #00aced;
+  cursor: pointer;
+}
+
+.donate-insta:hover, .donate-insta:hover a {
+  color: #e44458;
+  cursor: pointer;
+}
+.social-name {
+  visibility: hidden;
+}
+.donate-facebook:hover > .social-name {
+  visibility: visible;
+}
+.donate-insta:hover > .social-name {
+  visibility: visible;
+}
+.donate-twitter:hover > .social-name {
+  visibility: visible;
+}
+
