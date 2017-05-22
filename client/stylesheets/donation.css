@@ -119,3 +119,16 @@
   color: #e44458;
   cursor: pointer;
 }
+.social-name {
+  visibility: hidden;
+}
+.donate-facebook:hover > .social-name {
+  visibility: visible;
+}
+.donate-insta:hover > .social-name {
+  visibility: visible;
+}
+.donate-twitter:hover > .social-name {
+  visibility: visible;
+}
+
