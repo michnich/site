@@ -7,7 +7,7 @@ Template.donate.onCreated(function() {
 	//STRIPE CHECKOUT COFIGURATION
 	template.checkout = StripeCheckout.configure({
 	    key: Meteor.settings.public.stripe,
-	    image: 'img/logo-v5.png',
+	    image: '../img/logo-v5.png',
 	    locale: 'auto',
 	    token( token ) { //stipes pass backs token, used to complete charge
       		donation = parseInt(template.donationAmount.get());
