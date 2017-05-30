@@ -56,6 +56,7 @@ Template.donate.events({
 		if (e.target.id == "other") {
 			$("#otherAmount").show();
 			$("#otherSubmit").show();
+			return;
 		}
 		else {
 			$("#otherAmount").hide();
