@@ -59,13 +59,17 @@ Template.addStudent.helpers({
     //displays the locations based off the selected program
     //sets the session variable for the program location to be used with the program time helper
     programLocations: function() {
-        var selectedProgram = Session.get("programSelected");
+        /*var selectedProgram = Session.get("programSelected");
         var programs = _.uniq(_.toArray(Programs.find({
             program_type: selectedProgram
         }).fetch()), false, function(p) {
             return p.name;
         });
-        Session.set("programLocation", programs[0].name);
+        Session.set("programLocation", programs[0].name);*/
+        Session.set("programLocation", "Marian Anderson Rec Center"); //this is bad
+        var programs = _.uniq(_.toArray(Programs.find({}).fetch()), false, function(p) {
+            return p.name;
+        });
         return programs;
     },
 
@@ -73,10 +77,9 @@ Template.addStudent.helpers({
     //returns programs with that location and type
     programTimes: function() {
         var location = Session.get("programLocation");
-        var type = Session.get("programSelected");
+        //var type = Session.get("programSelected");
         return Programs.find({
             name: location,
-            program_type: type
         });
     },
 
@@ -176,8 +179,8 @@ Template.addStudent.events({
         document.location.reload(true);
     },
 
-    'change #program_location': function(e) {
-        var programLocation = ($e).target.find(["name=program_location"]).val();
+    'change #program_location': function() {
+        var programLocation = $('select[name=program_location]').val();
         Session.set("programLocation", programLocation);
     },
 
